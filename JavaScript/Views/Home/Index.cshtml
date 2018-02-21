@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Active Database Software</h1>
+        <p class="lead">Active Query Builder is a visual SQL query builder, SQL parser, and professional SQL text editor.</p>
+        <p><a href="https://www.activequerybuilder.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Simple client rendering</h3>
+            <p></p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "SimpleClientRendering")">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Create QueryBuilder by url</h3>
+            <p></p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "CreateQueryBuilder")">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Web.config</h3>
+            <p>Web.config XML configuration</p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "CreateFromConfig")">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Modal</h3>
+            <p></p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "DoubleClientRendering")">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Webpack</h3>
+            <p></p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "WebpackClientRendering")">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>React</h3>
+            <p></p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "ReactClientRendering")">Learn more &raquo;</a>
+            </p>
+        </div>
+    </div>
+</div>

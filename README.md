@@ -1,33 +1,38 @@
-# C# Demo Projects for [Active Query Builder ASP.NET Edition](http://www.activequerybuilder.com/product_asp.html)
+# C# Demo Projects for [Active Query Builder ASP.NET Edition](https://www.activequerybuilder.com/product_asp.html)
 
-##### Also, check [the VB.NET Demo projects repository](https://github.com/ActiveDbSoft/active-query-builder-2-asp-net-samples-vb) for the same.
-#
 ## What is Active Query Builder?
-Active Query Builder is a visual query builder and SQL parser component for ASP.NET (WebForms, MVC and Core 2.0). 
+Active Query Builder is a Visual SQL Query Builder and SQL parser component suite for ASP.NET (WebForms, MVC and Core 2.0). 
 ##### Details:
-- [Active Query Builder website](http://www.activequerybuilder.com/),
-- [Active Query Builder ASP.NET Edition details page](http://www.activequerybuilder.com/product_asp.html).
+- [Active Query Builder website](https://www.activequerybuilder.com/),
+- [Active Query Builder ASP.NET Edition details page](https://www.activequerybuilder.com/product_asp.html),
+- [Live demo website](http://aspquerybuilder.net/).
 
 ## How do I get Active Query Builder?
-- [Download the trial version](http://www.activequerybuilder.com/trequest.html?request=asp) from the product web site
-- Get it by installing the [ActiveQueryBuilder.ASPNET NuGet package](https://www.nuget.org/packages/ActiveQueryBuilder.ASPNET/).
+- [Download the trial version](https://www.activequerybuilder.com/trequest.html?request=asp) from the product web site
+- Get it by installing the Active Query Builder ASP.NET Edition NuGet package for [WebForms](https://www.nuget.org/packages/ActiveQueryBuilder.Web.WebForms) or [MVC](https://www.nuget.org/packages/ActiveQueryBuilder.Web.MVC).
 
 ## What's in this repository?
 The demo projects in this repository illustrate various aspects of the component's functionality from basic usage scenarios to advanced features. They are also included the trial and full versions of Active Query Builder.
 A brief description of each project can be found below.
+
 ##### Prerequisites:
 - Visual Studio 2012 or higher,
 - .NET Framework 4.0 or higher.
-- [Active Query Builder ASP.NET NuGet package](https://www.nuget.org/packages/ActiveQueryBuilder.ASPNET/).
+
+##### Dependencies:
+- [Active Query Builder Core](https://www.nuget.org/packages/ActiveQueryBuilder.Core/),
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) assembly 6.0.4 or higher.
 
 ## How to get these demo projects up and running?
 
 1. Clone this repository to your PC.
-2. Open the "Samples.sln" solution to review the WebForms or MVC demos or the "AspNetCoreSamples.sln" to review the Core over .NET Framework sample projects.
-3. Select the "Tools" - "NuGet Package Manager" - "**Package Manager Console**" menu item.
-4. Install **Active Query Builder ASP.NET NuGet package** by running the following command:
-     ```Install-Package ActiveQueryBuilder.ASPNET```
-5. Run the project.
+2. Open the "**Samples.sln**" solution to review the *WebForms and MVC demo projects* 
+3. Run the project.
+
+The necessary packages will be installed automatically. In case of any problems with the packages, open the "Tools" - "NuGet Package Manager" - "**Package Manager Console**" menu item and install them by running the following command:
+     ```Install-Package ActiveQueryBuilder.Web.MVC```
+    or 
+     ```Install-Package ActiveQueryBuilder.Web.WebForms```
 
 ## Have a question or want to leave feedback?
 
@@ -40,15 +45,17 @@ There you will find:
 
 ## Contents
 
-All samples are arranged by four demo projects are according to the development environment:
+All samples are arranged by several demo projects according to the development environment:
 - WebForms demo project
 - MVC demo project
-- Client-side JavaScript rendering project
-- ASP.NET Core 2.0 over the .NET Framework project (in a separate solution)
+- Client-side JavaScript rendering project 
+- Custom server-side objects storage demo project
 
-ASP.NET Core demo project requires the special setup of your development environment, so you must be familiar with this to get it up and running.
+Note: **ASP.NET Core demo projects** require the special setup of your development environment, so they are out of the scope of this repository. Please download the full Active Query Builder installation package and find them in the "%USERPROFILE%\Documents\Active Query Builder 3 ASP.NET Examples\AspNetCoreSamples.sln" solution.
 
-Projects which require a database connection must be configured according to the database server being used. 
+The Client-side JavaScript rendering project additionally includes the **React**, **Webpack** and **Electron** demo projects. Their Readme files can be found in appropriate subfolders inside the "JavaScript/Sctipts" folder.
+
+Projects which require a database connection must be properly configured according to the database server being used. 
 - Specify the right connection string according to used DBConnection object.
 - Choose the syntax and metadata providers which suit your database server and connection method. Read details in this article: [What are the Syntax and Metadata Providers for?](https://support.activequerybuilder.com/hc/en-us/articles/115001063445-What-are-the-Syntax-and-Metadata-providers-for-).
 
@@ -147,6 +154,11 @@ This demo provides code samples of the programmatic creation of various SQL quer
 
 
 ### Advanced Programming Tasks
+
+##### Redefining the server-side objects storage
+*Get rid of the ASP.NET session storage mechanism to maintain the user work sessions.*
+The default behaviour of saving the component state within the ASP.NET session can be changed by redefining the storage provider with a few simple steps. Enables the component usage in web farms.
+Read more about this feature in the Knowledge Base: [Configuring session state server to use Active Query Builder in a web farm](https://support.activequerybuilder.com/hc/en-us/articles/115001064365-Configuring-session-state-server-to-use-Active-Query-Builder-in-a-web-farm).
 
 ##### Handle Query Building Events
 *Performing specific actions in the process of building a SQL query.*

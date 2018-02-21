@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<user_queries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.activequerybuilder.com/schemas/metadata2.xsd">
+	<metadata>
+		<userquery name="New Query">
+			<expression>Select *
+From Categories
+  Inner Join Products On Categories.CategoryID = Products.CategoryID</expression>
+		</userquery>
+		<userquery name="New Query (1)">
+			<expression>Select *
+From Categories
+  Inner Join Products On Categories.CategoryID = Products.CategoryID</expression>
+		</userquery>
+	</metadata>
+	<structure load_metadata_children="False">
+		<filter>
+			<filter_item>
+				<exclude>False</exclude>
+				<object_types>UserQuery</object_types>
+				<user_objects>True</user_objects>
+				<system_objects>False</system_objects>
+				<server>%</server>
+				<database>%</database>
+				<schema>%</schema>
+				<package>%</package>
+				<name>%</name>
+				<field>%</field>
+				<case_sensitive>False</case_sensitive>
+			</filter_item>
+		</filter>
+		<structure_item load_metadata_children="True" metadata_name="[New Query]" image_index="-1" />
+		<structure_item load_metadata_children="True" metadata_name="[New Query (1)]" image_index="-1" />
+	</structure>
+</user_queries>
