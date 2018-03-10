@@ -180,7 +180,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider"><Private>True</Private></Reference>
+    <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider">
+      <HintPath>..\packages\ActiveQueryBuilder.MSSQLMetadataProvider.3.4.7.1084\lib\net\ActiveQueryBuilder.MSSQLMetadataProvider.dll</HintPath>
+    </Reference>
     <Reference Include="ActiveQueryBuilder.Core">
 		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
