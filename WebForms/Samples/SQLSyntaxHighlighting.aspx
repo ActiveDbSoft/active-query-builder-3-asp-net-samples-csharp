@@ -42,7 +42,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/mode/sql/sql.min.js"></script>
     <script>
         $(function () {
-            AQB.Web.onApplicationReady(function () {
+            AQB.Web.onQueryBuilderReady(function (qb) {
                 var codeMirror = CodeMirror(document.body,
                     {
                         mode: 'text/x-sql',
@@ -52,7 +52,7 @@
                         matchBrackets: true
                     });
 
-                AQB.Web.QueryBuilder.setEditor({
+                qb.setEditor({
                     element: document.querySelector('.CodeMirror'),
                     getSql: function () {
                         return codeMirror.getValue();

@@ -1,40 +1,33 @@
-﻿@using ActiveQueryBuilder.Web.MVC
-@model ActiveQueryBuilder.Web.Server.QueryBuilder
-@{
-    ViewBag.Title = "Custom Server-side Storage Demo";
-    var controls = Html.QueryBuilder(Model, s => { s.UseDefaultTheme = false; });
+﻿@{
+    ViewBag.Title = "Home Page";
 }
 
-<div class="row">
-    <div class="col-md-12">
-        <h1>Custom server-side objects storage demo</h1>
-        <p>The ability to define custom storage for the QueryBuilder and QueryTransformer server-side objects lets keep the component's state during the user work session and between sessions without using the ASP.NET session mechanism.</p>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Active Query Builder</h1>
+        <p class="lead">Active Query Builder is a visual SQL query builder component with powerful API to parse, analyze, and modify SQL queries.</p>
+        <p><a href="https://www.activequerybuilder.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-12">
-        @controls.GetHtml()
-        <div class="qb-ui-layout">
-            <div class="qb-ui-layout__top">
-                <div class="qb-ui-layout__left">
-                    <div class="qb-ui-structure-tabs">
-                        <div class="qb-ui-structure-tabs__tab">
-                            <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                            <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
-                            <div class="qb-ui-structure-tabs__content">
-                                @controls.ObjectTreeView().GetHtml()
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="qb-ui-layout__right">
-                    @controls.SubQueryNavigationBar().GetHtml()
-                    @controls.Canvas().GetHtml()
-                    @controls.StatusBar().GetHtml()
-                    @controls.Grid().GetHtml()
-                </div>
-            </div>
-            <div class="qb-ui-layout__bottom">
-                @controls.SqlEditor().GetHtml()
-            </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="section-title">Basic Demos</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Simple Custom Storage Demo</h3>
+            <p>Stores QueryBuilder objects in Sqlite DB.</p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "SimpleDemo")">Learn more &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Custom Storage Display Query Results</h3>
+            <p>Stores both QueryBuilder and QueryTransformer objects in Sqlite DB, displays several fully functional instances on separate tabs.</p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Index", "QueryResultsDemo")">Learn more &raquo;</a>
+            </p>
         </div>
     </div>
 </div>

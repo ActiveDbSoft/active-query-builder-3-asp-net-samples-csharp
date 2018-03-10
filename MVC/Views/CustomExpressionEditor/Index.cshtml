@@ -43,8 +43,8 @@
 @section scripts {
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script>
-        AQB.Web.onApplicationReady(function () {
-            AQB.Web.QueryBuilder.GridComponent.on(AQB.Web.QueryBuilder.GridComponent.Events.GridBeforeCustomEditCell, BeforeCustomEditCell);
+        AQB.Web.onQueryBuilderReady(function (qb) {
+            qb.GridComponent.on(AQB.Web.QueryBuilder.GridComponent.Events.GridBeforeCustomEditCell, BeforeCustomEditCell);
         });
         
         function BeforeCustomEditCell(data) {

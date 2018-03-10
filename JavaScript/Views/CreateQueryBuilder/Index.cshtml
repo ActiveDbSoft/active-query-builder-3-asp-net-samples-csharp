@@ -12,6 +12,7 @@
             Click the "Create markup" button to display the component's UI and then the "Connect to server" button to initialize the component on the server side.<br/>
             <button id="render" class="btn btn-default">Create markup</button>
             <button id="connect" class="btn btn-primary" style="display: none">Connect to server</button>
+            <button id="dispose" class="btn btn-primary" style="display: none">Dispose</button>
         </p>
     </div>
 <div class="col-md-12">
@@ -67,6 +68,13 @@
         $('#connect').click(function() {
             AQB.Web.UI.startApplication('/CreateQueryBuilder/CreateQueryBuilder', instanceId);
             $('#connect').hide();
+            $('#dispose').show();
+        });
+
+        $('#dispose').click(function () {
+            AQB.Web.QueryBuilder.dispose();
+            $('#connect').show();
+            $('#dispose').hide();
         });
     </script>
 }

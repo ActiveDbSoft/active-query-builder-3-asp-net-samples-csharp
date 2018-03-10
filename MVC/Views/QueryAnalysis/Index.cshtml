@@ -267,7 +267,7 @@
                 AQB.Web.QueryBuilder.setSql(SampleSQL[e.target.id]);
             });
 
-            AQB.Web.onApplicationReady(function () {
+            AQB.Web.onQueryBuilderReady(function () {
                 AQB.Web.Core.on(AQB.Web.Core.Events.UserDataReceived, onUserDataReceived);
             });
 

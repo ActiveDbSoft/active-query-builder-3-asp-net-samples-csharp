@@ -53,8 +53,8 @@
 @section scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.6/jquery.jgrowl.min.js"></script>
     <script>
-        AQB.Web.onApplicationReady(function () {
-            var uq = AQB.Web.QueryBuilder.UserQueriesComponent;
+        AQB.Web.onQueryBuilderReady(function (qb) {
+            var uq = qb.UserQueriesComponent;
 
             uq.on(uq.Events.OnCreateFolder, onCreateFolder);
             uq.on(uq.Events.OnCreateUserQuery, onCreateUserQuery);

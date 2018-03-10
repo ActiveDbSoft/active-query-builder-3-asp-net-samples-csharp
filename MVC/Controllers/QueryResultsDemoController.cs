@@ -45,7 +45,9 @@ namespace MVC_Samples.Controllers
                 if (!string.IsNullOrEmpty(m.Sortorder))
                 { 
                     var c = qt.Columns.FindColumnByResultName(m.Sortdatafield);
-                    qt.OrderBy(c, m.Sortorder.ToLower() == "asc");
+
+                    if (c != null)
+                        qt.OrderBy(c, m.Sortorder.ToLower() == "asc");
                 }
             }
 

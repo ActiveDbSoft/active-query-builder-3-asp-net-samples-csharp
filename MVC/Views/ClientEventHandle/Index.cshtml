@@ -46,8 +46,8 @@
 @section scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.6/jquery.jgrowl.min.js"></script>
     <script>
-        AQB.Web.onApplicationReady(function () {
-            AQB.Web.QueryBuilder.CanvasComponent.on(AQB.Web.QueryBuilder.CanvasComponent.Events.CanvasOnAddTable, onAddTableToCanvas);
+        AQB.Web.onQueryBuilderReady(function (qb) {
+            qb.CanvasComponent.on(AQB.Web.QueryBuilder.CanvasComponent.Events.CanvasOnAddTable, onAddTableToCanvas);
 
             AQB.Web.Core.on(AQB.Web.Core.Events.DataSending, beforeDataExchange);
             AQB.Web.Core.on(AQB.Web.Core.Events.DataReceived, afterDataExchange);

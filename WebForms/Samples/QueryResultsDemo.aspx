@@ -128,7 +128,7 @@
             $('[href="#qr"]').click(onOpenQueryResults);
             $('.next').button().click(function () { fillJsonEditor(fillJsonEditor.page + 1); return false; });
             $('.prev').button().click(function () { fillJsonEditor(fillJsonEditor.page - 1); return false; });
-            AQB.Web.onApplicationReady(subscribeToChanges);
+            AQB.Web.onCriteriaBuilderReady(subscribeToChanges);
         });
 
         function onOpenQueryResults() {
@@ -149,10 +149,8 @@
                 });
         };
 
-        function subscribeToChanges() {
+        function subscribeToChanges(cb) {
             setTimeout(function () {
-                var cb = AQB.Web.CriteriaBuilderContainer.first();
-
                 AQB.Web.Core.on(AQB.Web.Core.Events.SQLChanged, cb.loadColumns.bind(cb));
 
                 cb.on(cb.Events.CriteriaBuilderChanged,
@@ -345,7 +343,7 @@
 
             $('jsgrid-header-cell').click(function () {
                 var field = this.innerText;
-                $("#jsGrid").jsGrid("sort", field);
+                $("#jsgrid").jsGrid("sort", field);
             });
         }
 

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using ActiveQueryBuilder.Core.QueryTransformer;
 using ActiveQueryBuilder.Web.Server;
 using ActiveQueryBuilder.Web.Server.Infrastructure.Providers;
 using CustomStorage.Helpers;
@@ -73,7 +74,7 @@ namespace CustomStorage.QueryBuilderProvider
             ExecuteNonQuery(sql);
         }
 
-        protected void ExecuteNonQuery(string sql)
+        private void ExecuteNonQuery(string sql)
         {
             try
             {
@@ -88,8 +89,8 @@ namespace CustomStorage.QueryBuilderProvider
                 _connection.Close();
             }
         }
-        
-        protected string GetLayout(string id)
+
+        private string GetLayout(string id)
         {
             var sql = string.Format("select layout from QueryBuilders where id = '{0}'", id);
 
@@ -111,7 +112,104 @@ namespace CustomStorage.QueryBuilderProvider
             }
         }
 
-        protected IDbCommand CreateCommand(string sql)
+        private IDbCommand CreateCommand(string sql)
+        {
+            var cmd = _connection.CreateCommand();
+            cmd.CommandText = sql;
+            return cmd;
+        }
+    }
+
+    public class QueryTransformerSqliteStoreProvider : IQueryTransformerProvider
+    {
+        private readonly IDbConnection _connection;
+
+        public QueryTransformerSqliteStoreProvider()
+        {
+            _connection = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
+
+            var sql = "create table if not exists QueryTransformers(id text primary key, state TEXT)";
+            ExecuteNonQuery(sql);
+        }
+        
+        public QueryTransformer Get(string id)
+        {
+            var qt = new QueryTransformer { Tag = id };
+
+            qt.QueryProvider = QueryBuilderStore.Get(id).SQLQuery;
+
+            var state = GetState(id);
+
+            if (state != null)
+                qt.XML = state;
+
+            return qt;
+        }
+        
+        public void Put(QueryTransformer qt)
+        {
+            if (GetState(qt.Tag.ToString()) == null)
+                Insert(qt);
+            else
+                Update(qt);
+        }
+        
+        public void Delete(string id)
+        {
+            var sql = string.Format("delete from QueryTransformers where id = {0}", id);
+            ExecuteNonQuery(sql);
+        }
+
+        private void Insert(QueryTransformer qt)
+        {
+            var sql = string.Format("insert into QueryTransformers values ('{0}', '{1}')", qt.Tag, qt.XML);
+            ExecuteNonQuery(sql);
+        }
+        private void Update(QueryTransformer qt)
+        {
+            var sql = string.Format("update QueryTransformers set state = '{1}' where id = '{0}'", qt.Tag, qt.XML);
+            ExecuteNonQuery(sql);
+        }
+
+        private void ExecuteNonQuery(string sql)
+        {
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+
+                using (var cmd = CreateCommand(sql))
+                    cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        private string GetState(string id)
+        {
+            var sql = string.Format("select state from QueryTransformers where id = '{0}'", id);
+
+            try
+            {
+                if (_connection.State != ConnectionState.Open)
+                    _connection.Open();
+
+                using (var cmd = CreateCommand(sql))
+                using (var reader = cmd.ExecuteReader())
+                    if (reader.Read())
+                        return reader["state"].ToString();
+
+                return null;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+        private IDbCommand CreateCommand(string sql)
         {
             var cmd = _connection.CreateCommand();
             cmd.CommandText = sql;

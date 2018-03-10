@@ -249,25 +249,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.EventMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.5.1082\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.4.5.1082\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.4.7.1084\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.5.1082\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.7.1084\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.5.1082\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.0\lib\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.MVC">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.0\lib\ActiveQueryBuilder.Web.MVC.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.1\lib\net\ActiveQueryBuilder.Web.MVC.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.0\lib\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>
@@ -284,7 +284,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1063</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

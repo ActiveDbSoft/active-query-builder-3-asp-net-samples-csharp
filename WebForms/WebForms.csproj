@@ -107,12 +107,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.themeswitcher.min.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themeroller\buttonbg.png" />
@@ -142,11 +141,8 @@
     <Content Include="Content\themeroller\theme_90_ui_dark.png" />
     <Content Include="Content\themeroller\theme_90_ui_light.png" />
     <Content Include="Content\themeroller\theme_90_windoze.png" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Samples\AlternateNames.aspx" />
     <Content Include="Samples\ChangeConnection.aspx" />
@@ -417,25 +413,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.EventMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.5.1082\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.4.5.1082\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.4.7.1084\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.5.1082\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.7.1084\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.5.1082\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.1.0\lib\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.1.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.1.0\lib\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.1.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.WebForms">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.1.0\lib\ActiveQueryBuilder.Web.WebForms.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.1.1\lib\net\ActiveQueryBuilder.Web.WebForms.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>

@@ -65,7 +65,7 @@
 
     <script>
         $(function () {
-            AQB.Web.onApplicationReady(function () {
+            AQB.Web.onQueryBuilderReady(function () {
                 AQB.Web.Core.on(AQB.Web.Core.Events.UserDataReceived, onUserDataReceived);
             });
 

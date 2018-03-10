@@ -12,6 +12,11 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/black-tie/jquery-ui.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style>
+        .section-title, .body-content {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -36,10 +41,5 @@
             </footer>
         </div>
     </form>
-    <style>
-        .section-title, .body-content {
-            margin-top: 40px;
-        }
-    </style>
 </body>
 </html>

@@ -113,7 +113,7 @@
         var container = $('#jqxgrid'),
             grid;
 
-        AQB.Web.onApplicationReady(function (qb) {
+        AQB.Web.onQueryBuilderReady(function (qb) {
             qb.on(qb.Events.ActiveUnionSubQueryChanged, loadPreview);
             qb.on(qb.Events.SqlChanged, loadPreview);
             loadPreview();

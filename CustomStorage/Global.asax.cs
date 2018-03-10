@@ -21,6 +21,8 @@ namespace CustomStorage
 
             // Redefine the QueryBuilderStore.Provider object to be an instance of the QueryBuilderSqliteStoreProvider class
             QueryBuilderStore.Provider = new QueryBuilderSqliteStoreProvider();
+            // Redefine the QueryTransformerStore.Provider object to be an instance of the QueryTransformerSqliteStoreProvider class
+            QueryTransformerStore.Provider = new QueryTransformerSqliteStoreProvider();
         }
     }
 
