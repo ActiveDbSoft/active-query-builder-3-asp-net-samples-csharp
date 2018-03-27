@@ -17,7 +17,7 @@ namespace JavaScript
             // directives in the special configuration section of 'Web.config' file.
             
             // Uncomment this line to work with the "Create Query Configuration from Web.Config" demo
-            // SessionStore.UseWebConfig();
+            // QueryBuilderStore.UseWebConfig();
         }
     }
 }

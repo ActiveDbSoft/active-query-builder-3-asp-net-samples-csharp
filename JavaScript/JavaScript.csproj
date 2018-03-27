@@ -134,7 +134,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Electron\package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Electron\index.html" />
+    <Content Include="Scripts\Electron\main.js" />
+    <Content Include="Scripts\Electron\README.txt" />
+    <Content Include="Scripts\Electron\renderer.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -143,8 +148,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\React\Components\QueryBuilderLayout.js" />
+    <Content Include="Scripts\React\index.js" />
+    <Content Include="Scripts\React\README.txt" />
+    <Content Include="Scripts\React\webpack.config.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Webpack\index.js" />
+    <Content Include="Scripts\Webpack\README.txt" />
+    <Content Include="Scripts\Webpack\webpack.config.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -165,12 +177,13 @@
     <Content Include="Views\SimpleClientRendering\Index.cshtml" />
     <Content Include="Views\ReactClientRendering\Index.cshtml" />
     <Content Include="Views\WebpackClientRendering\Index.cshtml" />
+    <Content Include="Scripts\Webpack\package.json" />
+    <Content Include="Scripts\React\.babelrc" />
+    <Content Include="Scripts\React\package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\React\" />
-    <Folder Include="Scripts\Webpack\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -180,17 +193,15 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider">
-      <HintPath>..\packages\ActiveQueryBuilder.MSSQLMetadataProvider.3.4.7.1084\lib\net\ActiveQueryBuilder.MSSQLMetadataProvider.dll</HintPath>
-    </Reference>
+    <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider"><Private>True</Private></Reference>
     <Reference Include="ActiveQueryBuilder.Core">
 		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.2.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.2.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>

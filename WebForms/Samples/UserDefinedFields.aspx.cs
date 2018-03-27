@@ -32,7 +32,7 @@ namespace WebForms_Samples.Samples
             var queryBuilder = QueryBuilderStore.Create("UserDefinedFields");
 
             // Enables manipulations with user-defined fields in the visual UI
-            queryBuilder.EnableUserFields = true;
+            queryBuilder.DataSourceOptions.EnableUserFields = true;
 
             // Create an instance of the proper syntax provider for your database server.
             queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();

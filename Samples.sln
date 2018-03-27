@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScript", "JavaScript\Ja
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomStorage", "CustomStorage\CustomStorage.csproj", "{EC1408C3-F235-473E-B15F-72997CAC8654}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossDomain", "CrossDomain\CrossDomain.csproj", "{DC66F343-9C70-4B54-BE06-C8BEBFE0FB04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EC1408C3-F235-473E-B15F-72997CAC8654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC1408C3-F235-473E-B15F-72997CAC8654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC1408C3-F235-473E-B15F-72997CAC8654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC66F343-9C70-4B54-BE06-C8BEBFE0FB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC66F343-9C70-4B54-BE06-C8BEBFE0FB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC66F343-9C70-4B54-BE06-C8BEBFE0FB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC66F343-9C70-4B54-BE06-C8BEBFE0FB04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
