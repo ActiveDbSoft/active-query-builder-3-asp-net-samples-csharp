@@ -9,15 +9,19 @@ namespace CustomStorage.QueryBuilderProvider
     /// <summary>
     /// QueryBuilder storage provider which saves the state in Sqlite database
     /// </summary>
-    public class QueryBuilderSqliteStoreProvider : IQueryBuilderProvider
+    public class QueryBuilderSqLiteStoreProvider : IQueryBuilderProvider
     {
+        public bool SaveState { get; }
+
         /// <summary>
         /// Connection to the Sqlite database
         /// </summary>
         private readonly IDbConnection _connection;
 
-        public QueryBuilderSqliteStoreProvider()
+        public QueryBuilderSqLiteStoreProvider()
         {
+            SaveState = true;
+
             _connection = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
 
             var sql = "create table if not exists QueryBuilders(id text primary key, layout TEXT)";
@@ -122,10 +126,13 @@ namespace CustomStorage.QueryBuilderProvider
 
     public class QueryTransformerSqliteStoreProvider : IQueryTransformerProvider
     {
+        public bool SaveState { get; }
+
         private readonly IDbConnection _connection;
 
         public QueryTransformerSqliteStoreProvider()
         {
+            SaveState = true;
             _connection = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
 
             var sql = "create table if not exists QueryTransformers(id text primary key, state TEXT)";
@@ -153,7 +160,7 @@ namespace CustomStorage.QueryBuilderProvider
             else
                 Update(qt);
         }
-        
+
         public void Delete(string id)
         {
             var sql = string.Format("delete from QueryTransformers where id = {0}", id);
@@ -234,7 +241,7 @@ namespace CustomStorage.QueryBuilderProvider
         {
             var layout = _db.StringGet(id);
 
-            var qb = new QueryBuilder(id);
+            var qb = new SqLiteQueryBuilder(id);
 
             if (layout.HasValue)
                 qb.LayoutSQL = layout;

@@ -20,7 +20,7 @@ namespace CustomStorage
             BaseHandler.Log = new Logger();
 
             // Redefine the QueryBuilderStore.Provider object to be an instance of the QueryBuilderSqliteStoreProvider class
-            QueryBuilderStore.Provider = new QueryBuilderSqliteStoreProvider();
+            QueryBuilderStore.Provider = new QueryBuilderSqLiteStoreProvider();
             // Redefine the QueryTransformerStore.Provider object to be an instance of the QueryTransformerSqliteStoreProvider class
             QueryTransformerStore.Provider = new QueryTransformerSqliteStoreProvider();
         }

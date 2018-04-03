@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using ActiveQueryBuilder.Web.Server;
 
 namespace JavaScript.Controllers
@@ -23,16 +24,23 @@ namespace JavaScript.Controllers
             if (qb != null)
                 return new EmptyResult();
 
-            // Create an instance of the QueryBuilder object
-            qb = QueryBuilderStore.Create(name);
+            try
+            {
+                // Create an instance of the QueryBuilder object
+                qb = QueryBuilderStore.Create(name);
 
-            // The necessary initialization procedures to setup SQL syntax and the source of metadata will be performed automatically 
-            // according to directives in the special configuration section of 'Web.config' file.
+                // The necessary initialization procedures to setup SQL syntax and the source of metadata will be performed automatically 
+                // according to directives in the special configuration section of 'Web.config' file.
 
-            // This behavior is enabled by the SessionStore.WebConfig() method call in the Application_Start method in Global.asax.cs file.
+                // This behavior is enabled by the SessionStore.WebConfig() method call in the Application_Start method in Global.asax.cs file.
 
-            // Set default query
-            qb.SQL = GetDefaultSql();
+                // Set default query
+                qb.SQL = GetDefaultSql();
+            }
+            catch (Exception e)
+            {
+                return new HttpStatusCodeResult(500, e.Message);
+            }
 
             return new EmptyResult();
         }

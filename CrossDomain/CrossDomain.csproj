@@ -47,12 +47,17 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <ExcludeFilesFromDeployment>Dockerfile;CreateDocker.bat</ExcludeFilesFromDeployment> 
+  <ExcludeFoldersFromDeployment>FrontEnd</ExcludeFoldersFromDeployment> 
+</PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -110,25 +115,32 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QueryBuilderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdventureWorks.xml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontEnd\index.html" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Northwind.xml" />
+    <Content Include="Sakila.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Readme.md" />
+    <Content Include="Dockerfile" />
+    <Content Include="CreateDocker.bat" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\CrossDomain\index.html" />
-    <Content Include="Scripts\CrossDomain\Readme.txt" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -173,10 +185,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.8.1085\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.2.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>

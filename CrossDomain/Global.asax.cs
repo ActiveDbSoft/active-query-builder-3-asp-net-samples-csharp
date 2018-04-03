@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using ActiveQueryBuilder.Web.Server.Handlers;
+using ActiveQueryBuilder.Web.Server;
+using CrossDomain.Controllers;
 
 namespace CrossDomain
 {
@@ -17,16 +14,22 @@ namespace CrossDomain
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            BaseHandler.Register();
+
+            QueryBuilderStore.Provider = new TokenQueryBuilderProvider();
+            QueryBuilderStore.UseWebConfig();
         }
 
-        protected void Application_EndRequest()
+        protected void Application_BeginRequest()
         {
-			//Instructing to allow cross-domain requests by the server.
-            Response.AddHeader("Access-Control-Allow-Origin", "http://localhost:9080"); // Host address of the static web server returning the ./FrontEnd/index.html page.
-            Response.AddHeader("Access-Control-Allow-Headers", "*");
-            Response.AddHeader("Access-Control-Allow-Methods", "*");
-            Response.AddHeader("Access-Control-Allow-Credentials", "true");
+            // Instructing to allow cross-domain requests by the server.
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.Headers.Add("Access-Control-Allow-Methods", "*");
+
+			// This header is used to find a correspondence between the client and server parts of the QueryBuilder.
+            Response.Headers.Add("Access-Control-Allow-Headers", "query-builder-token");
+
+            if (Request.HttpMethod == "OPTIONS")
+                Response.Flush();
         }
     }
 }

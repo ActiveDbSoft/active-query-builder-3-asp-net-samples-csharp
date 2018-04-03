@@ -35,12 +35,6 @@
         <p>
             This sample illustrates the possibility to host HTTP and Active Query Builder handlers on different servers.
         </p>
-        <p>
-            Click the "Create markup" button to display the component's UI and then the "Connect to server" button to initialize the component on the server side.<br/>
-            <button id="render" class="btn btn-default">Create markup</button>
-            <button id="connect" class="btn btn-primary" style="display: none">Connect to server</button>
-            <button id="dispose" class="btn btn-primary" style="display: none">Dispose</button>
-        </p>
     </div>
 <div class="col-md-12">
     <div id="qb"></div>
@@ -82,35 +76,50 @@
 
 <script>
 	// Set this property to the host on which the Active Query Builder handler resides.
-	AQB.Web.host = 'http://localhost:55272'; 
+	AQB.Web.host = 'http://localhost:55272';
 
-	// Instance identifier string to bind to the QueryBiulder component on the server side.
-	var instanceId = 'CrossDomainQueryBuilder';
+    // Specify a handler for pre-processing of requests to Active Query Builder server handlers.
+    AQB.Web.beforeSend = function(xhr) {
+        // Add token the request header to identify the client and find the right QueryBuilder instance on the server.
+        xhr.setRequestHeader('query-builder-token', getToken());
+    };
 
-	$('#render').click(function () {
-		AQB.Web.UI.QueryBuilder(instanceId, $('#qb'));
-		AQB.Web.UI.ObjectTreeView(instanceId, $('#treeview'));
-		AQB.Web.UI.SubQueryNavigationBar(instanceId, $('#navbar'));
-		AQB.Web.UI.Canvas(instanceId, $('#canvas'));
-		AQB.Web.UI.StatusBar(instanceId, $('#statusbar'));
-		AQB.Web.UI.Grid(instanceId, $('#grid'));
-		AQB.Web.UI.SqlEditor(instanceId, $('#sql'));
-
-		$('#render').hide();
-		$('#connect').show();
+    $(function () {
+        // Send a request to check for the token validity.
+        $.ajax({
+            type: 'GET',
+            url: AQB.Web.host + '/QueryBuilder/CheckToken?token=' + getToken(),
+            success: function (token) {
+                // Save new token to the local storage to use in further requests.
+                if (token)
+                    saveToken(token);
+                start();
+            }
+        });
 	});
 
-	$('#connect').click(function() {
-		AQB.Web.UI.startApplication(AQB.Web.host + '/Home/CreateQueryBuilder', instanceId);
-		$('#connect').hide();
-		$('#dispose').show();
-	});
+    function start() {
+        // Instance identifier string to bind to the QueryBiulder component on the server side.
+        var instanceId = 'CrossDomainQueryBuilder';
 
-	$('#dispose').click(function () {
-		AQB.Web.QueryBuilder.dispose();
-		$('#connect').show();
-		$('#dispose').hide();
-	});
+        AQB.Web.UI.QueryBuilder(instanceId, $('#qb'));
+        AQB.Web.UI.ObjectTreeView(instanceId, $('#treeview'));
+        AQB.Web.UI.SubQueryNavigationBar(instanceId, $('#navbar'));
+        AQB.Web.UI.Canvas(instanceId, $('#canvas'));
+        AQB.Web.UI.StatusBar(instanceId, $('#statusbar'));
+        AQB.Web.UI.Grid(instanceId, $('#grid'), { orColumnCount: 0 });
+        AQB.Web.UI.SqlEditor(instanceId, $('#sql'));
+
+        AQB.Web.UI.startApplication(AQB.Web.host + '/QueryBuilder/CreateQueryBuilder', instanceId);
+    }
+
+    function getToken() {
+        return localStorage.getItem('queryBuilderToken');
+    }
+
+    function saveToken(token) {
+        localStorage.setItem('queryBuilderToken', token);
+    }
 </script>
 
 </body>

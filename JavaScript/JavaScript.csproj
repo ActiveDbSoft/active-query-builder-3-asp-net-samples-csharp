@@ -117,6 +117,7 @@
     <Compile Include="Controllers\CreateQueryBuilderController.cs" />
     <Compile Include="Controllers\DoubleClientRenderingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AngularJSClientRenderingController.cs" />
     <Compile Include="Controllers\WebpackClientRenderingController.cs" />
     <Compile Include="Controllers\ReactClientRenderingController.cs" />
     <Compile Include="Controllers\SimpleClientRenderingController.cs" />
@@ -180,6 +181,7 @@
     <Content Include="Scripts\Webpack\package.json" />
     <Content Include="Scripts\React\.babelrc" />
     <Content Include="Scripts\React\package.json" />
+    <Content Include="Views\AngularJSClientRendering\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -195,13 +197,13 @@
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider"><Private>True</Private></Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.7.1084\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.8.1085\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.2.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.1.2.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>
