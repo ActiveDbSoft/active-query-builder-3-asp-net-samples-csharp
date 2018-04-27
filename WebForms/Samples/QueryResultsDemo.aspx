@@ -150,14 +150,12 @@
         };
 
         function subscribeToChanges(cb) {
-            setTimeout(function () {
-                AQB.Web.Core.on(AQB.Web.Core.Events.SQLChanged, cb.loadColumns.bind(cb));
+            cb.loadColumns();
 
-                cb.on(cb.Events.CriteriaBuilderChanged,
-                    function () {
-                        onCriteriaBuilderChanged(cb, updateGrids);
-                    });
-            }, 1000);
+            cb.on(cb.Events.CriteriaBuilderChanged,
+                function () {
+                    onCriteriaBuilderChanged(cb, updateGrids);
+                });
         }
 
         function onCriteriaBuilderChanged(cb, callback) {

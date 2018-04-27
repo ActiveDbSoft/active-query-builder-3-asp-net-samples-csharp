@@ -2,7 +2,7 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 using ActiveQueryBuilder.Web.Server;
-using CrossDomain.Controllers;
+using CrossDomain.Providers;
 
 namespace CrossDomain
 {

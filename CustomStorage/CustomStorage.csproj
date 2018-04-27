@@ -130,7 +130,6 @@
     </Compile>
     <Compile Include="Helpers\DataBaseHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryBuilderProvider\SqLiteQueryBuilder.cs" />
     <Compile Include="QueryBuilderProvider\SqlIteQueryBuilderProvider.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,20 +209,20 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.8.1085\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+	<Reference Include="ActiveQueryBuilder.Core">
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.11.1088\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
-    <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.8.1085\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.View.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.Web.MVC">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.Web.MVC.dll</HintPath>
+	<Reference Include="ActiveQueryBuilder.View">
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+	</Reference>
+	<Reference Include="ActiveQueryBuilder.Web.MVC">
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.1\lib\net\ActiveQueryBuilder.Web.MVC.dll</HintPath>
+	</Reference>
+	<Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
+		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.11.1088\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>

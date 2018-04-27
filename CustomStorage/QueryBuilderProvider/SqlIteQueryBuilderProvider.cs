@@ -1,5 +1,7 @@
 ﻿using System.Data;
+using ActiveQueryBuilder.Core;
 using ActiveQueryBuilder.Core.QueryTransformer;
+using ActiveQueryBuilder.View;
 using ActiveQueryBuilder.Web.Server;
 using ActiveQueryBuilder.Web.Server.Infrastructure.Providers;
 using CustomStorage.Helpers;
@@ -11,7 +13,7 @@ namespace CustomStorage.QueryBuilderProvider
     /// </summary>
     public class QueryBuilderSqLiteStoreProvider : IQueryBuilderProvider
     {
-        public bool SaveState { get; }
+        public bool SaveState { get; private set; }
 
         /// <summary>
         /// Connection to the Sqlite database
@@ -35,7 +37,17 @@ namespace CustomStorage.QueryBuilderProvider
         /// <returns></returns>
         public QueryBuilder Get(string id)
         {
-            var qb = new SqLiteQueryBuilder(_connection, id);
+            QueryBuilder qb = QueryBuilderStore.Factory.SqLite(id);
+
+            // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
+            qb.BehaviorOptions.AllowSleepMode = false;
+            
+            // Bind Active Query Builder to a live database connection.
+            qb.MetadataProvider = new SQLiteMetadataProvider 
+            {
+                // Assign an instance of DBConnection object to the Connection property.
+                Connection = _connection
+            };
 
             var layout = GetLayout(id);
 
@@ -126,7 +138,7 @@ namespace CustomStorage.QueryBuilderProvider
 
     public class QueryTransformerSqliteStoreProvider : IQueryTransformerProvider
     {
-        public bool SaveState { get; }
+        public bool SaveState { get; private set; }
 
         private readonly IDbConnection _connection;
 

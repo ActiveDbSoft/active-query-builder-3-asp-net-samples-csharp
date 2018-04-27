@@ -10,6 +10,7 @@ namespace JavaScript.Controllers
     {
         public ActionResult Index()
         {
+			//Please follow the steps described in the Scripts/React/README.md file to run this demo project
             CreateQueryBuilder();
             return View();
         }

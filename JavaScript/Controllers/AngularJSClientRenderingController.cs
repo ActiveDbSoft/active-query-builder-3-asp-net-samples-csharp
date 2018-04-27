@@ -8,7 +8,7 @@ namespace JavaScript.Controllers
 {
     public class AngularJSClientRenderingController : Controller
     {
-        private static string InstanceId = "Angular";
+        private static string InstanceId = "AngularJS";
 
         public ActionResult Index()
         {

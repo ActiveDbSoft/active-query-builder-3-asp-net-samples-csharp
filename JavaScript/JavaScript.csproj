@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -22,6 +23,7 @@
     <IISExpressUseClassicPipelineMode />
     <Use64BitIISExpress />
     <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -113,6 +115,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AngularClientRenderingController.cs" />
     <Compile Include="Controllers\CreateFromConfigController.cs" />
     <Compile Include="Controllers\CreateQueryBuilderController.cs" />
     <Compile Include="Controllers\DoubleClientRenderingController.cs" />
@@ -133,9 +136,29 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Angular\karma.conf.js" />
+    <Content Include="Scripts\Angular\protractor.conf.js" />
+    <Content Include="Scripts\Angular\src\app\app.component.css" />
+    <Content Include="Scripts\Angular\src\app\app.component.html" />
+    <Content Include="Scripts\Angular\src\app\querybuilder\querybuilder.component.css" />
+    <Content Include="Scripts\Angular\src\app\querybuilder\querybuilder.component.html" />
+    <Content Include="Scripts\Angular\src\assets\aqb.client.js" />
+    <Content Include="Scripts\Angular\src\favicon.ico" />
+    <Content Include="Scripts\Angular\src\index.html" />
+    <Content Include="Scripts\Angular\src\styles.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Electron\package.json" />
+    <Content Include="Scripts\Angular\.angular-cli.json" />
+    <Content Include="Scripts\Angular\.editorconfig" />
+    <Content Include="Scripts\Angular\e2e\tsconfig.e2e.json" />
+    <Content Include="Scripts\Angular\package.json" />
+    <Content Include="Scripts\Angular\README.md" />
+    <Content Include="Scripts\Angular\src\assets\.gitkeep" />
+    <Content Include="Scripts\Angular\src\tsconfig.app.json" />
+    <Content Include="Scripts\Angular\src\tsconfig.spec.json" />
+    <Content Include="Scripts\Angular\tsconfig.json" />
+    <Content Include="Scripts\Angular\tslint.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Electron\index.html" />
     <Content Include="Scripts\Electron\main.js" />
@@ -197,20 +220,39 @@
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider"><Private>True</Private></Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.8.1085\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.11.1088\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.0\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Angular\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\e2e\app.po.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\app\app.component.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\app\querybuilder\querybuilder.component.spec.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\app\querybuilder\querybuilder.component.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\environments\environment.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\main.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\polyfills.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\test.ts" />
+    <TypeScriptCompile Include="Scripts\Angular\src\typings.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

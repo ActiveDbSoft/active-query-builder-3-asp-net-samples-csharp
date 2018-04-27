@@ -48,7 +48,7 @@
 
         aqbApp.controller("aqbController", function($scope, $window, $document) {
             // Instance identifier string to bind to the QueryBiulder component on the server side. See the AngularJSClientRenderingController.cs code for details.
-            var instanceId = "Angular";
+            var instanceId = "AngularJS";
             var ui = $window.AQB.Web.UI;
 
             ui.QueryBuilder(instanceId, $document.find('#qb'), { useDefaultTheme: false });

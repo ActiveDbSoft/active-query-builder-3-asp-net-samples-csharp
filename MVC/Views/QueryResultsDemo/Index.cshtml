@@ -180,6 +180,8 @@
         };
 
         function subscribeToChanges(cb) {
+            cb.loadColumns();
+
             cb.on(cb.Events.CriteriaBuilderChanged,
                 function() {
                     onCriteriaBuilderChanged(cb, updateGrids);
