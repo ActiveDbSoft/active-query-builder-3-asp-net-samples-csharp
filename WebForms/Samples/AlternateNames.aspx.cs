@@ -7,7 +7,7 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class AlternateNames : Page
+    public partial class AlternateNames : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("AlternateNames");
+            var queryBuilder = QueryBuilderStore.Factory.DB2("AlternateNames");
 
             // Turn displaying of alternate names on in the text of result SQL query
             queryBuilder.SQLFormattingOptions.UseAltNames = true;
@@ -39,9 +39,7 @@ namespace WebForms_Samples.Samples
 
             queryBuilder.SQLQuery.SQLUpdated += OnSQLUpdated;
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
-
-            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
-
+            
             // Load MetaData from XML document. File name stored in WEB.CONFIG file in [/configuration/appSettings/Db2XmlMetaData] key
             var path = ConfigurationManager.AppSettings["Db2XmlMetaData"];
             var xml = Path.Combine(Server.MapPath("~"), path);

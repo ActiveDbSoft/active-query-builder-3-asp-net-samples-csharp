@@ -2,7 +2,7 @@
 
 ##### To run the project:
 
-1. Execute the `npm run build` command,
+1. Execute the `npm install` command,
 
 2. Run the JavaScript demo project,
 

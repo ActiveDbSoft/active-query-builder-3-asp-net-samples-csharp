@@ -7,7 +7,7 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class NoDesignArea : Page
+    public partial class NoDesignArea : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,14 +28,11 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("NoDesignArea");
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("NoDesignArea");
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = true;
-
-            // Assign an instance of the syntax provider which defines SQL syntax and metadata retrieval rules.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

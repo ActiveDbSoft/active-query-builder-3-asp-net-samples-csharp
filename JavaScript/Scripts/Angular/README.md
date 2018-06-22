@@ -16,11 +16,13 @@
 
 ##### To run the project:
 
-1. Execute the `npm run build` command,
+1. Execute the `npm install` command,
 
-2. Run the JavaScript demo project,
+2. Execute the `npm run build` command,
 
-3. Open the Angular Demo page.
+3. Run the JavaScript demo project,
+
+4. Open the Angular Demo page.
 
 ---
 The project was made using the `ng new ProjectName` command accorting to the [Angular Quick Start Guide](https://angular.io/guide/quickstart).

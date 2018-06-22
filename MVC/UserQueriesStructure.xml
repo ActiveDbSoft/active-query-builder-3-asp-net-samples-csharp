@@ -2,14 +2,10 @@
 <user_queries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.activequerybuilder.com/schemas/metadata2.xsd">
 	<metadata>
 		<userquery name="New Query">
-			<expression>Select *
-From Categories
-  Inner Join Products On Categories.CategoryID = Products.CategoryID</expression>
+			<expression>Select * From Categories as c1</expression>
 		</userquery>
 		<userquery name="New Query (1)">
-			<expression>Select *
-From Categories
-  Inner Join Products On Categories.CategoryID = Products.CategoryID</expression>
+			<expression>Select * From Products as p1</expression>
 		</userquery>
 	</metadata>
 	<structure load_metadata_children="False">

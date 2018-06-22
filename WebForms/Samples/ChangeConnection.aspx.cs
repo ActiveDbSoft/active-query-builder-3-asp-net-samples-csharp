@@ -9,7 +9,7 @@ using WebForms_Samples.Helpers;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class ChangeConnection : Page
+    public partial class ChangeConnection : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

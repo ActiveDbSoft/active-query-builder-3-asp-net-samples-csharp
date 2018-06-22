@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using ActiveQueryBuilder.Web.Server;
 
 namespace JavaScript.Controllers
 {
@@ -8,5 +9,13 @@ namespace JavaScript.Controllers
         {
             return View();
         }
+
+//CUT:PRO{{
+        public void Dispose()
+        {
+            QueryBuilderStore.Remove();
+            QueryTransformerStore.Remove();
+        }
+//}}CUT:PRO
     }
 }

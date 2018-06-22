@@ -6,8 +6,9 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace MVC_Samples.Controllers
 {
+//CUT:STD{{
     public class UserDefinedFieldsController : Controller
-    {
+    {  
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
@@ -22,14 +23,11 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("UserDefinedFields");
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("UserDefinedFields");
 
             // Enables manipulations with user-defined fields in the visual UI
             queryBuilder.DataSourceOptions.EnableUserFields = true;
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -42,4 +40,5 @@ namespace MVC_Samples.Controllers
             return queryBuilder;
         }
     }
+//}}CUT:STD
 }

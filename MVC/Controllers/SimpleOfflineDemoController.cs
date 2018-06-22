@@ -29,11 +29,8 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder(string AInstanceId)
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create(AInstanceId);
+            var queryBuilder = QueryBuilderStore.Factory.MsSql(AInstanceId);
             
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
             // Denies metadata loading requests from live database connection
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ActiveQueryBuilder.Web.Server;
 
 namespace MVC_Samples.Controllers
 {
@@ -12,5 +13,13 @@ namespace MVC_Samples.Controllers
         {
             return View();
         }
+
+//CUT:PRO{{
+        public void Dispose()
+        {
+            QueryBuilderStore.Remove();
+            QueryTransformerStore.Remove();
+        }
+//}}CUT:PRO
     }
 }

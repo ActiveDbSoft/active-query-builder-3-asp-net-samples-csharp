@@ -27,11 +27,8 @@ namespace JavaScript.Controllers
                 return;
 
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("Webpack");
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("Webpack");
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

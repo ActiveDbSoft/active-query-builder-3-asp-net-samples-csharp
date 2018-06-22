@@ -7,8 +7,9 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class UserDefinedFields : Page
+    public partial class UserDefinedFields : BasePage
     {
+        //CUT:STD{{
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
@@ -29,14 +30,11 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("UserDefinedFields");
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("UserDefinedFields");
 
             // Enables manipulations with user-defined fields in the visual UI
             queryBuilder.DataSourceOptions.EnableUserFields = true;
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -48,5 +46,6 @@ namespace WebForms_Samples.Samples
 
             return queryBuilder;
         }
+        //}}CUT:STD
     }
 }

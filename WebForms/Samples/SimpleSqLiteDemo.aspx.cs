@@ -6,7 +6,7 @@ using WebForms_Samples.Helpers;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class SimpleSqLiteDemo : Page
+    public partial class SimpleSqLiteDemo : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,14 +32,11 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("SqLite");
+            var queryBuilder = QueryBuilderStore.Factory.SqLite("SqLite");
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = false;
-
-            // Assign an instance of the syntax provider which defines SQL syntax and metadata retrieval rules.
-            queryBuilder.SyntaxProvider = new SQLiteSyntaxProvider();
-
+            
             // Bind Active Query Builder to a live database connection.
             queryBuilder.MetadataProvider = new SQLiteMetadataProvider
             {

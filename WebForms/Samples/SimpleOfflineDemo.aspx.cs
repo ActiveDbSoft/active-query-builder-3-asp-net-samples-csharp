@@ -7,7 +7,7 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class SimpleOfflineDemo : Page
+    public partial class SimpleOfflineDemo : BasePage
     {
         const string qbId = "Offline"; // identifies instance of the QueryBuilder object within a session
         protected void Page_Load(object sender, EventArgs e)
@@ -35,11 +35,8 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder(string AInstanceId)
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create(AInstanceId);
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            var queryBuilder = QueryBuilderStore.Factory.MsSql(AInstanceId);
+            
             // Denies metadata loading requests from live database connection
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

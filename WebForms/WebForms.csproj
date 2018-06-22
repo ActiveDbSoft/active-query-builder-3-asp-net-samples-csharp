@@ -110,8 +110,6 @@
     <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\jquery.themeswitcher.min.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themeroller\buttonbg.png" />
@@ -152,6 +150,7 @@
     <Content Include="Samples\JQueryUITheming.aspx" />
     <Content Include="Samples\LoadMetadataDemo.aspx" />
     <Content Include="Samples\MetadataStructure.aspx" />
+    <Content Include="Samples\MobileDemo.aspx" />
     <Content Include="Samples\NoDesignArea.aspx" />
     <Content Include="Samples\QueryAnalysis.aspx" />
     <Content Include="Samples\QueryModificationDemo.aspx" />
@@ -214,21 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,6 +233,9 @@
     </Compile>
     <Compile Include="Samples\AlternateNames.aspx.designer.cs">
       <DependentUpon>AlternateNames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Samples\ChangeConnection.aspx.cs">
       <DependentUpon>ChangeConnection.aspx</DependentUpon>
@@ -297,6 +285,13 @@
     </Compile>
     <Compile Include="Samples\MetadataStructure.aspx.designer.cs">
       <DependentUpon>MetadataStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\MobileDemo.aspx.cs">
+      <DependentUpon>MobileDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\MobileDemo.aspx.designer.cs">
+      <DependentUpon>MobileDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Samples\NoDesignArea.aspx.cs">
       <DependentUpon>NoDesignArea.aspx</DependentUpon>
@@ -413,25 +408,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.EventMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.11.1088\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.18.1097\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.4.11.1088\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.4.18.1097\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.11.1088\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.4.18.1097\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.11.1088\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.18.1097\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.2.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.2.3\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.2.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.2.3\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.WebForms">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.2.1\lib\net\ActiveQueryBuilder.Web.WebForms.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.2.3\lib\net\ActiveQueryBuilder.Web.WebForms.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>

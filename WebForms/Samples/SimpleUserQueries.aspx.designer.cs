@@ -31,15 +31,6 @@ namespace WebForms_Samples.Samples {
         protected global::ActiveQueryBuilder.Web.WebForms.ObjectTreeView ObjectTreeView1;
         
         /// <summary>
-        /// UserQueries1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ActiveQueryBuilder.Web.WebForms.UserQueries UserQueries1;
-        
-        /// <summary>
         /// SubQueryNavigationBar1 control.
         /// </summary>
         /// <remarks>

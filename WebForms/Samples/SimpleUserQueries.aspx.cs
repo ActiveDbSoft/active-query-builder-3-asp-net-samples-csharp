@@ -7,8 +7,11 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class SimpleUserQueries : Page
+    public partial class SimpleUserQueries : BasePage
     {
+        //CUT:STD{{
+        protected global::ActiveQueryBuilder.Web.WebForms.UserQueries UserQueries1;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
@@ -30,11 +33,8 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("SimpleUserQueries");
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("SimpleUserQueries");
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -61,5 +61,6 @@ namespace WebForms_Samples.Samples
                         Inner Join Shippers s On s.ShipperID = o.OrderID
                     Where o.ShipCity = 'A'";
         }
+        //}}CUT:STD
     }
 }

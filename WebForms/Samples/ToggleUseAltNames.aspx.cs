@@ -7,7 +7,7 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class ToggleUseAltNames : Page
+    public partial class ToggleUseAltNames : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,16 +29,14 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("ToggleUseAltNames");
+            var queryBuilder = QueryBuilderStore.Factory.DB2("ToggleUseAltNames");
 
             // Turn displaying of alternate names on in the text of result SQL query
             queryBuilder.SQLFormattingOptions.UseAltNames = false;
 
             // Turn displaying of alternate names on in the visual UI
             queryBuilder.SQLGenerationOptions.UseAltNames = false;
-
-            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
-
+            
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
             // Load MetaData from XML document. File name stored in WEB.CONFIG file in [/configuration/appSettings/Db2XmlMetaData] key

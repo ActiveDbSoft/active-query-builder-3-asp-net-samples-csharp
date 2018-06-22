@@ -7,7 +7,7 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class CustomExpressionEditor : Page
+    public partial class CustomExpressionEditor : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,11 +29,8 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("CustomExpressionEditor");
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("CustomExpressionEditor");
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

@@ -45,7 +45,7 @@ namespace CustomStorage
             Log.Error(message);
         }
 
-        public void Error(Exception ex, string message)
+        public void Error(string message, Exception ex)
         {
             Log.Error(message, ex);
         }

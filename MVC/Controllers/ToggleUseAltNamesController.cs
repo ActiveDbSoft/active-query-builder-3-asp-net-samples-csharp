@@ -37,12 +37,10 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("ToggleUseAltNames");
+            var queryBuilder = QueryBuilderStore.Factory.DB2("ToggleUseAltNames");
 
             queryBuilder.SQLFormattingOptions.UseAltNames = false;
             queryBuilder.SQLGenerationOptions.UseAltNames = false;
-
-            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
             
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

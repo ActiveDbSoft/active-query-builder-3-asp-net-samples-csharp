@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="AQB" Namespace="ActiveQueryBuilder.Web.WebForms" Assembly="ActiveQueryBuilder.Web.WebForms" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
+    //CUT:STD{{
     <div class="row">
         <div class="col-md-12">
             <h1>User-defined Queries Demo</h1>
@@ -47,5 +47,5 @@
             </div>
         </div>
     </div>
-
+    //}}CUT:STD
 </asp:Content>

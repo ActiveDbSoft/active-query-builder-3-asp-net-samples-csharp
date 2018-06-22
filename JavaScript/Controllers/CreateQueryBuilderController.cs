@@ -27,11 +27,8 @@ namespace JavaScript.Controllers
                 return new EmptyResult();
 
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create(name);
+            var queryBuilder = QueryBuilderStore.Factory.MsSql(name);
             
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
             // Denies metadata loading requests from live database connection
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

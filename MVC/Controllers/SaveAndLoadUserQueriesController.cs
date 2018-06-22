@@ -8,6 +8,7 @@ namespace MVC_Samples.Controllers
 {
     public class SaveAndLoadUserQueriesController : Controller
     {
+//CUT:STD{{        
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
@@ -22,11 +23,8 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("SaveAndLoadUserQueries");
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("SaveAndLoadUserQueries");
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -70,5 +68,7 @@ namespace MVC_Samples.Controllers
                         Inner Join Shippers s On s.ShipperID = o.OrderID
                     Where o.ShipCity = 'A'";
         }
+
+//}}CUT:STD
     }
 }

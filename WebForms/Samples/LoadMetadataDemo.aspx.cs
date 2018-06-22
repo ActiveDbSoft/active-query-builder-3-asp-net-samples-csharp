@@ -8,7 +8,7 @@ using WebForms_Samples.Helpers;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class LoadMetadataDemo : Page
+    public partial class LoadMetadataDemo : BasePage
     {
         private readonly IDbConnection _conn = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
         protected int ActiveTabs = 0;

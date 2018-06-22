@@ -20,17 +20,12 @@ namespace JavaScript.Controllers
         private void CreateQueryBuilder()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("SimpleClient");
-
-            if (qb != null)
+            if (QueryBuilderStore.Get("SimpleClient") != null)
                 return;
 
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("SimpleClient");
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("SimpleClient");
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

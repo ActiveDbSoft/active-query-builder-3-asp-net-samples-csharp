@@ -1,48 +1,50 @@
 ﻿<%@ Page Title="Client Event Handle Demo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientEventHandleUQ.aspx.cs" Inherits="WebForms_Samples.Samples.ClientEventHandleUQ" %>
+
 <%@ Register TagPrefix="AQB" Namespace="ActiveQueryBuilder.Web.WebForms" Assembly="ActiveQueryBuilder.Web.WebForms" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    //CUT:STD{{
     <div class="row">
-    <div class="col-md-12">
-        <h1>Handle User-defined Queries Events Demo</h1>
-        <p>Performing specific actions in the process of working with user-defined queries.</p>
-    </div>
-    <div class="col-md-12">
+        <div class="col-md-12">
+            <h1>Handle User-defined Queries Events Demo</h1>
+            <p>Performing specific actions in the process of working with user-defined queries.</p>
+        </div>
+        <div class="col-md-12">
             <!--Turn the UseDefaultTheme to False for not using the default theme. You will have to load the JQueryUI library then. -->
-        <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="false" />
-        <div class="qb-ui-layout">
-            <div class="qb-ui-layout__top">
-                <div class="qb-ui-layout__left">
-                    <div class="qb-ui-structure-tabs">
-                        <div class="qb-ui-structure-tabs__tab">
-                            <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                            <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
-                            <div class="qb-ui-structure-tabs__content">
-                                <AQB:ObjectTreeView runat="server" ID="ObjectTreeView1" />
+            <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="false" />
+            <div class="qb-ui-layout">
+                <div class="qb-ui-layout__top">
+                    <div class="qb-ui-layout__left">
+                        <div class="qb-ui-structure-tabs">
+                            <div class="qb-ui-structure-tabs__tab">
+                                <input type="radio" id="tree-tab" name="qb-tabs" checked />
+                                <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
+                                <div class="qb-ui-structure-tabs__content">
+                                    <AQB:ObjectTreeView runat="server" ID="ObjectTreeView1" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="qb-ui-structure-tabs__tab">
-                            <input type="radio" id="queries-tab" name="qb-tabs" />
-                            <label class="ui-widget-header qb-widget-header" for="queries-tab">Queries</label>
-                            <div class="qb-ui-structure-tabs__content">
-                                <AQB:UserQueries runat="server" ID="UserQueries1" />
+                            <div class="qb-ui-structure-tabs__tab">
+                                <input type="radio" id="queries-tab" name="qb-tabs" />
+                                <label class="ui-widget-header qb-widget-header" for="queries-tab">Queries</label>
+                                <div class="qb-ui-structure-tabs__content">
+                                    <AQB:UserQueries runat="server" ID="UserQueries1" />
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="qb-ui-layout__right">
+                        <AQB:SubQueryNavigationBar runat="server" ID="SubQueryNavigationBar1" />
+                        <AQB:Canvas runat="server" ID="Canvas1" />
+                        <AQB:StatusBar runat="server" ID="StatusBar1" />
+                        <AQB:Grid runat="server" ID="Grid1" />
+                    </div>
                 </div>
-                <div class="qb-ui-layout__right">
-                    <AQB:SubQueryNavigationBar runat="server" ID="SubQueryNavigationBar1" />
-                    <AQB:Canvas runat="server" ID="Canvas1" />
-                    <AQB:StatusBar runat="server" ID="StatusBar1" />
-                    <AQB:Grid runat="server" ID="Grid1" />
+                <div class="qb-ui-layout__bottom">
+                    <AQB:SqlEditor runat="server" ID="SqlEditor1" />
                 </div>
-            </div>
-            <div class="qb-ui-layout__bottom">
-                <AQB:SqlEditor runat="server" ID="SqlEditor1" />
             </div>
         </div>
     </div>
-</div>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.6/jquery.jgrowl.min.css" type="text/css" rel="stylesheet" />
 
@@ -73,9 +75,10 @@
         function onRemove() {
             $.jGrowl('Item has been removed', { header: 'UserQueries Event' });
         }
-        
+
         function onRename() {
             $.jGrowl("Item has been renamed", { header: 'UserQueries Event' });
         }
     </script>
+    //}}CUT:STD
 </asp:Content>

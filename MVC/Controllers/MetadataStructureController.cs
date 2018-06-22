@@ -22,14 +22,11 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Get instance of QueryBuilder
-            var queryBuilder = QueryBuilderStore.Create("MetadataStructure");
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("MetadataStructure");
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = true;
-
-            // Assign an instance of the syntax provider which defines SQL syntax and metadata retrieval rules.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
             // Load MetaData from XML document. File name stored in WEB.CONFIG file in [/configuration/appSettings/Db2XmlMetaData] key

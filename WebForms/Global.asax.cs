@@ -37,7 +37,7 @@ namespace WebForms_Samples
             _Log.Error(message);
         }
 
-        public void Error(Exception ex, string message)
+        public void Error(string message, Exception ex)
         {
             _Log.Error(message, ex);
         }

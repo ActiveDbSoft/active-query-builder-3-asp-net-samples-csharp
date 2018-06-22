@@ -23,12 +23,11 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("VirtualObjectsAndFields");
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("VirtualObjectsAndFields");
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = true;
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
             
             // Load MetaData from XML document. File name stored in WEB.CONFIG file in [/configuration/appSettings/Db2XmlMetaData] key
             var path = ConfigurationManager.AppSettings["NorthwindXmlMetaData"];

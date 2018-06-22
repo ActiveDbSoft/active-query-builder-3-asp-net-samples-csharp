@@ -6,7 +6,7 @@ using WebForms_Samples.Helpers;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class SimpleOLEDBDemo : Page
+    public partial class SimpleOLEDBDemo : BasePage
     {
         const string qbId = "Simple"; // identifies instance of the QueryBuilder object within a session
         
@@ -35,7 +35,7 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder(string AInstanceId)
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create(AInstanceId);
+            var queryBuilder = QueryBuilderStore.Factory.MSAccess(AInstanceId);
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = false;

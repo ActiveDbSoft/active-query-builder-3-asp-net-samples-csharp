@@ -28,14 +28,11 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder(string AInstanceId)
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create(AInstanceId);
+            var queryBuilder = QueryBuilderStore.Factory.MSAccess(AInstanceId);
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = false;
-
-            // Assign an instance of the syntax provider which defines SQL syntax and metadata retrieval rules.
-            queryBuilder.SyntaxProvider = new MSAccessSyntaxProvider();
-
+            
             // Bind Active Query Builder to a live database connection.
             queryBuilder.MetadataProvider = new OLEDBMetadataProvider
             {

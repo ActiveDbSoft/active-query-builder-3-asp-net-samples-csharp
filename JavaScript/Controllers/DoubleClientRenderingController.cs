@@ -28,11 +28,8 @@ namespace JavaScript.Controllers
                 return;
 
             // Create an instance of the QueryBuilder object
-            queryBuilder = QueryBuilderStore.Create("FirstClient");
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            queryBuilder = QueryBuilderStore.Factory.MsSql("FirstClient");
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -55,11 +52,8 @@ namespace JavaScript.Controllers
                 return;
 
             // Create an instance of the QueryBuilder object
-            queryBuilder = QueryBuilderStore.Create("SecondClient");
-
-            // Create an instance of the proper syntax provider for your database server.
-            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
-
+            queryBuilder = QueryBuilderStore.Factory.DB2("SecondClient");
+            
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 

@@ -7,7 +7,7 @@ using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class VirtualObjectsAndFields : Page
+    public partial class VirtualObjectsAndFields : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,15 +29,12 @@ namespace WebForms_Samples.Samples
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("VirtualObjectsAndFields");
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("VirtualObjectsAndFields");
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = true;
-
-            // Assign an instance of the syntax provider which defines SQL syntax and metadata retrieval rules.
-            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
-
+            
             // Load MetaData from XML document. File name stored in WEB.CONFIG file in [/configuration/appSettings/Db2XmlMetaData] key
             var path = ConfigurationManager.AppSettings["NorthwindXmlMetaData"];
             var xml = Path.Combine(Server.MapPath("~"), path);

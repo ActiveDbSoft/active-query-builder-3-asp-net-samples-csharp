@@ -23,16 +23,14 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Create("AlternateNames");
+            var queryBuilder = QueryBuilderStore.Factory.DB2("AlternateNames");
 
             // Turn displaying of alternate names on in the text of result SQL query
             queryBuilder.SQLFormattingOptions.UseAltNames = true;
 
             // Turn displaying of alternate names on in the visual UI
             queryBuilder.SQLGenerationOptions.UseAltNames = true;
-
-            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
-
+            
             queryBuilder.SQLQuery.SQLUpdated += OnSQLUpdated;
 
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
