@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.IO;
 using System.Web.Mvc;
 using ActiveQueryBuilder.Core;
@@ -8,11 +9,13 @@ namespace MVC_Samples.Controllers
 {
     public class SaveAndLoadUserQueriesController : Controller
     {
+        private const string id = "SaveAndLoadUserQueries";
+        private const string filename = "UserQueriesStructure.xml";
 //CUT:STD{{        
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("SaveAndLoadUserQueries");
+            var qb = QueryBuilderStore.Get(id);
 
             if (qb == null)
                 qb = CreateQueryBuilder();
@@ -23,7 +26,7 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("SaveAndLoadUserQueries");
+            var queryBuilder = QueryBuilderStore.Factory.MsSql(id);
             
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
@@ -34,8 +37,9 @@ namespace MVC_Samples.Controllers
 
             queryBuilder.MetadataContainer.ImportFromXML(xml);
 
-            ImportUserQueries(queryBuilder.UserQueries);
-            queryBuilder.UserQueries.Changed += UserQueriesChanged;
+            //Comment these 2 lines for using browser localStorage
+            ImportUserQueriesFromFile(queryBuilder.UserQueries);
+            queryBuilder.UserQueries.Changed += ExportUserQueriesToFile;
 
             //Set default query
             queryBuilder.SQL = GetDefaultSql();
@@ -43,18 +47,31 @@ namespace MVC_Samples.Controllers
             return queryBuilder;
         }
 
-        private void UserQueriesChanged(object sender, MetadataStructureItem item)
+        private void ExportUserQueriesToFile(object sender, MetadataStructureItem item)
         {
-            var container = (UserQueriesContainer)sender;
-            container.ExportToXML(Server.MapPath("UserQueriesStructure.xml"));
+            var uq = (UserQueriesContainer)sender;
+            uq.ExportToXML(Server.MapPath("~/" + filename));
         }
         
-        private void ImportUserQueries(UserQueriesContainer uqc)
+        private void ImportUserQueriesFromFile(UserQueriesContainer uqc)
         {
-            var file = Server.MapPath("UserQueriesStructure.xml");
+            var file = Server.MapPath("~/" + filename);
 
             if (System.IO.File.Exists(file))
                 uqc.ImportFromXML(file);
+        }
+
+        public void GetUserQueriesXml()
+        {
+            var qb = QueryBuilderStore.Get(id);
+            qb.UserQueries.ExportToXML(Response.OutputStream);
+        }
+
+        [ValidateInput(false)]
+        public void LoadUserQueries(string xml)
+        {
+            var qb = QueryBuilderStore.Get(id);
+            qb.UserQueries.XML = xml;
         }
 
         private string GetDefaultSql()
