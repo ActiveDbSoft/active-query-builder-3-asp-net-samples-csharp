@@ -112,13 +112,6 @@
 
         <div class="row">
             <div class="col-md-4">
-                <h3>Custom Expression Editor</h3>
-                <p>Define own editor to deal with complex SQL expressions.</p>
-                <p>
-                    <a class="btn btn-default" href="Samples/CustomExpressionEditor.aspx">Run &raquo;</a>
-                </p>
-            </div>
-            <div class="col-md-4">
                 <h3>SQL Syntax Highlighting</h3>
                 <p>Highlight SQL syntax using a third-party SQL text editor.</p>
                 <p>

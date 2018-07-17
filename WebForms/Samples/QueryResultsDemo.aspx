@@ -34,7 +34,7 @@
                             <AQB:SubQueryNavigationBar runat="server" ID="SubQueryNavigationBar1" />
                             <AQB:Canvas runat="server" ID="Canvas1" />
                             <AQB:StatusBar runat="server" ID="StatusBar1" />
-                            <AQB:Grid runat="server" ID="Grid1" />
+                            <AQB:Grid runat="server" ID="Grid1" UseCustomExpressionBuilder="ExpressionColumn" />
                         </div>
                     </div>
                     <div class="qb-ui-layout__bottom">
@@ -90,6 +90,7 @@
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.11.0/jsoneditor.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/codemirror.min.css" />
 
     <style>
         #qb, #qr {
@@ -119,6 +120,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.11.0/jsoneditor.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/mode/sql/sql.min.js"></script>
+
     <script>
         var dataUrl = "/QueryResultsDemo/GetData";
 
@@ -129,6 +133,7 @@
             $('.next').button().click(function () { fillJsonEditor(fillJsonEditor.page + 1); return false; });
             $('.prev').button().click(function () { fillJsonEditor(fillJsonEditor.page - 1); return false; });
             AQB.Web.onCriteriaBuilderReady(subscribeToChanges);
+            AQB.Web.onQueryBuilderReady(createExpressionEditor);
         });
 
         function onOpenQueryResults() {
@@ -370,6 +375,75 @@
                 }
             });
 
+        }
+
+        function createExpressionEditor(qb) {
+            window.codeMirror = CodeMirror(document.body, {
+                mode: 'text/x-sql',
+                indentWithTabs: true,
+                smartIndent: true,
+                lineNumbers: true,
+                matchBrackets: true,
+                width: '500px',
+                height: '250px'
+            });
+
+            qb.GridComponent.on(AQB.Web.QueryBuilder.GridComponent.Events.GridBeforeCustomEditCell, BeforeCustomEditCell);
+        }
+
+        function BeforeCustomEditCell(data) {
+            var row = data.row;
+            var cell = data.cell;
+
+            var error = $('<p class="ui-state-error" style="display: none;"></div>');
+
+            var $dialog = $('<div>').dialog({
+                modal: true,
+                width: 'auto',
+                title: 'Custom expression editor',
+                buttons: [{
+                    text: "OK",
+                    click: function () {
+                        var newValue = codeMirror.getValue();
+
+                        var ifValid = function () {
+                            cell.updateValue(newValue);
+                            $dialog.dialog("close");
+                        }
+
+                        var ifNotValid = function (message) {
+                            error.html(message).show();
+                        }
+
+                        validate(newValue, ifValid, ifNotValid);
+                    }
+                }, {
+                    text: "Cancel",
+                    click: function () {
+                        $dialog.dialog("close");
+                    }
+                }
+                ]
+            });
+
+            $dialog.append(error, $('.CodeMirror'));
+            $dialog.parent().css({
+                top: '25%',
+                left: '30%',
+                width: 600
+            });
+
+            codeMirror.setValue(row.FormattedExpression || '');
+            codeMirror.refresh();
+        };
+        
+        function validate(expression, ifValid, ifNotValid) {
+            AQB.Web.QueryBuilder.validateExpression(expression, function (isValid, message) {
+                if (isValid)
+                    ifValid();
+                else
+                    ifNotValid(message);
+            });
         }
     </script>
 </asp:Content>

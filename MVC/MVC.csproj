@@ -126,7 +126,6 @@
     <Compile Include="Controllers\ChangeConnectionController.cs" />
     <Compile Include="Controllers\ClientEventHandleController.cs" />
     <Compile Include="Controllers\ClientEventHandleUqController.cs" />
-    <Compile Include="Controllers\CustomExpressionEditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JQueryUiThemingController.cs" />
     <Compile Include="Controllers\QueryResultsDemoController.cs" />
@@ -218,7 +217,6 @@
     <Content Include="Views\ChangeConnection\Index.cshtml" />
     <Content Include="Views\ClientEventHandleUq\Index.cshtml" />
     <Content Include="Views\ClientEventHandle\Index.cshtml" />
-    <Content Include="Views\CustomExpressionEditor\Index.cshtml" />
     <Content Include="Views\JQueryUiTheming\Index.cshtml" />
     <Content Include="Views\LoadMetadataDemo\Index.cshtml" />
     <Content Include="Views\MetadataStructure\Index.cshtml" />
@@ -263,13 +261,13 @@
 		<HintPath>..\packages\ActiveQueryBuilder.Core.3.4.19.1100\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.4.1\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.5\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.MVC">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.4.1\lib\net\ActiveQueryBuilder.Web.MVC.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.5\lib\net\ActiveQueryBuilder.Web.MVC.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.4.1\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.2.5\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>

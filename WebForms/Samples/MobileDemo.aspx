@@ -97,7 +97,6 @@
         }
     </style>
 
-    <!-- todo import libraries -->
     <link rel="stylesheet" type="text/css" href="/Samples/layout.mobile.css" />
     <script src="/Samples/layout.mobile.js"></script>
 
