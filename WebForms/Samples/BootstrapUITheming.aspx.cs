@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
+using System.Web.UI;
+using ActiveQueryBuilder.Core;
 using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
 {
-    public partial class MobileDemo : BasePage
+    public partial class BootstrapTheming : BasePage
     {
-        const string qbId = "Mobile"; // identifies instance of the QueryBuilder object within a session
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Get instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(qbId);
+            // Get an instance of the QueryBuilder object
+            var qb = QueryBuilderStore.Get("BootstrapTheming");
 
             if (qb == null)
-                qb = CreateQueryBuilder(qbId);
+                qb = CreateQueryBuilder();
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -25,20 +26,15 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        /// <summary>
-        /// Creates and initializes a new instance of the QueryBuilder object.
-        /// </summary>
-        /// <param name="AInstanceId">String which uniquely identifies an instance of Active Query Builder in the session.</param>
-        /// <returns>Returns instance of the QueryBuilder object.</returns>
-        private QueryBuilder CreateQueryBuilder(string AInstanceId)
+        private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql(AInstanceId);
+            var queryBuilder = QueryBuilderStore.Factory.MsSql("BootstrapTheming");
             
-            // Denies metadata loading requests from live database connection
+            // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
-            // Load metadata from XML document. File name stored in the "Web.config" file [/configuration/appSettings/NorthwindXmlMetaData] key
+            // Load MetaData from XML document. File name stored in WEB.CONFIG file in [/configuration/appSettings/NorthwindXmlMetaData] key
             var path = ConfigurationManager.AppSettings["NorthwindXmlMetaData"];
             var xml = Path.Combine(Server.MapPath("~"), path);
 

@@ -16,6 +16,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
+                <span class="label label-info" style="float: right;">Default</span>
                 <h3>OLE DB Connection</h3>
                 <p>Loading metadata from live database.</p>
                 <p>
@@ -23,6 +24,7 @@
                 </p>
             </div>
             <div class="col-md-4">
+                <span class="label label-info" style="float: right;">Bootstrap</span>
                 <h3>Offline Demo</h3>
                 <p>Loading metadata from the pre-generated XML file.</p>
                 <p>
@@ -30,6 +32,7 @@
                 </p>
             </div>
             <div class="col-md-4">
+                <span class="label label-info" style="float: right;">JqueryUI</span>
                 <h3>Display Query Results</h3>
                 <p>Displaying SQL query results and modifying SQL queries while browsing the data.</p>
                 <p>
@@ -46,6 +49,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
+                <span class="label label-info" style="float: right;">Foundation</span>
                 <h3>Alternate Names</h3>
                 <p>Active Query Builder lets substitute unreadable names for user-friendly aliases.</p>
                 <p>
@@ -116,6 +120,13 @@
                 <p>Highlight SQL syntax using a third-party SQL text editor.</p>
                 <p>
                     <a class="btn btn-default" href="Samples/SQLSyntaxHighlighting.aspx">Run &raquo;</a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h3>Bootstrap Theming</h3>
+                <p>Apply any bootstrap theme to Active Query Builder UI.</p>
+                <p>
+                    <a class="btn btn-default" href="Samples/BootstrapUITheming.aspx">Run &raquo;</a>
                 </p>
             </div>
             <div class="col-md-4">

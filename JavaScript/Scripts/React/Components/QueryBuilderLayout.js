@@ -29,7 +29,7 @@ export default class QueryBuilderLayout extends Component {
                                 <div className="qb-ui-structure-tabs">
                                     <div className="qb-ui-structure-tabs__tab">
                                         <input type="radio" id="tree-tab" name="qb-tabs" defaultChecked />
-                                        <label className="ui-widget-header qb-widget-header" htmlFor="tree-tab">Database</label>
+                                        <label htmlFor="tree-tab">Database</label>
                                         <div className="qb-ui-structure-tabs__content">
                                             <div ref={el => this.treeview = el}></div>
                                         </div>

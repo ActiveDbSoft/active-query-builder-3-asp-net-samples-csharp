@@ -1,15 +1,21 @@
-﻿<%@ Page Title="Simple User Queries Demo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SimpleUserQueries.aspx.cs" Inherits="WebForms_Samples.Samples.SimpleUserQueries" %>
+﻿<%@ Page Title="Bootstrap Theming Demo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BootstrapUITheming.aspx.cs" Inherits="WebForms_Samples.Samples.BootstrapTheming" %>
 <%@ Register TagPrefix="AQB" Namespace="ActiveQueryBuilder.Web.WebForms" Assembly="ActiveQueryBuilder.Web.WebForms" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-md-12">
-            <h1>User-defined Queries Demo</h1>
-            <p>Users can save their queries and use them as data sources in subsequent queries.</p>
+            <h1>Bootstrap Theming Demo</h1>
+            <p>
+                <span>Apply any Bootstrap theme to Active Query Builder UI:</span>
+                <span class="btn btn-default">Simplex</span>
+                <span class="btn btn-default">Cerulean</span>
+                <span class="btn btn-default">Cosmo</span>
+                <span class="btn btn-default">Flatly</span>
+                <span class="btn btn-default">Superhero</span>
+            </p>
         </div>
         <div class="col-md-12">
-            <!--Turn the UseDefaultTheme to False for not using the default theme. You will have to load the JQueryUI library then. -->
-            <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="false" />
+            <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" Theme="bootstrap" />
             <div class="qb-ui-layout">
                 <div class="qb-ui-layout__top">
                     <div class="qb-ui-layout__left">
@@ -19,13 +25,6 @@
                                 <label for="tree-tab">Database</label>
                                 <div class="qb-ui-structure-tabs__content">
                                     <AQB:ObjectTreeView runat="server" ID="ObjectTreeView1" />
-                                </div>
-                            </div>
-                            <div class="qb-ui-structure-tabs__tab">
-                                <input type="radio" id="queries-tab" name="qb-tabs" />
-                                <label for="queries-tab">Queries</label>
-                                <div class="qb-ui-structure-tabs__content">
-                                    <AQB:UserQueries runat="server" ID="UserQueries1" />
                                 </div>
                             </div>
                         </div>
@@ -43,5 +42,17 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        var last;
 
+        $('.btn.btn-default').click(function () {
+            if (last)
+                last.remove();
+
+            var url = 'https://bootswatch.com/3/' + this.innerText.toLowerCase() + '/bootstrap.min.css';
+            last = $('<link rel="stylesheet" type="text/css" href="' + url + '">');
+            $('head').append(last);
+        });
+    </script>
 </asp:Content>

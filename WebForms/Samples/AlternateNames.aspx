@@ -2,6 +2,8 @@
 <%@ Register TagPrefix="AQB" Namespace="ActiveQueryBuilder.Web.WebForms" Assembly="ActiveQueryBuilder.Web.WebForms" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    
+    <link type="text/css" rel="stylesheet" href="../Content/foundation.min.css" />
 
     <div class="row">
         <div class="col-md-12">
@@ -9,15 +11,14 @@
             <p>Active Query Builder lets substitute unreadable names for user-friendly aliases.</p>
         </div>
         <div class="col-md-12">
-            <!--Turn the UseDefaultTheme to False for not using the default theme. You will have to load the JQueryUI library then. -->
-            <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="false" />
+            <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" />
             <div class="qb-ui-layout">
                 <div class="qb-ui-layout__top">
                     <div class="qb-ui-layout__left">
                         <div class="qb-ui-structure-tabs">
                             <div class="qb-ui-structure-tabs__tab">
                                 <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                                <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
+                                <label for="tree-tab">Database</label>
                                 <div class="qb-ui-structure-tabs__content">
                                     <AQB:ObjectTreeView ID="ObjectTreeView1" runat="server" />
                                 </div>
@@ -68,9 +69,44 @@
         .alternate-header {
             padding: 5px 10px;
         }
+
+        .card-divider {
+            background: #0c3e5f;
+            color: white;
+        }
+
+        .cornerAll {
+            border-radius: 5px;
+        }
+
+        .cornerTop {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .cornerBottom {
+            border-radius: 0 0 5px 5px;
+        }
+
+        .subquery {
+            top: 1px
+        }
     </style>
 
     <script>
+        AQB.Web.theme = {
+            widget: 'card',
+            header: 'card-divider',
+            content: 'card-section',
+            button: 'button',
+            buttonEnabled: 'primary',
+            buttonDisabled: 'disabled',
+            active: 'button hollow',
+            hover: 'hollow',
+            cornerAll: 'cornerAll',
+            cornerTop: 'cornerTop',
+            cornerBottom: 'cornerBottom'
+        }
+
         $(function () {
             AQB.Web.onQueryBuilderReady(function () {
                 AQB.Web.Core.on(AQB.Web.Core.Events.UserDataReceived, onUserDataReceived);

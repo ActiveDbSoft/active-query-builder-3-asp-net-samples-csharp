@@ -15,15 +15,14 @@
         </ul>
         <div class="row" id="qb">
             <div class="col-md-12">
-            <!--Turn the UseDefaultTheme to False for not using the default theme. You will have to load the JQueryUI library then. -->
-                <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="false" />
+                <AQB:QueryBuilderControl ID="QueryBuilderControl1" Theme="jqueryui" runat="server" />
                 <div class="qb-ui-layout">
                     <div class="qb-ui-layout__top">
                         <div class="qb-ui-layout__left">
                             <div class="qb-ui-structure-tabs">
                                 <div class="qb-ui-structure-tabs__tab">
                                     <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                                    <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
+                                    <label for="tree-tab">Database</label>
                                     <div class="qb-ui-structure-tabs__content">
                                         <AQB:ObjectTreeView runat="server" ID="ObjectTreeView1" />
                                     </div>
@@ -388,6 +387,8 @@
                 height: '250px'
             });
 
+            $('.CodeMirror').hide();
+
             qb.GridComponent.on(AQB.Web.QueryBuilder.GridComponent.Events.GridBeforeCustomEditCell, BeforeCustomEditCell);
         }
 
@@ -426,7 +427,7 @@
                 ]
             });
 
-            $dialog.append(error, $('.CodeMirror'));
+            $dialog.append(error, $('.CodeMirror').show());
             $dialog.parent().css({
                 top: '25%',
                 left: '30%',

@@ -68,18 +68,24 @@ const showMobileComponents = (function () {
                 e.removeClass('active');
         }
 
-        for (let e of elements)
-            if (e)
+        for (let e of elements) {
+            if (e) {
                 e.addClass('active');
+                e.find('label').hide();
+            }
+        }
 
         last = elements;
     };
 }());
 
 const hideMobileComponents = (function (elements) {
-    for (let e of elements)
-        if (e)
+    for (let e of elements) {
+        if (e) {
             e.removeClass('active');
+            e.find('label').show();
+        }
+    }
 });
 
 window.AQB.Mobile = Mobile;

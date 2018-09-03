@@ -8,6 +8,7 @@ let Mobile = {
             return console.warn("It's not a standard layout");
 
         mobile(qb, lay);
+        applyStyle(qb, lay);
     }
 };
 
@@ -24,7 +25,7 @@ function mobile(qb, lay) {
             userQueriesParent.parent().click(() => showMobileComponents([userQueriesParent, left]));
         }
 
-        var closeLeft = createMobileCloseButton('left', qb._useDefaultTheme,
+        var closeLeft = createMobileCloseButton('left', qb._style.header,
             () => hideMobileComponents([treeViewParent, userQueriesParent, left]));
 
         left.append(closeLeft);
@@ -38,7 +39,9 @@ function mobile(qb, lay) {
         if (qb.EditorComponent)
             subscribeComponentToTap(qb.EditorComponent, bottom);
 
-        const closeGrid = createMobileCloseButton('bottom', qb._useDefaultTheme, () => hideMobileComponents([bottom]));
+        const closeGrid = createMobileCloseButton('bottom', qb._style.header,
+            () => hideMobileComponents([bottom]));
+
         bottom.append(closeGrid);
     }
 }
@@ -48,11 +51,8 @@ function subscribeComponentToTap(component, bottom) {
     parent.parent().click(() => showMobileComponents([bottom]));
 }
 
-function createMobileCloseButton(modif, useDefTheme, callback) {
-    const cls = `ui-widget-header close-mobile-component close-mobile-component--${modif}`;
-
-    if (useDefTheme)
-        cls.addClass('qb-widget-header');
+function createMobileCloseButton(modif, headerClass, callback) {
+    const cls = `close-mobile-component close-mobile-component--${modif} ${headerClass}`;
 
     return $(`<div class="${cls}"></div>`)
         .html(closeIcon)
@@ -62,24 +62,35 @@ function createMobileCloseButton(modif, useDefTheme, callback) {
 const showMobileComponents = (function () {
     let last = undefined;
 
-    return function(elements) {
+    return function (elements) {
         if (last != null) {
-            for (let e of last)
+            for (let e of last) {
                 e.removeClass('active');
+            }
         }
 
-        for (let e of elements)
-            if (e)
+        for (let e of elements) {
+            if (e) {
                 e.addClass('active');
+                e.find('label').hide();
+            }
+        }
 
         last = elements;
     };
 }());
 
 const hideMobileComponents = (function (elements) {
-    for (let e of elements)
-        if (e)
+    for (let e of elements) {
+        if (e) {
             e.removeClass('active');
+            e.find('label').show();
+        }
+    }
 });
+
+function applyStyle(qb, lay) {
+    lay.find('.qb-ui-structure-tabs__tab > label').addClass(qb._style.header);
+}
 
 window.AQB.Mobile = Mobile;

@@ -1,20 +1,21 @@
 ﻿@using ActiveQueryBuilder.Web.MVC
 @model ActiveQueryBuilder.Web.Server.QueryBuilder
 @{
-    ViewBag.Title = "Switch Database Connections Demo";
-    var controls = Html.QueryBuilder(Model);
+    ViewBag.Title = "Bootstrap Theming Demo";
+    var controls = Html.QueryBuilder(Model, s => s.Theme = "bootstrap");
 }
 
 <div class="row">
     <div class="col-md-12">
-        <h1>Switch Database Connections Demo</h1>
-        <p>Switching between different database connections at run time.</p>
-        <div>
-            <h3 style="display: inline">Connect to:</h3>
-            <button class="change">NorthwindXmlMetaData</button>
-            <button class="change">Db2XmlMetaData</button>
-            <button class="change">SQLite</button>
-        </div>
+        <h1>Bootstrap Theming Demo</h1>
+        <p>
+            <span>Apply any Bootstrap theme to Active Query Builder UI:</span>
+            <span class="btn btn-default">Simplex</span>
+            <span class="btn btn-default">Cerulean</span>
+            <span class="btn btn-default">Cosmo</span>
+            <span class="btn btn-default">Flatly</span>
+            <span class="btn btn-default">Superhero</span>
+        </p>
     </div>
     <div class="col-md-12">
         @controls.GetHtml()
@@ -45,25 +46,17 @@
     </div>
 </div>
 
-@section scripts
-{
+@section scripts {
     <script>
-        $('.change').click(function() {
+        var last;
 
-            $('.change').prop('disabled', true);
+        $('.btn.btn-default').click(function () {
+            if (last)
+                last.remove();
 
-            $.ajax({
-                type: 'POST',
-                url: '/ChangeConnection/Change',
-                data: {
-                    name: this.innerText
-                },
-                success: function() {
-                    AQB.Web.QueryBuilder.fullUpdate(function() {
-                        $('.change').prop('disabled', false);
-                    });
-                }
-            });
+            var url = 'https://bootswatch.com/3/' + this.innerText.toLowerCase() + '/bootstrap.min.css';
+            last = $('<link rel="stylesheet" type="text/css" href="' + url + '">');
+            $('head').append(last);
         });
     </script>
 }

@@ -18,14 +18,14 @@
                         <div class="qb-ui-structure-tabs">
                             <div class="qb-ui-structure-tabs__tab">
                                 <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                                <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
+                                <label for="tree-tab">Database</label>
                                 <div class="qb-ui-structure-tabs__content">
                                     <AQB:ObjectTreeView runat="server" ID="ObjectTreeView1" />
                                 </div>
                             </div>
                             <div class="qb-ui-structure-tabs__tab">
                                 <input type="radio" id="queries-tab" name="qb-tabs" />
-                                <label class="ui-widget-header qb-widget-header" for="queries-tab">Queries</label>
+                                <label for="queries-tab">Queries</label>
                                 <div class="qb-ui-structure-tabs__content">
                                     <AQB:UserQueries runat="server" ID="UserQueries1" />
                                 </div>

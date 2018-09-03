@@ -23,7 +23,7 @@
                 <div class="qb-ui-structure-tabs">
                     <div class="qb-ui-structure-tabs__tab">
                         <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                        <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
+                        <label for="tree-tab">Database</label>
                         <div class="qb-ui-structure-tabs__content">
                             <AQB:ObjectTreeView ID="ObjectTreeView1" runat="server" DefaultExpandMetadataType="Server" ShowFields="True" />
                         </div>
@@ -40,14 +40,14 @@
                     <div class="qb-ui-structure-tabs">
                         <div class="qb-ui-structure-tabs__tab">
                             <input type="radio" id="qcl-tab" name="right-tabs" checked />
-                            <label class="ui-widget-header qb-widget-header" for="qcl-tab">Column List</label>
+                            <label for="qcl-tab">Column List</label>
                             <div class="qb-ui-structure-tabs__content">
                                 <AQB:Grid runat="server" ID="Grid1" OrColumnCount="0" UseCustomExpressionBuilder="ExpressionColumn" />
                             </div>
                         </div>
                         <div class="qb-ui-structure-tabs__tab">
                             <input type="radio" id="sql-tab" name="right-tabs" />
-                            <label class="ui-widget-header qb-widget-header" for="sql-tab">SQL Text</label>
+                            <label for="sql-tab">SQL Text</label>
                             <div class="qb-ui-structure-tabs__content">
                                 <AQB:SqlEditor runat="server" ID="SqlEditor1" />
                             </div>

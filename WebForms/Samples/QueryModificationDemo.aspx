@@ -33,7 +33,7 @@
                                 <div class="qb-ui-structure-tabs">
                                     <div class="qb-ui-structure-tabs__tab">
                                         <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                                        <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
+                                        <label for="tree-tab">Database</label>
                                         <div class="qb-ui-structure-tabs__content">
                                             <AQB:ObjectTreeView ID="ObjectTreeView1" runat="server" />
                                         </div>

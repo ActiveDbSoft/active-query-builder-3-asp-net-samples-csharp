@@ -9,15 +9,14 @@
             <p>Loading metadata from live database.</p>
         </div>
         <div class="col-md-12">
-            <!--Turn the UseDefaultTheme to False for not using the default theme. You will have to load the JQueryUI library then. -->
-            <AQB:QueryBuilderControl ID="QueryBuilderControl1" UseDefaultTheme="false" runat="server" />
+            <AQB:QueryBuilderControl ID="QueryBuilderControl1" Theme="default" runat="server" />
             <div class="qb-ui-layout">
                 <div class="qb-ui-layout__top">
                     <div class="qb-ui-layout__left">
                         <div class="qb-ui-structure-tabs">
                             <div class="qb-ui-structure-tabs__tab">
                                 <input type="radio" id="tree-tab" name="qb-tabs" checked />
-                                <label class="ui-widget-header qb-widget-header" for="tree-tab">Database</label>
+                                <label for="tree-tab">Database</label>
                                 <div class="qb-ui-structure-tabs__content">
                                     <AQB:ObjectTreeView runat="server" ID="ObjectTreeView1" />
                                 </div>
