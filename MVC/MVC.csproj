@@ -238,6 +238,8 @@
     <Content Include="Views\SubQueryResultsPreviewDemo\Index.cshtml" />
     <Content Include="Views\MobileDemo\Index.cshtml" />
     <Content Include="Views\BootstrapTheming\Index.cshtml" />
+	<Content Include="Views\ChangeConnection\WithPartiaView.cshtml" />
+	<Content Include="Views\ChangeConnection\_queryBuilder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

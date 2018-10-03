@@ -9,10 +9,23 @@ namespace MVC_Samples.Controllers
 {
     public class ChangeConnectionController : Controller
     {
+        private string _instanceId = "ChangeConnection";
+
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("ChangeConnection");
+            var qb = QueryBuilderStore.Get(_instanceId);
+
+            if (qb == null)
+                qb = CreateQueryBuilder();
+
+            return View(qb);
+        }
+
+        public ActionResult WithPartiaView()
+        {
+            // Get an instance of the QueryBuilder object
+            var qb = QueryBuilderStore.Get(_instanceId);
 
             if (qb == null)
                 qb = CreateQueryBuilder();
@@ -23,7 +36,7 @@ namespace MVC_Samples.Controllers
         private QueryBuilder CreateQueryBuilder()
         {
             // Create an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Create("ChangeConnection");
+            var qb = QueryBuilderStore.Create(_instanceId);
 
             SetNorthwindXml(qb);
 
@@ -33,7 +46,20 @@ namespace MVC_Samples.Controllers
         [HttpPost]
         public ActionResult Change(string name)
         {
-            var queryBuilder = QueryBuilderStore.Get("ChangeConnection");
+            ChangeConnection(name);
+            return new EmptyResult();
+        }
+
+        [HttpPost]
+        public PartialViewResult ChangePartial(string name)
+        {
+            var qb = ChangeConnection(name);
+            return PartialView("_queryBuilder", qb);
+        }
+
+        public QueryBuilder ChangeConnection(string name)
+        {
+            var queryBuilder = QueryBuilderStore.Get(_instanceId);
 
             queryBuilder.MetadataContainer.Clear();
 
@@ -44,7 +70,7 @@ namespace MVC_Samples.Controllers
             else
                 SetDb2Xml(queryBuilder);
 
-            return new EmptyResult();
+            return queryBuilder;
         }
 
         private void SetNorthwindXml(QueryBuilder qb)
