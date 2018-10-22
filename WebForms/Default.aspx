@@ -79,8 +79,6 @@
             </div>
         </div>
 
-        //CUT:STD{{
-
         <div class="row">
             <div class="col-md-12">
                 <h2 class="section-title">User-defined Queries and Fields</h2>
@@ -210,7 +208,7 @@
                     <a class="btn btn-default" href="Samples/MobileDemo.aspx">Run &raquo;</a>
                 </p>
             </div>
-            //CUT:STD{{
+
             <div class="col-md-4">
                 <span class="label label-danger" style="float: right;">Pro</span>
                 <h3>Handle User-defined Queries Events</h3>
@@ -219,7 +217,7 @@
                     <a class="btn btn-default" href="Samples/ClientEventHandleUQ.aspx">Run &raquo;</a>
                 </p>
             </div>
-            //}}CUT:STD
+
         </div>
     </div>
 </asp:Content>

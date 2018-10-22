@@ -9,7 +9,7 @@ namespace MVC_Samples.Controllers
 {
     public class ChangeConnectionController : Controller
     {
-        private string _instanceId = "ChangeConnection";
+        private readonly string _instanceId = "ChangeConnection";
 
         public ActionResult Index()
         {

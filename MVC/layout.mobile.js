@@ -1,4 +1,7 @@
-let closeIcon = '<svg class="svg--delete" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><g><rect x="7.45" y="0.843" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 9.0859 18.8636)" fill="#FFFFFF" width="2" height="13.415"/><rect x="7.45" y="0.842" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.8633 8.186)" fill="#FFFFFF" width="2" height="13.414"/></g></svg>';
+const icons = {
+    bottom: '<svg class="svg--chevron" width="16px" height="16px" viewBox="0 0 26 26" enable-background="new 0 0 16 16" xml:space="preserve"><g><polygon fill="#ffffff" points="0.046,2.582 2.13,0.498 12.967,11.334 23.803,0.498 25.887,2.582 12.967,15.502  "/><polygon fill="#ffffff" points="0.046,13.582 2.13,11.498 12.967,22.334 23.803,11.498 25.887,13.582 12.967,26.502  "/></g></svg>',
+    left: '<svg class="svg--chevron" width="26px" height="26px" viewBox="0 0 26 26" enable-background="new 0 0 16 16" xml:space="preserve"><g><polygon fill="#ffffff" points="23.885,0.58 25.969,2.664 15.133,13.5 25.969,24.336 23.885,26.42 10.965,13.5  "/><polygon fill="#ffffff" points="12.885,0.58 14.969,2.664 4.133,13.5 14.969,24.336 12.885,26.42 -0.035,13.5  "/></g></svg>'
+};
 
 let Mobile = {
     updateLayout: qb => {
@@ -55,7 +58,7 @@ function createMobileCloseButton(modif, useDefTheme, callback) {
         cls.addClass('qb-widget-header');
 
     return $(`<div class="${cls}"></div>`)
-        .html(closeIcon)
+        .html(icons[modif])
         .click(callback);
 }
 

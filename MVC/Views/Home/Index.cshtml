@@ -39,7 +39,7 @@
                 <a class="btn btn-default" href="@Url.Action("Index", "QueryResultsDemo")">Run &raquo;</a>
             </p>
         </div>
-        //CUT:STD{{
+        
         <div class="col-md-4">
             <span class="label label-danger" style="float: right;">Pro</span>
             <h3>Edit Sub-Query Text</h3>
@@ -48,7 +48,7 @@
                 <a class="btn btn-default" href="@Url.Action("Index", "SubQueryResultsPreviewDemo")">Run &raquo;</a>
             </p>
         </div>
-        //}}CUT:STD
+        
     </div>
 
     <div class="row">
@@ -88,8 +88,6 @@
             </p>
         </div>
     </div>
-    
-    //CUT:STD{{
 
     <div class="row">
         <div class="col-md-12">
@@ -115,8 +113,6 @@
             </p>
         </div>
     </div>
-
-    //}}CUT:STD
 
     <div class="row">
         <div class="col-md-12">
@@ -177,8 +173,8 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h3>Switch Database Connections. Partial view</h3>
-            <p>Switching between different database connections at run time using PartialView</p>
+            <h3>Switch Database Connections using Partial Views</h3>
+            <p>Using partial views to implement deffered load and explicit release of the component. You'd better do this using the AQB JavaScript API - see the "Deferred Load and Explicit Release" demo below.</p>
             <p>
                 <a class="btn btn-default" href="@Url.Action("WithPartiaView", "ChangeConnection")">Run &raquo;</a>
             </p>
@@ -220,7 +216,7 @@
                 <a class="btn btn-default" href="@Url.Action("Index", "ClientEventHandle")">Run &raquo;</a>
             </p>
         </div>
-        //CUT:STD{{
+
         <div class="col-md-4">
             <span class="label label-danger" style="float: right;">Pro</span>
             <h3>Handle User-defined Queries Events</h3>
@@ -229,7 +225,7 @@
                 <a class="btn btn-default" href="@Url.Action("Index", "ClientEventHandleUQ")">Run &raquo;</a>
             </p>
         </div>
-        //}}CUT:STD
+
         <div class="col-md-4">
             <h3>Custom HTML Layout Definition</h3>
             <p>Applying alternate (mobile-friendly) HTML layout instead of the predefined embedded layout.</p>
@@ -237,24 +233,12 @@
                 <a class="btn btn-default" href="@Url.Action("Index", "MobileDemo")">Run &raquo;</a>
             </p>
         </div>
+        <div class="col-md-4">
+            <h3>Deferred Load and Explicit Release</h3>
+            <p>Loading and releasing of the component on client and server via JavaScript API.</p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Defered", "SimpleOfflineDemo")">Run &raquo;</a>
+            </p>
+        </div>
     </div>
 </div>
-
-//CUT:PRO{{
-@section scripts
-{
-    <script>
-        $('a.btn').click(function (e) {
-            e.preventDefault();
-            var href = this.href;
-
-            $.ajax({
-                url: '/Home/Dispose',
-                success: function () {
-                    window.location.href = href;
-                }
-            });
-        });
-    </script>
-}
-//}}CUT:PRO

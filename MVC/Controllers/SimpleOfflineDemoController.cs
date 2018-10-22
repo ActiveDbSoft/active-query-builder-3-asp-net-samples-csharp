@@ -12,13 +12,25 @@ namespace MVC_Samples.Controllers
 
         public ActionResult Index()
         {
+            var qb = GetOrCreateQueryBuilder();
+            return View(qb);
+        }
+
+        public ActionResult Defered()
+        {
+            var qb = GetOrCreateQueryBuilder();
+            return View(qb);
+        }
+
+        private QueryBuilder GetOrCreateQueryBuilder()
+        {
             // Get an instance of the QueryBuilder object
             var qb = QueryBuilderStore.Get(qbId);
 
             if (qb == null)
                 qb = CreateQueryBuilder(qbId);
 
-            return View(qb);
+            return qb;
         }
 
         /// <summary>

@@ -19,31 +19,31 @@
 @section scripts
 {
     <script>
-        $('.change').click(function() {
-            $.ajax({
-                type: 'POST',
-                url: '/ChangeConnection/ChangePartial',
-                data: {
-                    name: this.innerText
-                },
-                success: function (data) {
-                    if (window.AQB != null)
-                        AQB.Web.dispose();
+    $('.change').click(function() {
+        $.ajax({
+            type: 'POST',
+            url: '/ChangeConnection/ChangePartial',
+            data: {
+                name: this.innerText
+            },
+            success: function (data) {
+                if (window.AQB != null) 
+                    AQB.Web.dispose(); // Disposing a namespace which leads to the release of all allocated memory on both client and server.
 
-                    $('.query-builder-container').html(data);
+                $('.query-builder-container').html(data); // Anticipating all the necessary code and scripts returned from the partial view.
 
-                    AQB.Web.onQueryBuilderReady(function (qb) {
-                        qb.on(qb.Events.SqlChanged, function () {
-                            isQueryChanged = true;
-                        });
-                        qb.on(qb.Events.SQLTextChanged, function () {
-                            isQueryChanged = true;
-                        });
+                AQB.Web.onQueryBuilderReady(function (qb) {
+                    qb.on(qb.Events.SqlChanged, function () { // sample subscription to query changes made in the UI.
+                        isQueryChanged = true; 
                     });
+                    qb.on(qb.Events.SQLTextChanged, function () { // sample subscription to SQL text changes made by the user.
+                        isQueryChanged = true;
+                    });
+                }); 
 
-                    AQB.startApplication();
-                }
-            });
+                AQB.startApplication(); // Subscribing to changes first, then running the application.
+            }
         });
+    });
     </script>
 }

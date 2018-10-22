@@ -238,8 +238,9 @@
     <Content Include="Views\SubQueryResultsPreviewDemo\Index.cshtml" />
     <Content Include="Views\MobileDemo\Index.cshtml" />
     <Content Include="Views\BootstrapTheming\Index.cshtml" />
-	<Content Include="Views\ChangeConnection\WithPartiaView.cshtml" />
-	<Content Include="Views\ChangeConnection\_queryBuilder.cshtml" />
+    <Content Include="Views\ChangeConnection\WithPartiaView.cshtml" />
+    <Content Include="Views\ChangeConnection\_queryBuilder.cshtml" />
+    <Content Include="Views\SimpleOfflineDemo\Defered.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,25 +255,25 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.EventMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.3.1106\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.4.1109\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.5.3.1106\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.5.4.1109\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.5.3.1106\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.5.4.1109\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.3.1106\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.4.1109\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.3.2\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.3.3\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.MVC">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.3.2\lib\net\ActiveQueryBuilder.Web.MVC.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.3.3\lib\net\ActiveQueryBuilder.Web.MVC.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.3.2\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.3.3\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <PropertyGroup>

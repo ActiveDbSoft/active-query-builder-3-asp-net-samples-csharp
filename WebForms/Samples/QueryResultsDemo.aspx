@@ -15,7 +15,7 @@
         </ul>
         <div class="row" id="qb">
             <div class="col-md-12">
-                <AQB:QueryBuilderControl ID="QueryBuilderControl1" Theme="jqueryui" runat="server" />
+                <AQB:QueryBuilderControl ID="QueryBuilderControl1" Theme="jqueryui" runat="server" Language="ru" />
                 <div class="qb-ui-layout">
                     <div class="qb-ui-layout__top">
                         <div class="qb-ui-layout__left">
