@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using ActiveQueryBuilder.Core;
 using ActiveQueryBuilder.Core.QueryTransformer;
 using ActiveQueryBuilder.View;
@@ -14,17 +15,10 @@ namespace CustomStorage.QueryBuilderProvider
     public class QueryBuilderSqLiteStoreProvider : IQueryBuilderProvider
     {
         public bool SaveState { get; private set; }
-
-        /// <summary>
-        /// Connection to the Sqlite database
-        /// </summary>
-        private readonly IDbConnection _connection;
-
+        
         public QueryBuilderSqLiteStoreProvider()
         {
             SaveState = true;
-
-            _connection = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
 
             var sql = "create table if not exists QueryBuilders(id text primary key, layout TEXT)";
             ExecuteNonQuery(sql);
@@ -41,18 +35,26 @@ namespace CustomStorage.QueryBuilderProvider
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             qb.BehaviorOptions.AllowSleepMode = false;
-            
+
             // Bind Active Query Builder to a live database connection.
-            qb.MetadataProvider = new SQLiteMetadataProvider 
+            qb.MetadataProvider = new SQLiteMetadataProvider
             {
                 // Assign an instance of DBConnection object to the Connection property.
-                Connection = _connection
+                Connection = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase")
             };
 
             var layout = GetLayout(id);
 
-            if (layout != null)
-                qb.LayoutSQL = layout;
+            try
+            {
+                if (layout != null)
+                    qb.LayoutSQL = layout;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
 
             return qb;
         }
@@ -62,7 +64,7 @@ namespace CustomStorage.QueryBuilderProvider
         /// </summary>
         /// <param name="qb">The QueryBuilder object.</param>
         public void Put(QueryBuilder qb)
-        {           
+        {
             if (GetLayout(qb.Tag) == null)
                 Insert(qb);
             else
@@ -92,12 +94,14 @@ namespace CustomStorage.QueryBuilderProvider
 
         private void ExecuteNonQuery(string sql)
         {
+            var _connection = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
+
             try
             {
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                using (var cmd = CreateCommand(sql))
+                using (var cmd = CreateCommand(_connection, sql))
                     cmd.ExecuteNonQuery();
             }
             finally
@@ -109,16 +113,17 @@ namespace CustomStorage.QueryBuilderProvider
         private string GetLayout(string id)
         {
             var sql = string.Format("select layout from QueryBuilders where id = '{0}'", id);
+            var _connection = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
 
             try
             {
                 if (_connection.State != ConnectionState.Open)
                     _connection.Open();
 
-                using (var cmd = CreateCommand(sql))
-                    using (var reader = cmd.ExecuteReader())
-                        if (reader.Read())
-                            return reader["layout"].ToString();
+                using (var cmd = CreateCommand(_connection, sql))
+                using (var reader = cmd.ExecuteReader())
+                    if (reader.Read())
+                        return reader["layout"].ToString();
 
                 return null;
             }
@@ -128,9 +133,9 @@ namespace CustomStorage.QueryBuilderProvider
             }
         }
 
-        private IDbCommand CreateCommand(string sql)
+        private IDbCommand CreateCommand(IDbConnection conn, string sql)
         {
-            var cmd = _connection.CreateCommand();
+            var cmd = conn.CreateCommand();
             cmd.CommandText = sql;
             return cmd;
         }
@@ -150,7 +155,7 @@ namespace CustomStorage.QueryBuilderProvider
             var sql = "create table if not exists QueryTransformers(id text primary key, state TEXT)";
             ExecuteNonQuery(sql);
         }
-        
+
         public QueryTransformer Get(string id)
         {
             var qt = new QueryTransformer { Tag = id };
@@ -164,7 +169,7 @@ namespace CustomStorage.QueryBuilderProvider
 
             return qt;
         }
-        
+
         public void Put(QueryTransformer qt)
         {
             if (GetState(qt.Tag.ToString()) == null)

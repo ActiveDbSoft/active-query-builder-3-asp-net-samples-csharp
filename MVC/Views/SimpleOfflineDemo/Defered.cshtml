@@ -46,59 +46,53 @@
     </div>
 </div>
 
-@section styles
-{
-    <link type="text/css" rel="stylesheet" href="" />
-}
-
 @section scripts
 {
-    <script src=""></script>
     <script>
-    var script = null;
-    var link = null;
+        var script = null;
+        var link = null;
 
-    $(function() {
-        $('.create').click(function() {
-            loadScript();
-            loadStyle();
+        $(function() {
+            $('.create').click(function() {
+                loadScript();
+                loadStyle();
 
-            $(this).hide();
-            $('.destroy').show();
+                $(this).hide();
+                $('.destroy').show();
 
-            setTimeout(function() {
-                AQB.startApplication();
-            }, 1000);
+                setTimeout(function() {
+                    AQB.startApplication();
+                }, 1000);
+            });
+
+            $('.destroy').click(function() {
+                $(this).hide();
+                $('.create').show();
+
+                AQB.Web.dispose();
+
+                if (script)
+                    script.remove();
+            });
         });
 
-        $('.destroy').click(function() {
-            $(this).hide();
-            $('.create').show();
+        function loadScript() {
+            script = document.createElement('script');
+            script.setAttribute('src', '/ActiveQueryBuilder/Handler/resources/script/qb');
 
-            AQB.Web.dispose();
+            document.body.appendChild(script);
+        }
 
-            if (script)
-                script.remove();
-        });
-    });
+        function loadStyle() {
+            if (link)
+                return;
 
-    function loadScript() {
-        script = document.createElement('script');
-        script.setAttribute('src', '/ActiveQueryBuilder/Handler/resources/script/qb');
+            link = document.createElement('link');
+            link.setAttribute('href', '/ActiveQueryBuilder/Handler/resources/style/qb');
+            link.setAttribute('type', 'text/css');
+            link.setAttribute('rel', 'stylesheet');
 
-        document.body.appendChild(script);
-    }
-
-    function loadStyle() {
-        if (link)
-            return;
-
-        link = document.createElement('link');
-        link.setAttribute('href', '/ActiveQueryBuilder/Handler/resources/style/qb');
-        link.setAttribute('type', 'text/css');
-        link.setAttribute('rel', 'stylesheet');
-
-        document.body.appendChild(link);
-    }
+            document.body.appendChild(link);
+        }
     </script>
 }
