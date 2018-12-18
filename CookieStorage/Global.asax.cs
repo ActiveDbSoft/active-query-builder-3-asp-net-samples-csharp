@@ -19,6 +19,7 @@ namespace CookieStorage
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            // Redefine the QueryBuilderStore.Provider object to be an instance of the CookieQueryBuilderProvider class
             QueryBuilderStore.Provider = new CookieQueryBuilderProvider();
         }
     }

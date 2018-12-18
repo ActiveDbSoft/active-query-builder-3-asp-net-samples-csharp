@@ -15,6 +15,7 @@ namespace CrossDomain
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            // Redefine the QueryBuilderStore.Provider object to be an instance of the TokenQueryBuilderProvider class
             QueryBuilderStore.Provider = new TokenQueryBuilderProvider();
             QueryBuilderStore.UseWebConfig();
         }

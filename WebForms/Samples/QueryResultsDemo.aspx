@@ -15,7 +15,7 @@
         </ul>
         <div class="row" id="qb">
             <div class="col-md-12">
-                <AQB:QueryBuilderControl ID="QueryBuilderControl1" Theme="jqueryui" runat="server" Language="ru" />
+                <AQB:QueryBuilderControl ID="QueryBuilderControl1" Theme="jqueryui" runat="server" Language="en" />
                 <div class="qb-ui-layout">
                     <div class="qb-ui-layout__top">
                         <div class="qb-ui-layout__left">
@@ -47,6 +47,7 @@
                 <AQB:CriteriaBuilder runat="server" ID="CriteriaBuilder1" />
             </div>
             <div class="col-md-12">
+                <div class="alert alert-danger"></div>
                 <div id="second-tabs" class="block-flat">
                     <ul>
                         <li><a href="#jx">JqxGrid</a></li>
@@ -109,6 +110,10 @@
             margin-left: 5px;
             font-weight: bold;
         }
+
+        .execute, .alert-danger {
+            display: none;
+        }
     </style>
 
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
@@ -170,6 +175,8 @@
         }
 
         function createGrids(columns) {
+            $('.alert-danger').hide();
+
             createJqxGrid(columns);
             createJsGrid(columns);
             createReactGrid(columns);
@@ -177,6 +184,7 @@
         }
 
         function updateGrids() {
+            $('.alert-danger').hide();
             dataAdapter.dataBind();
             jsgrid.jsGrid();
             reactGrid.updateRows();
@@ -185,8 +193,15 @@
 
         function createJqxGrid(columns) {
             var source = {
+                type: 'POST',
+                contentType: 'application/json;',
                 datatype: 'json',
                 url: dataUrl,
+                formatData: function (data) {
+                    data.params = getParams();
+                    return JSON.stringify(data);
+                },
+                loadError: errorCallback,
                 sort: function () {
                     $("#jqxgrid").jqxGrid('updatebounddata');
                 },
@@ -445,6 +460,24 @@
                 else
                     ifNotValid(message);
             });
+        }
+
+        function errorCallback(xhr, error, statusText) {
+            $('.alert-danger').show().text(statusText);
+        }
+
+        function getParams() {
+            var result = [];
+            var params = AQB.Web.QueryBuilder.queryParams;
+
+            for (var i = 0; i < params.length; i++) {
+                result.push({
+                    Name: params[i].FullName,
+                    Value: $('input.' + params[i].Name).val()
+                });
+            }
+
+            return result;
         }
     </script>
 </asp:Content>

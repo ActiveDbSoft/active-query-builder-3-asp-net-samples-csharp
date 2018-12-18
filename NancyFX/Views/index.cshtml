@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>HTTP Context Overriding Demo</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/black-tie/jquery-ui.css" />
+</head>
+<body>
+    <div id="item-page-content" class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>HTTP Context Overriding Demo</h1>
+                    <p>
+                        Overriding HTTP context for the NancyFX framework
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <div id="qb"></div>
+                    <div class="qb-ui-layout">
+                        <div class="qb-ui-layout__top">
+                            <div class="qb-ui-layout__left">
+                                <div class="qb-ui-structure-tabs">
+                                    <div class="qb-ui-structure-tabs__tab">
+                                        <input type="radio" id="tree-tab" name="qb-tabs" checked />
+                                        <label for="tree-tab">Database</label>
+                                        <div class="qb-ui-structure-tabs__content">
+                                            <div id="treeview"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qb-ui-layout__right">
+                                <div id="navbar"></div>
+                                <div id="canvas"></div>
+                                <div id="statusbar"></div>
+                                <div id="grid"></div>
+                            </div>
+                        </div>
+                        <div class="qb-ui-layout__bottom">
+                            <div id="sql"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - ActiveDbSoft</p>
+    </footer>
+
+    <script type="text/javascript" src="/scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/scripts/aqb.client.js"></script>
+
+    <script type="text/javascript">
+        // Instance identifier string to bind to the QueryBiulder component on the server side. See the SimpleQueryBuilderController.cs code for details.
+        var name = 'NancyFX';
+
+        $(function () {
+            AQB.Web.UI.QueryBuilder(name, $('#qb'));
+            AQB.Web.UI.ObjectTreeView(name, $('#treeview'));
+            AQB.Web.UI.SubQueryNavigationBar(name, $('#navbar'));
+            AQB.Web.UI.Canvas(name, $('#canvas'));
+            AQB.Web.UI.StatusBar(name, $('#statusbar'));
+            AQB.Web.UI.Grid(name, $('#grid'), { orColumnCount: 0 });
+            AQB.Web.UI.SqlEditor(name, $('#sql'));
+
+            AQB.Web.UI.startApplication(name);
+        });
+    </script>
+</body>
+</html>
