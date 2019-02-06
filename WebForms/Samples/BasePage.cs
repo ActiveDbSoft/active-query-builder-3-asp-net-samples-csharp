@@ -6,5 +6,6 @@ namespace WebForms_Samples.Samples
 {
     public class BasePage : Page
     {
+
     }
 }

@@ -468,13 +468,27 @@
 
         function getParams() {
             var result = [];
-            var params = AQB.Web.QueryBuilder.queryParams;
+            var params = getUniqueQueryParams();
 
             for (var i = 0; i < params.length; i++) {
                 result.push({
                     Name: params[i].FullName,
                     Value: $('input.' + params[i].Name).val()
                 });
+            }
+
+            return result;
+        }
+
+        function getUniqueQueryParams() {
+            var params = AQB.Web.QueryBuilder.queryParams;
+            var result = [];
+
+            for (var i = 0, l = params.length; i < l; i++) {
+                var param = params[i];
+
+                if (result.find(r => r.FullName === param.FullName) == null)
+                    result.push(param);
             }
 
             return result;

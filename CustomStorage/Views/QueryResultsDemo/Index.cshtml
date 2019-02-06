@@ -139,7 +139,7 @@
 
             onCriteriaBuilderChanged(cb,
                 function () {
-                    var params = AQB.Web.QueryBuilder.queryParams;
+                    var params = getUniqueQueryParams();
                     clearParams();
 
                     if (params.length) {
@@ -190,7 +190,7 @@
 
         function getParams() {
             var result = [];
-            var params = AQB.Web.QueryBuilder.queryParams;
+            var params = getUniqueQueryParams();
 
             for (var i = 0; i < params.length; i++) {
                 result.push({
@@ -288,6 +288,20 @@
             }).done(function () {
                 AQB.Web.QueryBuilder.update();
             }).fail(errorCallback);
+        }
+
+        function getUniqueQueryParams() {
+            var params = AQB.Web.QueryBuilder.queryParams;
+            var result = [];
+
+            for (var i = 0, l = params.length; i < l; i++) {
+                var param = params[i];
+
+                if (result.find(r => r.FullName === param.FullName) == null)
+                    result.push(param);
+            }
+
+            return result;
         }
     </script>
 }
