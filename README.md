@@ -1,6 +1,7 @@
 # C# Demo Projects for [Active Query Builder ASP.NET Edition](https://www.activequerybuilder.com/product_asp.html)
 
 ##### Also, check [the VB.NET Demo projects repository](https://github.com/ActiveDbSoft/active-query-builder-3-asp-net-samples-vb) for the same.
+##### Demo projects for ASP.NET Core reside in a separate repository: [ASP.NET Core Demo projects repository](https://github.com/ActiveDbSoft/active-query-builder-3-asp-net-core-samples-csharp).
 #
 ## What is Active Query Builder?
 Active Query Builder is a Visual SQL Query Builder and SQL parser component suite for ASP.NET (WebForms, MVC and Core 2.0). 
@@ -19,7 +20,8 @@ A brief description of each project can be found below.
 
 ##### Prerequisites:
 - Visual Studio 2012 or higher,
-- .NET Framework 4.0 or higher.
+- .NET Framework 4.0 or higher for WebForms,
+- .NET Framework 4.6.2 or higher for MVC.
 
 ##### Dependencies:
 - [Active Query Builder Core](https://www.nuget.org/packages/ActiveQueryBuilder.Core/),
@@ -52,8 +54,6 @@ All samples are arranged by several demo projects according to the development e
 - MVC demo project
 - Client-side JavaScript rendering project 
 - Custom server-side objects storage demo project
-
-Note: **ASP.NET Core demo projects** require the special setup of your development environment, so they are out of the scope of this repository. Please download the full Active Query Builder installation package and find them in the "%USERPROFILE%\Documents\Active Query Builder 3 ASP.NET Examples\AspNetCoreSamples.sln" solution.
 
 The Client-side JavaScript rendering project additionally includes the **React**, **Webpack** and **Electron** demo projects. Their Readme files can be found in appropriate subfolders inside the "JavaScript/Sctipts" folder.
 
