@@ -1,4 +1,4 @@
-# C# Demo Projects for [Active Query Builder ASP.NET Edition](https://www.activequerybuilder.com/product_asp.html)
+# ASP.NET C# Demo Projects for [Active Query Builder ASP.NET Edition](https://www.activequerybuilder.com/product_asp.html)
 
 ##### Also, check [the VB.NET Demo projects repository](https://github.com/ActiveDbSoft/active-query-builder-3-asp-net-samples-vb) for the same.
 ##### Demo projects for ASP.NET Core reside in a separate repository: [ASP.NET Core Demo projects repository](https://github.com/ActiveDbSoft/active-query-builder-3-asp-net-core-samples-csharp).
