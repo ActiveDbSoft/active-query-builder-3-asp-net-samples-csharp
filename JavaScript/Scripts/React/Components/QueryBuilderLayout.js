@@ -7,7 +7,8 @@ export default class QueryBuilderLayout extends Component {
         // See the ReactQueryBuilderController.cs code for details.
         var name = 'React';
 
-        AQB.Web.UI.QueryBuilder(name, this.querybuilder, { useDefaultTheme: false });
+        window.AQB = AQB;
+        AQB.Web.UI.QueryBuilder(name, this.querybuilder);
         AQB.Web.UI.ObjectTreeView(name, this.treeview);
         AQB.Web.UI.SubQueryNavigationBar(name, this.navbar);
         AQB.Web.UI.Canvas(name, this.canvas);
@@ -16,7 +17,6 @@ export default class QueryBuilderLayout extends Component {
         AQB.Web.UI.SqlEditor(name, this.sql);
 
         AQB.Web.UI.startApplication();
-        window.AQB = AQB;
     }
 
     render() {

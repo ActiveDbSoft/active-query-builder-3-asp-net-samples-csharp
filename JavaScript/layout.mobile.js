@@ -27,8 +27,7 @@ function mobile(qb, lay) {
             userQueriesParent.parent().click(() => showMobileComponents([userQueriesParent, left]));
         }
 
-        var closeLeft = createMobileCloseButton('left', qb._useDefaultTheme,
-            () => hideMobileComponents([treeViewParent, userQueriesParent, left]));
+        var closeLeft = createMobileCloseButton('left', () => hideMobileComponents([treeViewParent, userQueriesParent, left]));
 
         left.append(closeLeft);
     }
@@ -41,7 +40,7 @@ function mobile(qb, lay) {
         if (qb.EditorComponent)
             subscribeComponentToTap(qb.EditorComponent, bottom);
 
-        const closeGrid = createMobileCloseButton('bottom', qb._useDefaultTheme, () => hideMobileComponents([bottom]));
+        const closeGrid = createMobileCloseButton('bottom', () => hideMobileComponents([bottom]));
         bottom.append(closeGrid);
     }
 }
@@ -51,11 +50,9 @@ function subscribeComponentToTap(component, bottom) {
     parent.parent().click(() => showMobileComponents([bottom]));
 }
 
-function createMobileCloseButton(modif, useDefTheme, callback) {
+function createMobileCloseButton(modif, callback) {
     const cls = `ui-widget-header close-mobile-component close-mobile-component--${modif}`;
-
-    if (useDefTheme)
-        cls.addClass('qb-widget-header');
+    cls.addClass('qb-widget-header');
 
     return $(`<div class="${cls}"></div>`)
         .html(icons[modif])

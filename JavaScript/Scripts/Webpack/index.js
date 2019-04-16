@@ -4,6 +4,7 @@ import AQB from '../../aqb.client';
 // See the WebpackQueryBuilderController.cs code for details.
 var name = 'Webpack';
 
+window.AQB = AQB;
 var qb = document.getElementById('qb');
 var treeview = document.getElementById('treeview');
 var navbar = document.getElementById('navbar');
@@ -12,7 +13,7 @@ var statusbar = document.getElementById('statusbar');
 var grid = document.getElementById('grid');
 var sql = document.getElementById('sql');
 
-AQB.Web.UI.QueryBuilder(name, qb, { useDefaultTheme: false });
+AQB.Web.UI.QueryBuilder(name, qb);
 AQB.Web.UI.ObjectTreeView(name, treeview);
 AQB.Web.UI.SubQueryNavigationBar(name, navbar);
 AQB.Web.UI.Canvas(name, canvas);
@@ -21,5 +22,3 @@ AQB.Web.UI.Grid(name, grid);
 AQB.Web.UI.SqlEditor(name, sql);
 
 AQB.Web.UI.startApplication();
-
-window.AQB = AQB;

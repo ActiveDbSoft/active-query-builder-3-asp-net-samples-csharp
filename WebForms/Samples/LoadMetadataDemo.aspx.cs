@@ -89,6 +89,8 @@ namespace WebForms_Samples.Samples
             {
                 metadataContainer.EndUpdate();
             }
+
+            queryBuilder1.MetadataStructure.Refresh();
         }
 
         //////////////////////////////////////////////////////////////////////////
@@ -107,6 +109,7 @@ namespace WebForms_Samples.Samples
 
             queryBuilder1.MetadataProvider = null;
             queryBuilder1.MetadataContainer.ItemMetadataLoading += way2ItemMetadataLoading;
+            queryBuilder1.MetadataStructure.Refresh();
         }
 
         private void way2ItemMetadataLoading(object sender, MetadataItem item, MetadataType types)
@@ -194,6 +197,7 @@ namespace WebForms_Samples.Samples
 
                 queryBuilder1.MetadataProvider = new EventMetadataProvider();
                 ((EventMetadataProvider)queryBuilder1.MetadataProvider).ExecSQL += way3EventMetadataProvider_ExecSQL;
+                queryBuilder1.MetadataStructure.Refresh();
 
             }
             catch (Exception ex)
@@ -304,6 +308,8 @@ namespace WebForms_Samples.Samples
             {
                 queryBuilder1.MetadataContainer.EndUpdate();
             }
+
+            queryBuilder1.MetadataStructure.Refresh();
         }
 
         private static DbType TypeToDbType(Type type)

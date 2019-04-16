@@ -25,7 +25,6 @@ namespace MVC_Samples.Controllers
             var qb = QueryBuilderStore.Get("ToggleUseAltNames");
 
             qb.SQLFormattingOptions.UseAltNames = !qb.SQLFormattingOptions.UseAltNames;
-            qb.SQLGenerationOptions.UseAltNames = !qb.SQLGenerationOptions.UseAltNames;
 
             // Reload metadata structure to refill it with real or alternate names.
             // Note: reloading the structure does not reload the metadata container. 
@@ -40,7 +39,6 @@ namespace MVC_Samples.Controllers
             var queryBuilder = QueryBuilderStore.Factory.DB2("ToggleUseAltNames");
 
             queryBuilder.SQLFormattingOptions.UseAltNames = false;
-            queryBuilder.SQLGenerationOptions.UseAltNames = false;
             
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -58,9 +56,10 @@ namespace MVC_Samples.Controllers
 
         private string GetDefaultSql()
         {
-            return @"Select ""Employees"".""Employee ID"", ""Employees"".""First Name"", ""Employees"".""Last Name"", ""Employee Photos"".""Photo Image"", ""Employee Resumes"".Resume From ""Employee Photos"" Inner Join
-			""Employees"" On ""Employee Photos"".""Employee ID"" = ""Employees"".""Employee ID"" Inner Join
-			""Employee Resumes"" On ""Employee Resumes"".""Employee ID"" = ""Employees"".""Employee ID""";
-        }       
+            return @"Select ""Employees"".""Employee ID"", ""Employees"".""First Name"", ""Employees"".""Last Name"", "+
+                @"""Employee Photos"".""Photo Image"", ""Employee Resumes"".Resume From ""Employee Photos"" Inner Join "+
+                @"""Employees"" On ""Employee Photos"".""Employee ID"" = ""Employees"".""Employee ID"" Inner Join " +
+                @"""Employee Resumes"" On ""Employee Resumes"".""Employee ID"" = ""Employees"".""Employee ID""";
+        }
     }
 }

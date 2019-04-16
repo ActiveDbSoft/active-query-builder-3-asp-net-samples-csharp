@@ -4,6 +4,7 @@ const AQB = require('../../aqb.client.js');
 // See the ElectronQueryBuilderController.cs code for details.
 var instanceId = 'Electron';
 
+window.AQB = AQB;
 var qb = document.getElementById('qb');
 var treeview = document.getElementById('treeview');
 var navbar = document.getElementById('navbar');
@@ -12,7 +13,8 @@ var statusbar = document.getElementById('statusbar');
 var grid = document.getElementById('grid');
 var sql = document.getElementById('sql');
 
-AQB.Web.UI.QueryBuilder(instanceId, qb, { host: 'http://localhost:1066' });
+AQB.Web.host = 'http://localhost:1066';
+AQB.Web.UI.QueryBuilder(instanceId, qb);
 AQB.Web.UI.ObjectTreeView(instanceId, treeview);
 AQB.Web.UI.SubQueryNavigationBar(instanceId, navbar);
 AQB.Web.UI.Canvas(instanceId, canvas);
@@ -21,5 +23,3 @@ AQB.Web.UI.Grid(instanceId, grid);
 AQB.Web.UI.SqlEditor(instanceId, sql);
 
 AQB.Web.UI.startApplication('http://localhost:1066/CreateQueryBuilder/CreateQueryBuilder', instanceId);
-
-window.AQB = AQB;

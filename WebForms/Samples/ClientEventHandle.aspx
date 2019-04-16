@@ -8,8 +8,7 @@
         <p>Performing specific actions in the process of building a SQL query.</p>
     </div>
     <div class="col-md-12">
-        <!--Turn the UseDefaultTheme to False for not using the default theme. You will have to load the JQueryUI library then. -->
-        <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="false" />
+        <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" />
         <div class="qb-ui-layout">
             <div class="qb-ui-layout__top">
                 <div class="qb-ui-layout__left">

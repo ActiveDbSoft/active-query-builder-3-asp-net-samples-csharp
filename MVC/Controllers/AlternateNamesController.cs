@@ -29,7 +29,7 @@ namespace MVC_Samples.Controllers
             queryBuilder.SQLFormattingOptions.UseAltNames = true;
 
             // Turn displaying of alternate names on in the visual UI
-            queryBuilder.SQLGenerationOptions.UseAltNames = true;
+            queryBuilder.SQLFormattingOptions.UseAltNames = true;
             
             queryBuilder.SQLQuery.SQLUpdated += OnSQLUpdated;
 

@@ -32,7 +32,8 @@ namespace JavaScript.Controllers
                 // The necessary initialization procedures to setup SQL syntax and the source of metadata will be performed automatically 
                 // according to directives in the special configuration section of 'Web.config' file.
 
-                // This behavior is enabled by the SessionStore.WebConfig() method call in the Application_Start method in Global.asax.cs file.
+                // This behavior is enabled by the QueryBuilderStore.WebConfig() method call in the Application_Start method in Global.asax.cs file.
+                // See qb.ConfiguredBy to get information about actual default settings
 
                 // Set default query
                 qb.SQL = GetDefaultSql();

@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+  "ActiveQueryBuilder.Core": "3.5.14.1126",
+  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.5.14.1126",
+  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.5.14.1126",
+  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.5.14.1126",
+  "ActiveQueryBuilder.Web.MVC": "3.4.3",
+    "jQuery": "1.10.2",
+    "Microsoft.AspNet.Razor": "3.2.3",
+    "Nancy": "1.4.5",
+    "Nancy.Hosting.Aspnet": "1.4.1",
+    "Nancy.Viewengines.Razor": "1.4.3",
+    "Newtonsoft.Json": "6.0.4"
+  },
+  "frameworks": {
+    "net45": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}

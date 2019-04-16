@@ -19,10 +19,10 @@ namespace WebForms_Samples.Samples
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
-            Canvas1.QueryBuilder = qb;
             Grid1.QueryBuilder = qb;
             SubQueryNavigationBar1.QueryBuilder = qb;
             StatusBar1.QueryBuilder = qb;
+            SqlEditor1.QueryBuilder = qb;
         }
 
         private QueryBuilder CreateQueryBuilder()

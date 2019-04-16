@@ -31,11 +31,8 @@ namespace WebForms_Samples.Samples
             // Create an instance of the QueryBuilder object
             var queryBuilder = QueryBuilderStore.Factory.DB2("AlternateNames");
 
-            // Turn displaying of alternate names on in the text of result SQL query
+            // Turn displaying of alternate names on in the text of result SQL query and in the visual UI
             queryBuilder.SQLFormattingOptions.UseAltNames = true;
-
-            // Turn displaying of alternate names on in the visual UI
-            queryBuilder.SQLGenerationOptions.UseAltNames = true;
 
             queryBuilder.SQLQuery.SQLUpdated += OnSQLUpdated;
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;

@@ -18,7 +18,7 @@
                     <li><a href="#way4">Fill from DataSet</a></li>
                 </ul>
                 <div id="way1">
-                    <div>This method demonstrates the direct access to the internal matadata objects collection (MetadataContainer).</div>
+                    <div>This method demonstrates the direct access to the internal metadata objects collection (MetadataContainer).</div>
                     <ASP:Button runat="server" OnClick="Way1" Text="Load Metadata" />
                 </div>
                 <div id="way2">
@@ -39,8 +39,7 @@
             </div>
         </div>
         <div class="col-md-12">
-            <!--Turn the UseDefaultTheme to False for not using the default theme. You will have to load the JQueryUI library then. -->
-            <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="false" />
+            <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" />
             <div class="qb-ui-layout">
                 <div class="qb-ui-layout__top">
                     <div class="qb-ui-layout__left">

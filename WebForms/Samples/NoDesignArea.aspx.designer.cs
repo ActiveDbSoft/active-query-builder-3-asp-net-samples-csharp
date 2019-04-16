@@ -40,15 +40,6 @@ namespace WebForms_Samples.Samples {
         protected global::ActiveQueryBuilder.Web.WebForms.SubQueryNavigationBar SubQueryNavigationBar1;
         
         /// <summary>
-        /// Canvas1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ActiveQueryBuilder.Web.WebForms.Canvas Canvas1;
-        
-        /// <summary>
         /// StatusBar1 control.
         /// </summary>
         /// <remarks>
@@ -65,5 +56,14 @@ namespace WebForms_Samples.Samples {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::ActiveQueryBuilder.Web.WebForms.Grid Grid1;
+        
+        /// <summary>
+        /// SqlEditor1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ActiveQueryBuilder.Web.WebForms.SqlEditor SqlEditor1;
     }
 }

@@ -10,7 +10,7 @@ Sample of the XML file metadata specification:
 
 	  <aspQueryBuilder>
 	    <syntaxProvider type="ActiveQueryBuilder.Core.MySQLSyntaxProvider, ActiveQueryBuilder.Core" />
-	    <metadataSource xml="C:\Parh\To\YourMetadataFile"></metadataSource>
+	    <metadataSource xml="C:\Path\To\YourMetadataFile"></metadataSource>
 	  </aspQueryBuilder>
 
 *Note* that the path to the XML file must be **absolute**.

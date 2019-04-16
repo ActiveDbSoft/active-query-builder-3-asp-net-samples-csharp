@@ -31,11 +31,8 @@ namespace WebForms_Samples.Samples
             // Create an instance of the QueryBuilder object
             var queryBuilder = QueryBuilderStore.Factory.DB2("ToggleUseAltNames");
 
-            // Turn displaying of alternate names on in the text of result SQL query
+            // Turn displaying of alternate names on in the text of result SQL query and in the visual UI
             queryBuilder.SQLFormattingOptions.UseAltNames = false;
-
-            // Turn displaying of alternate names on in the visual UI
-            queryBuilder.SQLGenerationOptions.UseAltNames = false;
             
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -69,7 +66,6 @@ namespace WebForms_Samples.Samples
             var qb = QueryBuilderStore.Get("ToggleUseAltNames");
 
             qb.SQLFormattingOptions.UseAltNames = !qb.SQLFormattingOptions.UseAltNames;
-            qb.SQLGenerationOptions.UseAltNames = !qb.SQLGenerationOptions.UseAltNames;
 
             // Reload metadata structure to refill it with real or alternate names.
             // Note: reloading the structure does not reload the metadata container. 

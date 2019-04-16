@@ -17,7 +17,7 @@
 </head>
 <body>
     <form runat="server">
-        <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" UseDefaultTheme="False" />
+        <AQB:QueryBuilderControl ID="QueryBuilderControl1" runat="server" />
         <div class="qb-ui-layout">
             <div class="qb-ui-layout__left">
                 <div class="qb-ui-structure-tabs">

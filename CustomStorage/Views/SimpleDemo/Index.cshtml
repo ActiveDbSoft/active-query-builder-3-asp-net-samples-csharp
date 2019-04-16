@@ -2,7 +2,7 @@
 @model ActiveQueryBuilder.Web.Server.QueryBuilder
 @{
     ViewBag.Title = "Custom Server-side Storage Demo";
-    var controls = Html.QueryBuilder(Model, s => { s.UseDefaultTheme = false; });
+    var controls = Html.QueryBuilder(Model);
 }
 
 <div class="row">

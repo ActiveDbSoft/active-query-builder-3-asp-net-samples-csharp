@@ -85,7 +85,7 @@ namespace MVC_Samples.Controllers
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = false;
-            
+
             // Bind Active Query Builder to a live database connection.
             queryBuilder.MetadataProvider = new SQLiteMetadataProvider
             {

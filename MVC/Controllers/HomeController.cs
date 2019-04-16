@@ -15,7 +15,7 @@ namespace MVC_Samples.Controllers
         }
 
 //CUT:PRO{{
-        public void Dispose()
+        public void DisposeStates()
         {
             QueryBuilderStore.Remove();
             QueryTransformerStore.Remove();
