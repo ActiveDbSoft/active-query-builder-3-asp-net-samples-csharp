@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Web;
 using System.Web.SessionState;
 using ActiveQueryBuilder.Core.QueryTransformer;
@@ -25,11 +26,23 @@ namespace WebForms_Samples.Handlers
 
         public void ProcessRequest(HttpContext context)
         {
-            var model = CreateFromPostData(context.Request) ?? CreateFromGetParams(context.Request);
-            var result = GetData(model);
-            var content = Newtonsoft.Json.JsonConvert.SerializeObject(result);
+            try
+            {
+                var model = CreateFromPostData(context.Request) ?? CreateFromGetParams(context.Request);
+                var result = GetData(model);
+                var content = Newtonsoft.Json.JsonConvert.SerializeObject(result);
 
-            context.Response.Write(content);
+                context.Response.Write(content);
+            }
+            catch (Exception e)
+            {
+                context.Response.Write(Newtonsoft.Json.JsonConvert.SerializeObject(new ErrorOutput { Error = e.Message }));
+            }
+        }
+
+        private class ErrorOutput
+        {
+            public string Error { get; set; }
         }
 
         private GridModel CreateFromGetParams(HttpRequest r)

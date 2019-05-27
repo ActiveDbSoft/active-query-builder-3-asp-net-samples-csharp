@@ -70,8 +70,13 @@ namespace MVC_Samples.Controllers
             }
             catch (Exception e)
             {
-                return new HttpStatusCodeResult((int)HttpStatusCode.BadRequest, e.Message);
+                return Json(new ErrorOutput { Error = e.Message }, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        private class ErrorOutput
+        {
+            public string Error { get; set; }
         }
 
         /// <summary>

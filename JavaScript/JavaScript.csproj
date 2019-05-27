@@ -114,6 +114,7 @@
     <Content Include="Scripts\Webpack\README.txt" />
     <Content Include="Scripts\Webpack\webpack.config.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Content\query-builder-template.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -155,13 +156,13 @@
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider"><Private>True</Private></Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.15.1127\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.18.1130\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.4\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.5\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.4\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.5\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>

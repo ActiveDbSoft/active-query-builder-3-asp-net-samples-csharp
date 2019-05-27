@@ -51,7 +51,7 @@
                 <div id="second-tabs" class="block-flat">
                     <ul>
                         <li><a href="#jx">JqxGrid</a></li>
-                        <li><a href="#js">JsGrid</a></li>
+                        <li><a id="jsgrid-tab" href="#js">JsGrid</a></li>
                         <li><a href="#rg">ReactDataGrid</a></li>
                         <li><a href="#je">JsonEditor</a></li>
                         <li><a href="#ur">Your implementation</a></li>
@@ -138,6 +138,10 @@
             $('.prev').button().click(function () { fillJsonEditor(fillJsonEditor.page - 1); return false; });
             AQB.Web.onCriteriaBuilderReady(subscribeToChanges);
             AQB.Web.onQueryBuilderReady(createExpressionEditor);
+
+            $('#jsgrid-tab').click(function() {
+                $("#jsgrid").jsGrid('refresh');
+            });
         });
 
         function onOpenQueryResults() {
@@ -177,18 +181,45 @@
         function createGrids(columns) {
             $('.alert-danger').hide();
 
-            createJqxGrid(columns);
-            createJsGrid(columns);
-            createReactGrid(columns);
-            fillJsonEditor(0);
+            testQuery(function() {
+                createJqxGrid(columns);
+                createJsGrid(columns);
+                createReactGrid(columns);
+                fillJsonEditor(0);
+            });
         }
 
         function updateGrids() {
             $('.alert-danger').hide();
-            dataAdapter.dataBind();
-            jsgrid.jsGrid();
-            reactGrid.updateRows();
-            fillJsonEditor(0);
+
+            testQuery(function() {
+                dataAdapter.dataBind();
+                jsgrid.jsGrid();
+                reactGrid.updateRows();
+                fillJsonEditor(0);
+            });
+        }
+
+        function testQuery(callback) {
+            $.ajax({
+                url: dataUrl,
+                dataType: "json",
+                data: {
+                    pagenum: 0,
+                    pagesize: 1
+                },
+                success: function(data) {
+                    if (data.Error)
+                        showError(data.Error);
+                    else {
+                        hideError();
+                        callback();
+                    }
+                },
+                error: function(xhr, error, text) {
+                    showError(text);
+                }
+            });
         }
 
         function createJqxGrid(columns) {
@@ -201,7 +232,6 @@
                     data.params = getParams();
                     return JSON.stringify(data);
                 },
-                loadError: errorCallback,
                 sort: function () {
                     $("#jqxgrid").jqxGrid('updatebounddata');
                 },
@@ -341,7 +371,7 @@
                             url: dataUrl,
                             dataType: "json",
                             data: {
-                                pagenum: filter.pageIndex,
+                                pagenum: filter.pageIndex - 1,
                                 pagesize: filter.pageSize,
                                 sortdatafield: filter.sortField,
                                 sortorder: filter.sortOrder
@@ -462,8 +492,14 @@
             });
         }
 
-        function errorCallback(xhr, error, statusText) {
+        function showError(statusText) {
             $('.alert-danger').show().text(statusText);
+            $("#second-tabs").hide();
+        }
+
+        function hideError() {
+            $('.alert-danger').hide();
+            $("#second-tabs").show();
         }
 
         function getParams() {
