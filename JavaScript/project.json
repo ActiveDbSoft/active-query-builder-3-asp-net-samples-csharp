@@ -1,10 +1,10 @@
 {
   "dependencies": {
-  "ActiveQueryBuilder.Core": "3.5.18.1130",
-  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.5.18.1130",
-  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.5.18.1130",
-  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.5.18.1130",
-  "ActiveQueryBuilder.Web.MVC": "3.4.5",
+  "ActiveQueryBuilder.Core": "3.5.20.1133",
+  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.5.20.1133",
+  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.5.20.1133",
+  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.5.20.1133",
+  "ActiveQueryBuilder.Web.MVC": "3.4.6",
     "Antlr": "3.4.1.9004",
     "bootstrap": "3.0.0",
     "jQuery": "1.10.2",
@@ -19,6 +19,7 @@
     "Modernizr": "2.6.2",
     "Newtonsoft.Json": "6.0.4",
     "Respond": "1.2.0",
+    "System.Data.SQLite.Core": "1.0.109",
     "WebGrease": "1.5.2"
   },
   "frameworks": {

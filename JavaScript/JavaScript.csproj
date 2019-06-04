@@ -73,12 +73,14 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AngularJSClientRenderingController.cs" />
     <Compile Include="Controllers\MobileDemoController.cs" />
+    <Compile Include="Controllers\QueryResultsDemoController.cs" />
     <Compile Include="Controllers\WebpackClientRenderingController.cs" />
     <Compile Include="Controllers\ReactClientRenderingController.cs" />
     <Compile Include="Controllers\SimpleClientRenderingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DataBaseHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +144,7 @@
     <Content Include="Views\AngularJSClientRendering\Index.cshtml" />
     <Content Include="Views\MobileDemo\Index.cshtml" />
     <Content Include="Views\ChangeConnection\Index.cshtml" />
+    <Content Include="Views\QueryResultsDemo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -155,14 +158,17 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider"><Private>True</Private></Reference>
+    <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
+		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.5.20.1133\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+	</Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.18.1130\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.20.1133\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.5\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.6\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.5\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.6\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,10 @@
-﻿{
+{
   "dependencies": {
-    "ActiveQueryBuilder.Core": "3.5.18.1130",
-    "ActiveQueryBuilder.Web.MVC": "3.4.5",
+  "ActiveQueryBuilder.Core": "3.5.20.1133",
+  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.5.20.1133",
+  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.5.20.1133",
+  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.5.20.1133",
+  "ActiveQueryBuilder.Web.MVC": "3.4.6",
     "Antlr": "3.5.0.2",
     "Autofac": "4.9.2",
     "Autofac.WebApi2": "4.2.1",

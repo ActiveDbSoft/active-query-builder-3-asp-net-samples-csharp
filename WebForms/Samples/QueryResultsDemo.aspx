@@ -145,7 +145,7 @@
         });
 
         function onOpenQueryResults() {
-            var cb = AQB.Web.CriteriaBuilderContainer.first();
+            var cb = window.criteriaBuilder;
 
             onCriteriaBuilderChanged(cb,
                 function () {
@@ -163,6 +163,7 @@
         };
 
         function subscribeToChanges(cb) {
+            window.criteriaBuilder = cb;
             cb.loadColumns();
 
             cb.on(cb.Events.CriteriaBuilderChanged,
