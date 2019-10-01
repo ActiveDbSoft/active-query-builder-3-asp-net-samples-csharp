@@ -1,0 +1,291 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "jQuery/1.10.2": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Razor/3.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Nancy/1.4.5": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Nancy.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Nancy.dll": {}
+        }
+      },
+      "Nancy.Hosting.Aspnet/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Nancy": "1.4.1"
+        },
+        "compile": {
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+        }
+      },
+      "Nancy.Viewengines.Razor/1.4.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "2.0.30506",
+          "Nancy": "1.4.3"
+        },
+        "compile": {
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+        },
+        "build": {
+          "build/Nancy.ViewEngines.Razor.targets": {}
+        }
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win": {
+      "jQuery/1.10.2": {
+        "type": "package"
+      },
+      "Microsoft.AspNet.Razor/3.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Nancy/1.4.5": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Nancy.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Nancy.dll": {}
+        }
+      },
+      "Nancy.Hosting.Aspnet/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Nancy": "1.4.1"
+        },
+        "compile": {
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+        }
+      },
+      "Nancy.Viewengines.Razor/1.4.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "2.0.30506",
+          "Nancy": "1.4.3"
+        },
+        "compile": {
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+        },
+        "build": {
+          "build/Nancy.ViewEngines.Razor.targets": {}
+        }
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "jQuery/1.10.2": {
+      "sha512": "uPspgAZqsXYOwLW+Kf3uRxdFAyX1EiEd6AWJhCsnZNVsUJmEbsZSxA0P+ku6oAhHI682TOSwkbmmJPwFgdY5cA==",
+      "type": "package",
+      "path": "jquery/1.10.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.10.2-vsdoc.js",
+        "Content/Scripts/jquery-1.10.2.js",
+        "Content/Scripts/jquery-1.10.2.min.js",
+        "Content/Scripts/jquery-1.10.2.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.10.2.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.10.2.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Razor/3.2.3": {
+      "sha512": "leta+Q73O7+pR8ThTqXmwaNMSqwZQQ3BHfpUHd8S1XaUWe1jRVLitMHqo1AmY7wPNLyankPA1beiUKEGj8Q3Dw==",
+      "type": "package",
+      "path": "microsoft.aspnet.razor/3.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/System.Web.Razor.dll",
+        "lib/net45/System.Web.Razor.xml",
+        "microsoft.aspnet.razor.3.2.3.nupkg.sha512",
+        "microsoft.aspnet.razor.nuspec"
+      ]
+    },
+    "Nancy/1.4.5": {
+      "sha512": "2wRDjtSydQYPZMJbzcPsDvMJ1D+qKyiC3BuLd1pKGezinbWTq/ZCt2yb47JC9G7phgLhg1R0Ab29lYZULt2yEg==",
+      "type": "package",
+      "path": "nancy/1.4.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Nancy.dll",
+        "lib/net40/Nancy.xml",
+        "nancy.1.4.5.nupkg.sha512",
+        "nancy.nuspec"
+      ]
+    },
+    "Nancy.Hosting.Aspnet/1.4.1": {
+      "sha512": "CShS2vQSHnCArAL+ZJsT76GV8cwsVwDEtsk+OuPkUm7+2DEstGZGBMaxqaMvw0Q/BfLHll9F/39XMPXEkN2Dmw==",
+      "type": "package",
+      "path": "nancy.hosting.aspnet/1.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/web.config.transform",
+        "lib/net40/Nancy.Hosting.Aspnet.dll",
+        "lib/net40/Nancy.Hosting.Aspnet.xml",
+        "nancy.hosting.aspnet.1.4.1.nupkg.sha512",
+        "nancy.hosting.aspnet.nuspec"
+      ]
+    },
+    "Nancy.Viewengines.Razor/1.4.3": {
+      "sha512": "9ADC/AWQ0s4qv3KHVlITe+VTkH0KK0Cj55BCpjgDVvG5VSOXQ2ScPh7xI5MuEtETxYdgaX+0pdriq62MlvEuBQ==",
+      "type": "package",
+      "path": "nancy.viewengines.razor/1.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "BuildProviders/Nancy.ViewEngines.Razor.BuildProviders.XML",
+        "BuildProviders/Nancy.ViewEngines.Razor.BuildProviders.dll",
+        "build/Nancy.ViewEngines.Razor.targets",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/Nancy.ViewEngines.Razor.dll",
+        "lib/net40/Nancy.ViewEngines.Razor.xml",
+        "nancy.viewengines.razor.1.4.3.nupkg.sha512",
+        "nancy.viewengines.razor.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/6.0.4": {
+      "sha512": "FyQLmEpjsCrEP+znauLDGAi+h6i9YnaMkITlfIoiM4RYyX3nki306bTHsr/0okiIvIc7BJhQTbOAIZVocccFUw==",
+      "type": "package",
+      "path": "newtonsoft.json/6.0.4",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netcore45/Newtonsoft.Json.dll",
+        "lib/netcore45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.6.0.4.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Microsoft.AspNet.Razor >= 3.2.3",
+      "Nancy >= 1.4.5",
+      "Nancy.Hosting.Aspnet >= 1.4.1",
+      "Nancy.Viewengines.Razor >= 1.4.3",
+      "Newtonsoft.Json >= 6.0.4",
+      "jQuery >= 1.10.2"
+    ],
+    ".NETFramework,Version=v4.5": []
+  },
+  "packageFolders": {
+    "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\NancyFX\\NancyFX.csproj",
+      "projectName": "NancyFX",
+      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\NancyFX\\NancyFX.csproj",
+      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\NancyFX\\project.json",
+      "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages",
+      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\NancyFX\\obj\\",
+      "projectStyle": "ProjectJson",
+      "validateRuntimeAssets": true,
+      "configFilePaths": [
+        "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\.nuget\\NuGet.Config",
+        "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "dependencies": {
+      "Microsoft.AspNet.Razor": "[3.2.3, )",
+      "Nancy": "[1.4.5, )",
+      "Nancy.Hosting.Aspnet": "[1.4.1, )",
+      "Nancy.Viewengines.Razor": "[1.4.3, )",
+      "Newtonsoft.Json": "[6.0.4, )",
+      "jQuery": "[1.10.2, )"
+    },
+    "frameworks": {
+      "net45": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      }
+    }
+  }
+}

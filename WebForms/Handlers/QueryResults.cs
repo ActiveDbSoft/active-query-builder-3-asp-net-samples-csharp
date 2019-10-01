@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 using ActiveQueryBuilder.Core.QueryTransformer;
@@ -8,7 +10,7 @@ using WebForms_Samples.Helpers;
 
 namespace WebForms_Samples.Handlers
 {
-    public class QueryResults : IHttpHandler, IRequiresSessionState
+    public abstract class QueryResults<T> : IHttpHandler, IRequiresSessionState where T : class
     {
         /// <summary>
         /// You will need to configure this handler in the Web.config file of your 
@@ -29,7 +31,7 @@ namespace WebForms_Samples.Handlers
             try
             {
                 var model = CreateFromPostData(context.Request) ?? CreateFromGetParams(context.Request);
-                var result = GetData(model);
+                var result = GetDataForModel(model);
                 var content = Newtonsoft.Json.JsonConvert.SerializeObject(result);
 
                 context.Response.Write(content);
@@ -45,53 +47,25 @@ namespace WebForms_Samples.Handlers
             public string Error { get; set; }
         }
 
-        private GridModel CreateFromGetParams(HttpRequest r)
-        {
-            //filterscount=0&groupscount=0&=0&=10&recordstartindex=0&recordendindex=10
-            return new GridModel
-            {
-                Pagenum = int.Parse(r.Params["pagenum"]),
-                Pagesize = int.Parse(r.Params["pagesize"]),
-                Sortdatafield = r.Params["sortdatafield"],
-                Sortorder = r.Params["sortorder"]
-            };
-        }
-
-        private GridModel CreateFromPostData(HttpRequest r)
+        private T CreateFromPostData(HttpRequest r)
         {
             string input = new StreamReader(r.InputStream).ReadToEnd();
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GridModel>(input);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(input);
         }
 
-        public static object GetData(GridModel m)
-        {
-            var qt = QueryTransformerStore.Get("QueryResults");
+        public abstract object GetDataForModel(T m);
+        public abstract T CreateFromGetParams(HttpRequest r);
 
-            qt.Skip((m.Pagenum * m.Pagesize).ToString());
-            qt.Take(m.Pagesize == 0 ? "" : m.Pagesize.ToString());
-
-            if (!string.IsNullOrEmpty(m.Sortdatafield))
-            {
-                qt.Sortings.Clear();
-
-                if (!string.IsNullOrEmpty(m.Sortorder))
-                {
-                    var c = qt.Columns.FindColumnByResultName(m.Sortdatafield);
-
-                    if (c != null)
-                        qt.OrderBy(c, m.Sortorder.ToLower() == "asc");
-                }
-            }
-
-            return GetData(qt);
-        }
-
-        private static object GetData(QueryTransformer qt)
+        public static List<Dictionary<string, object>> GetData(QueryTransformer qt, Param[] _params)
         {
             var conn = qt.Query.SQLContext.MetadataProvider.Connection;
             var sql = qt.SQL;
-            
-            return DataBaseHelper.GetData(conn, sql);
+
+            if (_params != null)
+                foreach (var p in _params)
+                    p.DataType = qt.Query.QueryParameters.First(qp => qp.FullName == p.Name).DataType;
+
+            return DataBaseHelper.GetData(conn, sql, _params);
         }
 
         #endregion
@@ -103,5 +77,6 @@ namespace WebForms_Samples.Handlers
         public int Pagesize { get; set; }
         public string Sortdatafield { get; set; }
         public string Sortorder { get; set; }
+        public Param[] Params { get; set; }
     }
 }

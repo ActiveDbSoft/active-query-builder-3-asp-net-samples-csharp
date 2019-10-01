@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\src\Samples\ASP.NET\Samples C#\CustomStorage\project.lock.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">ProjectJson</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">4.9.3</NuGetToolVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\newtonsoft.json\6.0.4</PkgNewtonsoft_Json>
+    <PkgWebGrease Condition=" '$(PkgWebGrease)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\webgrease\1.5.2</PkgWebGrease>
+    <PkgModernizr Condition=" '$(PkgModernizr)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\modernizr\2.6.2</PkgModernizr>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\jquery\1.10.2</PkgjQuery>
+  </PropertyGroup>
+</Project>

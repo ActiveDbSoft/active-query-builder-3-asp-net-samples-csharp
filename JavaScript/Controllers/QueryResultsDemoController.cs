@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using ActiveQueryBuilder.Core;
 using ActiveQueryBuilder.Core.QueryTransformer;
@@ -57,6 +56,19 @@ namespace JavaScript.Controllers
 
         private ActionResult GetData(QueryTransformer qt, Param[] _params)
         {
+            try
+            {
+                var data = Execute(qt, _params);
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(new ErrorOutput { Error = e.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        private List<Dictionary<string, object>> Execute(QueryTransformer qt, Param[] _params)
+        {
             var conn = qt.Query.SQLContext.MetadataProvider.Connection;
             var sql = qt.SQL;
 
@@ -64,14 +76,34 @@ namespace JavaScript.Controllers
                 foreach (var p in _params)
                     p.DataType = qt.Query.QueryParameters.First(qp => qp.FullName == p.Name).DataType;
 
+            return DataBaseHelper.GetData(conn, sql, _params);
+        }
+
+        [HttpPost]
+        public ActionResult SelectRecordsCount(Param[] _params)
+        {
+            var qb = QueryBuilderStore.Get(instanceId);
+            var qt = QueryTransformerStore.Get(instanceId);
+            var qtForSelectRecordsCount = QueryTransformerStore.Create(instanceId + "_for_records_count");
+
+            qtForSelectRecordsCount.QueryProvider = qb.SQLQuery;
+            qtForSelectRecordsCount.Assign(qt);
+            qtForSelectRecordsCount.Skip("");
+            qtForSelectRecordsCount.Take("");
+            qtForSelectRecordsCount.SelectRecordsCount("recCount");
+            
             try
             {
-                var data = DataBaseHelper.GetData(conn, sql, _params);
-                return Json(data, JsonRequestBehavior.AllowGet);
+                var data = Execute(qtForSelectRecordsCount, _params);
+                return Json(data.First().Values.First(), JsonRequestBehavior.AllowGet);
             }
             catch (Exception e)
             {
                 return Json(new ErrorOutput { Error = e.Message }, JsonRequestBehavior.AllowGet);
+            }
+            finally
+            {
+                QueryTransformerStore.Remove(instanceId + "_for_records_count");
             }
         }
 

@@ -1,0 +1,754 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "Antlr/3.4.1.9004": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
+      "AspNet.ScriptManager.bootstrap/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "bootstrap": "[3.0.0, 3.0.1)"
+        },
+        "compile": {
+          "lib/net45/AspNet.ScriptManager.bootstrap.dll": {}
+        },
+        "runtime": {
+          "lib/net45/AspNet.ScriptManager.bootstrap.dll": {}
+        }
+      },
+      "AspNet.ScriptManager.jQuery/1.10.2": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.10.2, 1.10.3)"
+        },
+        "compile": {
+          "lib/net45/AspNet.ScriptManager.jQuery.dll": {}
+        },
+        "runtime": {
+          "lib/net45/AspNet.ScriptManager.jQuery.dll": {}
+        }
+      },
+      "bootstrap/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "jquery": "1.9.0"
+        }
+      },
+      "jQuery/1.10.2": {
+        "type": "package"
+      },
+      "log4net/2.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/log4net.dll": {}
+        }
+      },
+      "Microsoft.AspNet.FriendlyUrls/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.FriendlyUrls.Core": "1.0.2"
+        }
+      },
+      "Microsoft.AspNet.FriendlyUrls.Core/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+        }
+      },
+      "Microsoft.AspNet.ScriptManager.MSAjax/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.ScriptManager.MSAjax.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.ScriptManager.MSAjax.dll": {}
+        }
+      },
+      "Microsoft.AspNet.ScriptManager.WebForms/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.ScriptManager.WebForms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.ScriptManager.WebForms.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization.WebForms/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "1.1.3",
+          "Microsoft.Web.Infrastructure": "(, )"
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Web.Optimization.WebForms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Web.Optimization.WebForms.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Modernizr/2.6.2": {
+        "type": "package"
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Respond/1.2.0": {
+        "type": "package"
+      },
+      "System.Data.SQLite.Core/1.0.109": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Data.SQLite.dll": {}
+        },
+        "build": {
+          "build/net45/System.Data.SQLite.Core.targets": {}
+        }
+      },
+      "WebGrease/1.5.2": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win": {
+      "Antlr/3.4.1.9004": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
+      "AspNet.ScriptManager.bootstrap/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "bootstrap": "[3.0.0, 3.0.1)"
+        },
+        "compile": {
+          "lib/net45/AspNet.ScriptManager.bootstrap.dll": {}
+        },
+        "runtime": {
+          "lib/net45/AspNet.ScriptManager.bootstrap.dll": {}
+        }
+      },
+      "AspNet.ScriptManager.jQuery/1.10.2": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.10.2, 1.10.3)"
+        },
+        "compile": {
+          "lib/net45/AspNet.ScriptManager.jQuery.dll": {}
+        },
+        "runtime": {
+          "lib/net45/AspNet.ScriptManager.jQuery.dll": {}
+        }
+      },
+      "bootstrap/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "jquery": "1.9.0"
+        }
+      },
+      "jQuery/1.10.2": {
+        "type": "package"
+      },
+      "log4net/2.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net45-full/log4net.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/log4net.dll": {}
+        }
+      },
+      "Microsoft.AspNet.FriendlyUrls/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.FriendlyUrls.Core": "1.0.2"
+        }
+      },
+      "Microsoft.AspNet.FriendlyUrls.Core/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+        }
+      },
+      "Microsoft.AspNet.ScriptManager.MSAjax/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.ScriptManager.MSAjax.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.ScriptManager.MSAjax.dll": {}
+        }
+      },
+      "Microsoft.AspNet.ScriptManager.WebForms/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.ScriptManager.WebForms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.ScriptManager.WebForms.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization.WebForms/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "1.1.3",
+          "Microsoft.Web.Infrastructure": "(, )"
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Web.Optimization.WebForms.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Web.Optimization.WebForms.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Modernizr/2.6.2": {
+        "type": "package"
+      },
+      "Newtonsoft.Json/6.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Respond/1.2.0": {
+        "type": "package"
+      },
+      "System.Data.SQLite.Core/1.0.109": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Data.SQLite.dll": {}
+        },
+        "build": {
+          "build/net45/System.Data.SQLite.Core.targets": {}
+        }
+      },
+      "WebGrease/1.5.2": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Antlr/3.4.1.9004": {
+      "sha512": "c1S+HBE+KYA5EBxtn25LEK02hHPH/tDQ6RviUTTCJpZIPoputtn8ArsQJy9lVJWZOnw37ufByO2Fmf1M8wpr8Q==",
+      "type": "package",
+      "path": "antlr/3.4.1.9004",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "antlr.3.4.1.9004.nupkg.sha512",
+        "antlr.nuspec",
+        "lib/Antlr3.Runtime.dll",
+        "lib/Antlr3.Runtime.pdb"
+      ]
+    },
+    "AspNet.ScriptManager.bootstrap/3.0.0": {
+      "sha512": "qJjpS/mAUKhzSO7F2qJxRtMBnEwP4Kz3gX5mGtUC5iAJmEr+7lnedvRpJQJWVxsMx3FE6rVQXpGmYAj13N0Epg==",
+      "type": "package",
+      "path": "aspnet.scriptmanager.bootstrap/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnet.scriptmanager.bootstrap.3.0.0.nupkg.sha512",
+        "aspnet.scriptmanager.bootstrap.nuspec",
+        "lib/net40/AspNet.ScriptManager.bootstrap.dll",
+        "lib/net45/AspNet.ScriptManager.bootstrap.dll"
+      ]
+    },
+    "AspNet.ScriptManager.jQuery/1.10.2": {
+      "sha512": "Ve/t3mdaMM7LOcW8sP8g+zhNTFdJKdnljVzEZpMO1tNHO50Wg9zkQuJIVL78FNxGG43d2z+J/0x0YGmZ6kr5OA==",
+      "type": "package",
+      "path": "aspnet.scriptmanager.jquery/1.10.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnet.scriptmanager.jquery.1.10.2.nupkg.sha512",
+        "aspnet.scriptmanager.jquery.nuspec",
+        "lib/net40/AspNet.ScriptManager.jQuery.dll",
+        "lib/net45/AspNet.ScriptManager.jQuery.dll"
+      ]
+    },
+    "bootstrap/3.0.0": {
+      "sha512": "d1JUd1ZjfbhGGTxjBSjCLIV+O//hZDcvI0hnaeTL3VHAD+6Z89vgPwV0K/nmPM4hZKq172iPV55lCSpohT6WmA==",
+      "type": "package",
+      "path": "bootstrap/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Content/bootstrap-theme.css",
+        "Content/Content/bootstrap-theme.min.css",
+        "Content/Content/bootstrap.css",
+        "Content/Content/bootstrap.min.css",
+        "Content/Scripts/bootstrap.js",
+        "Content/Scripts/bootstrap.min.js",
+        "Content/fonts/glyphicons-halflings-regular.eot",
+        "Content/fonts/glyphicons-halflings-regular.svg",
+        "Content/fonts/glyphicons-halflings-regular.ttf",
+        "Content/fonts/glyphicons-halflings-regular.woff",
+        "bootstrap.3.0.0.nupkg.sha512",
+        "bootstrap.nuspec"
+      ]
+    },
+    "jQuery/1.10.2": {
+      "sha512": "uPspgAZqsXYOwLW+Kf3uRxdFAyX1EiEd6AWJhCsnZNVsUJmEbsZSxA0P+ku6oAhHI682TOSwkbmmJPwFgdY5cA==",
+      "type": "package",
+      "path": "jquery/1.10.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.10.2-vsdoc.js",
+        "Content/Scripts/jquery-1.10.2.js",
+        "Content/Scripts/jquery-1.10.2.min.js",
+        "Content/Scripts/jquery-1.10.2.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.10.2.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.10.2.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "log4net/2.0.8": {
+      "sha512": "N41MQGHZImiCfn0cUuSBjZxrcNfIQCuCgQP0rpgB3J/NWponEh3lc1LxJEuIsPAR9Oc1jVvfkNNFCY1C5hf9LA==",
+      "type": "package",
+      "path": "log4net/2.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20-full/log4net.dll",
+        "lib/net20-full/log4net.xml",
+        "lib/net35-client/log4net.dll",
+        "lib/net35-client/log4net.xml",
+        "lib/net35-full/log4net.dll",
+        "lib/net35-full/log4net.xml",
+        "lib/net40-client/log4net.dll",
+        "lib/net40-client/log4net.xml",
+        "lib/net40-full/log4net.dll",
+        "lib/net40-full/log4net.xml",
+        "lib/net45-full/log4net.dll",
+        "lib/net45-full/log4net.xml",
+        "lib/netstandard1.3/log4net.dll",
+        "log4net.2.0.8.nupkg.sha512",
+        "log4net.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.FriendlyUrls/1.0.2": {
+      "sha512": "X2onMSqwGMmeZBqpu8Llz9eZc/CMH06W16UF6vmwTi35oTYqg02d/EaL5PareaC3AcKd+17q9F1ESNBTXJ6F9A==",
+      "type": "package",
+      "path": "microsoft.aspnet.friendlyurls/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/App_Start/RouteConfig.cs.pp",
+        "Content/Site.Mobile.Master.cs.pp",
+        "Content/Site.Mobile.Master.designer.cs.pp",
+        "Content/Site.Mobile.Master.pp",
+        "Content/ViewSwitcher.ascx.cs.pp",
+        "Content/ViewSwitcher.ascx.designer.cs.pp",
+        "Content/ViewSwitcher.ascx.pp",
+        "microsoft.aspnet.friendlyurls.1.0.2.nupkg.sha512",
+        "microsoft.aspnet.friendlyurls.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Microsoft.AspNet.FriendlyUrls.Core/1.0.2": {
+      "sha512": "X0tMJ5VWGbJ+oxXwdGTNw6sZnK0KL7uhE2F6krRWjXpv3rO/8hBOn3T+Ra5WWWkjEBP+im2gNWmzPJi6flZqXQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.friendlyurls.core/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.AspNet.FriendlyUrls.dll",
+        "lib/net40/Microsoft.AspNet.FriendlyUrls.xml",
+        "lib/net45/Microsoft.AspNet.FriendlyUrls.dll",
+        "lib/net45/Microsoft.AspNet.FriendlyUrls.xml",
+        "microsoft.aspnet.friendlyurls.core.1.0.2.nupkg.sha512",
+        "microsoft.aspnet.friendlyurls.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.ScriptManager.MSAjax/5.0.0": {
+      "sha512": "D6dJkw+xm/kXeL5rblPAhyeKrpNaDWeHBoG6tjMrOrvFX1A6GwwEY6y+cyFPR6ZWz5XBgC3xJPIBi/p3YIj40Q==",
+      "type": "package",
+      "path": "microsoft.aspnet.scriptmanager.msajax/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjax.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxApplicationServices.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxComponentModel.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxCore.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxGlobalization.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxHistory.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxNetwork.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxSerialization.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxTimer.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxWebForms.js",
+        "content/Scripts/WebForms/MSAjax/MicrosoftAjaxWebServices.js",
+        "lib/net45/Microsoft.ScriptManager.MSAjax.dll",
+        "microsoft.aspnet.scriptmanager.msajax.5.0.0.nupkg.sha512",
+        "microsoft.aspnet.scriptmanager.msajax.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.ScriptManager.WebForms/5.0.0": {
+      "sha512": "bWDoRE15wfr/6SYzes5AhZCpZZvtXClq6L1LmItY12Gs+ZLUJ29FrS5tfqmkPm2+UHQh81JmtR5DrolD3ZmoXg==",
+      "type": "package",
+      "path": "microsoft.aspnet.scriptmanager.webforms/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/WebForms/DetailsView.js",
+        "content/Scripts/WebForms/Focus.js",
+        "content/Scripts/WebForms/GridView.js",
+        "content/Scripts/WebForms/Menu.js",
+        "content/Scripts/WebForms/MenuStandards.js",
+        "content/Scripts/WebForms/SmartNav.js",
+        "content/Scripts/WebForms/TreeView.js",
+        "content/Scripts/WebForms/WebForms.js",
+        "content/Scripts/WebForms/WebParts.js",
+        "content/Scripts/WebForms/WebUIValidation.js",
+        "lib/net45/Microsoft.ScriptManager.WebForms.dll",
+        "microsoft.aspnet.scriptmanager.webforms.5.0.0.nupkg.sha512",
+        "microsoft.aspnet.scriptmanager.webforms.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Web.Optimization/1.1.3": {
+      "sha512": "TWKKpTWEdB8jXp2Vl2TXNKW30GBQg6nnh0y8iZWmGY5c1XY4f649vfDslNHsCsvk9JZxc1Rkm/UGDdfq4gjWRQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.web.optimization/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/System.Web.Optimization.dll",
+        "lib/net40/system.web.optimization.xml",
+        "microsoft.aspnet.web.optimization.1.1.3.nupkg.sha512",
+        "microsoft.aspnet.web.optimization.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Web.Optimization.WebForms/1.1.3": {
+      "sha512": "DVlyZCrjWsh2COAkEIvAiXpsV2xhyx2NFWg3Z6X5mVUN9DfqhPtxCmHzoSAhjrNEDr5FaMYllxeffCQM9FjkCw==",
+      "type": "package",
+      "path": "microsoft.aspnet.web.optimization.webforms/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/web.config.transform",
+        "lib/net45/Microsoft.AspNet.Web.Optimization.WebForms.dll",
+        "microsoft.aspnet.web.optimization.webforms.1.1.3.nupkg.sha512",
+        "microsoft.aspnet.web.optimization.webforms.nuspec"
+      ]
+    },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "type": "package",
+      "path": "microsoft.web.infrastructure/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.Web.Infrastructure.dll",
+        "microsoft.web.infrastructure.1.0.0.nupkg.sha512",
+        "microsoft.web.infrastructure.nuspec"
+      ]
+    },
+    "Modernizr/2.6.2": {
+      "sha512": "3KcdGI/xNPSCqwazIlh+W9TFK9WH0v++qj6L2UXNAjt8FrXIz8QKR51XIzJwdIUVCOp8asdbyGaCcXTCT6ppFg==",
+      "type": "package",
+      "path": "modernizr/2.6.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/modernizr-2.6.2.js",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/uninstall.ps1",
+        "modernizr.2.6.2.nupkg.sha512",
+        "modernizr.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/6.0.4": {
+      "sha512": "FyQLmEpjsCrEP+znauLDGAi+h6i9YnaMkITlfIoiM4RYyX3nki306bTHsr/0okiIvIc7BJhQTbOAIZVocccFUw==",
+      "type": "package",
+      "path": "newtonsoft.json/6.0.4",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netcore45/Newtonsoft.Json.dll",
+        "lib/netcore45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.6.0.4.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "Respond/1.2.0": {
+      "sha512": "n/EC7jh1JBc5iE7TAmyFvrziR5Lir2TG0J0ipq4NSe//7Ih0rbMS2qmodIXkAFDf6oQZkYARLa5re9dSDb3gHQ==",
+      "type": "package",
+      "path": "respond/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/respond.js",
+        "content/Scripts/respond.min.js",
+        "respond.1.2.0.nupkg.sha512",
+        "respond.nuspec"
+      ]
+    },
+    "System.Data.SQLite.Core/1.0.109": {
+      "sha512": "oPxz072xISqpXXOsCu77OVVy6nNrFGecmMU0XKT+fcIkBDQcGW5PgajEoY/64AFh2DdMNAcZEOdYDV6oGywqlw==",
+      "type": "package",
+      "path": "system.data.sqlite.core/1.0.109",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net20/System.Data.SQLite.Core.targets",
+        "build/net20/x64/SQLite.Interop.dll",
+        "build/net20/x86/SQLite.Interop.dll",
+        "build/net40/System.Data.SQLite.Core.targets",
+        "build/net40/x64/SQLite.Interop.dll",
+        "build/net40/x86/SQLite.Interop.dll",
+        "build/net45/System.Data.SQLite.Core.targets",
+        "build/net45/x64/SQLite.Interop.dll",
+        "build/net45/x86/SQLite.Interop.dll",
+        "build/net451/System.Data.SQLite.Core.targets",
+        "build/net451/x64/SQLite.Interop.dll",
+        "build/net451/x86/SQLite.Interop.dll",
+        "build/net46/System.Data.SQLite.Core.targets",
+        "build/net46/x64/SQLite.Interop.dll",
+        "build/net46/x86/SQLite.Interop.dll",
+        "build/netstandard2.0/System.Data.SQLite.Core.targets",
+        "build/netstandard2.0/linux-x64/SQLite.Interop.dll",
+        "build/netstandard2.0/osx-x64/SQLite.Interop.dll",
+        "build/netstandard2.0/x64/SQLite.Interop.dll",
+        "build/netstandard2.0/x86/SQLite.Interop.dll",
+        "lib/net20/System.Data.SQLite.dll",
+        "lib/net20/System.Data.SQLite.dll.config",
+        "lib/net20/System.Data.SQLite.xml",
+        "lib/net40/System.Data.SQLite.dll",
+        "lib/net40/System.Data.SQLite.dll.config",
+        "lib/net40/System.Data.SQLite.xml",
+        "lib/net45/System.Data.SQLite.dll",
+        "lib/net45/System.Data.SQLite.dll.config",
+        "lib/net45/System.Data.SQLite.xml",
+        "lib/net451/System.Data.SQLite.dll",
+        "lib/net451/System.Data.SQLite.dll.config",
+        "lib/net451/System.Data.SQLite.xml",
+        "lib/net46/System.Data.SQLite.dll",
+        "lib/net46/System.Data.SQLite.dll.config",
+        "lib/net46/System.Data.SQLite.xml",
+        "lib/netstandard2.0/System.Data.SQLite.dll",
+        "lib/netstandard2.0/System.Data.SQLite.dll.config",
+        "lib/netstandard2.0/System.Data.SQLite.xml",
+        "system.data.sqlite.core.1.0.109.nupkg.sha512",
+        "system.data.sqlite.core.nuspec"
+      ]
+    },
+    "WebGrease/1.5.2": {
+      "sha512": "VoyDSOOugLx3q5IyOgEcjeYZQOqV9VWZQT57UtN4szlYhAmOcEjVfKWXbtRqBuX43pgyL9E7nMSIPoryC8Cu1Q==",
+      "type": "package",
+      "path": "webgrease/1.5.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/WebGrease.dll",
+        "tools/WG.exe",
+        "tools/install.ps1",
+        "tools/uninstall.ps1",
+        "webgrease.1.5.2.nupkg.sha512",
+        "webgrease.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Antlr >= 3.4.1.9004",
+      "AspNet.ScriptManager.bootstrap >= 3.0.0",
+      "AspNet.ScriptManager.jQuery >= 1.10.2",
+      "Microsoft.AspNet.FriendlyUrls >= 1.0.2",
+      "Microsoft.AspNet.FriendlyUrls.Core >= 1.0.2",
+      "Microsoft.AspNet.ScriptManager.MSAjax >= 5.0.0",
+      "Microsoft.AspNet.ScriptManager.WebForms >= 5.0.0",
+      "Microsoft.AspNet.Web.Optimization >= 1.1.3",
+      "Microsoft.AspNet.Web.Optimization.WebForms >= 1.1.3",
+      "Microsoft.Web.Infrastructure >= 1.0.0",
+      "Modernizr >= 2.6.2",
+      "Newtonsoft.Json >= 6.0.4",
+      "Respond >= 1.2.0",
+      "System.Data.SQLite.Core >= 1.0.109",
+      "WebGrease >= 1.5.2",
+      "bootstrap >= 3.0.0",
+      "jQuery >= 1.10.2",
+      "log4net >= 2.0.8"
+    ],
+    ".NETFramework,Version=v4.5": []
+  },
+  "packageFolders": {
+    "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\WebForms\\WebForms.csproj",
+      "projectName": "WebForms",
+      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\WebForms\\WebForms.csproj",
+      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\WebForms\\project.json",
+      "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages",
+      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\WebForms\\obj\\",
+      "projectStyle": "ProjectJson",
+      "validateRuntimeAssets": true,
+      "configFilePaths": [
+        "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\.nuget\\NuGet.Config",
+        "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "dependencies": {
+      "Antlr": "[3.4.1.9004, )",
+      "AspNet.ScriptManager.bootstrap": "[3.0.0, )",
+      "AspNet.ScriptManager.jQuery": "[1.10.2, )",
+      "Microsoft.AspNet.FriendlyUrls": "[1.0.2, )",
+      "Microsoft.AspNet.FriendlyUrls.Core": "[1.0.2, )",
+      "Microsoft.AspNet.ScriptManager.MSAjax": "[5.0.0, )",
+      "Microsoft.AspNet.ScriptManager.WebForms": "[5.0.0, )",
+      "Microsoft.AspNet.Web.Optimization": "[1.1.3, )",
+      "Microsoft.AspNet.Web.Optimization.WebForms": "[1.1.3, )",
+      "Microsoft.Web.Infrastructure": "[1.0.0, )",
+      "Modernizr": "[2.6.2, )",
+      "Newtonsoft.Json": "[6.0.4, )",
+      "Respond": "[1.2.0, )",
+      "System.Data.SQLite.Core": "[1.0.109, )",
+      "WebGrease": "[1.5.2, )",
+      "bootstrap": "[3.0.0, )",
+      "jQuery": "[1.10.2, )",
+      "log4net": "[2.0.8, )"
+    },
+    "frameworks": {
+      "net45": {}
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      }
+    }
+  }
+}

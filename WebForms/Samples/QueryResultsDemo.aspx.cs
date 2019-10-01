@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Web.UI;
+using System.Linq;
 using ActiveQueryBuilder.Core;
 using ActiveQueryBuilder.Core.QueryTransformer;
 using ActiveQueryBuilder.Web.Server;
+using WebForms_Samples.Handlers;
 using WebForms_Samples.Helpers;
 
 namespace WebForms_Samples.Samples
 {
     public partial class QueryResultsDemo : BasePage
     {
+        private int _page = 1;
+        private int _recordsCount = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
@@ -30,7 +34,6 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
             CriteriaBuilder1.QueryTransformer = qt;
         }
-
 
         /// <summary>
         /// Creates and initializes a new instance of the QueryBuilder object.
@@ -73,6 +76,81 @@ namespace WebForms_Samples.Samples
             qt.AlwaysExpandColumnsInQuery = true;
 
             return qt;
+        }
+
+        protected void Prev_OnClick(object sender, EventArgs e)
+        {
+            _page = int.Parse(aspPage.Text.Substring(6)) - 1;
+            UpdateDataGrid(sender, e);
+        }
+
+        protected void Next_OnClick(object sender, EventArgs e)
+        {
+            _page = int.Parse(aspPage.Text.Substring(6)) + 1;
+            UpdateDataGrid(sender, e);
+        }
+
+        protected void UpdateDataGrid(object sender, EventArgs e)
+        {
+            var qb = QueryBuilderStore.Get("QueryResults");
+            var qt = QueryTransformerStore.Get("QueryResults");
+
+            if (string.IsNullOrEmpty(qt.SQL))
+            {
+                GridView1.DataSource = null;
+                GridView1.DataBind();
+                aspPage.Text = "Page: 0";
+                recordsCount.Text = "Records count: 0";
+                return;
+            }
+
+            UpdateRecordCount(qt);
+
+            if (_page < 0)
+                _page = 0;
+
+            if (10 * _page > _recordsCount)
+                _page -= 1;
+
+            qt.Skip((10 * _page).ToString());
+            qt.Take("10");
+
+            using (var conn = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase"))
+            {
+                conn.Open();
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = qt.SQL;
+                    var reader = cmd.ExecuteReader();
+                    GridView1.DataSource = reader;
+                    GridView1.DataBind();
+                }
+            }
+
+            aspPage.Text = "Page: " + _page;
+        }
+
+        private void UpdateRecordCount(QueryTransformer qt)
+        {
+            var qtForSelectRecordsCount = QueryTransformerStore.Create("QueryResults_for_select_records_count");
+
+            qtForSelectRecordsCount.QueryProvider = qt.QueryProvider;
+            qtForSelectRecordsCount.Assign(qt);
+            qtForSelectRecordsCount.Skip("");
+            qtForSelectRecordsCount.Take("");
+            qtForSelectRecordsCount.SelectRecordsCount("recCount");
+
+            try
+            {
+                var data = SelectRecordsCount.GetData(qtForSelectRecordsCount, new Param[0]);
+                _recordsCount = int.Parse(data.First().Values.First().ToString());
+                recordsCount.Text = "Records count: " + _recordsCount;
+            }
+            finally
+            {
+                QueryTransformerStore.Remove("QueryResults_for_select_records_count");
+            }
         }
     }
 }

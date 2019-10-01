@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.IO;
 using System.Web;
 using System.Data.SQLite;
+using WebForms_Samples.Handlers;
 
 namespace WebForms_Samples.Helpers
 {
@@ -20,13 +21,16 @@ namespace WebForms_Samples.Helpers
         /// <param name="conn">The DB connection object.</param>
         /// <param name="sql">The SQL query text.</param>
         /// <returns>List of records.</returns>
-        public static List<Dictionary<string, object>> GetData(IDbConnection conn, string sql)
+        public static List<Dictionary<string, object>> GetData(IDbConnection conn, string sql, Param[] parameters)
         {
             IDbCommand cmd = conn.CreateCommand();
             cmd.CommandText = sql;
 
             if (string.IsNullOrEmpty(sql))
                 return new List<Dictionary<string, object>>();
+
+            if (parameters != null)
+                AddParameters(cmd, parameters);
 
             try
             {
@@ -39,6 +43,19 @@ namespace WebForms_Samples.Helpers
             finally
             {
                 conn.Close();
+            }
+        }
+
+        private static void AddParameters(IDbCommand cmd, Param[] parameters)
+        {
+            foreach (var p in parameters)
+            {
+                var param = cmd.CreateParameter();
+                param.DbType = p.DataType;
+                param.ParameterName = p.Name;
+                param.Value = p.Value;
+
+                cmd.Parameters.Add(param);
             }
         }
 
@@ -56,7 +73,7 @@ namespace WebForms_Samples.Helpers
                 var row = new Dictionary<string, object>();
 
                 for (int i = 0; i < reader.FieldCount; i++)
-                    row.Add(reader.GetName(i), reader[i]); 
+                    row.Add(reader.GetName(i), reader[i]);
 
                 result.Add(row);
             }

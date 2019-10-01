@@ -34,7 +34,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -92,6 +92,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dataExplorer.js" />
     <Content Include="Scripts\Electron\package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Electron\index.html" />
@@ -105,7 +106,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jqxGridDataExplorer.js" />
+    <Content Include="Scripts\JsGridDataExplorer.js" />
+    <Content Include="Scripts\JsonDataExplorer.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\paramsController.js" />
+    <Content Include="Scripts\queryResults.js" />
+    <Content Include="Scripts\reactGridDataExplorer.js" />
     <Content Include="Scripts\React\Components\QueryBuilderLayout.js" />
     <Content Include="Scripts\React\index.js" />
     <Content Include="Scripts\React\README.txt" />
@@ -159,16 +166,16 @@
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider"><Private>True</Private></Reference>
     <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.5.20.1133\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.5.25.1142\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.20.1133\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.25.1142\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.6\lib\net\ActiveQueryBuilder.View.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.8\lib\net\ActiveQueryBuilder.View.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.6\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.8\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -202,10 +209,4 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target> -->
 </Project>
