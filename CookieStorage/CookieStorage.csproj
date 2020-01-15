@@ -134,7 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.34.1152\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
+		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.35.1153\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
 	</Reference>
     <Reference Include="ActiveQueryBuilder.View">
 		<HintPath>..\packages\ActiveQueryBuilder.Web.MVC.3.4.8.\lib\net\ActiveQueryBuilder.View.dll</HintPath>

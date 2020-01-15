@@ -85,26 +85,28 @@ namespace MVC_Samples.Controllers
         {
             var qb = QueryBuilderStore.Get(instanceId);
             var qt = QueryTransformerStore.Get(instanceId);
-            var qtForSelectRecordsCount = QueryTransformerStore.Create(instanceId + "_for_records_count");
-
-            qtForSelectRecordsCount.QueryProvider = qb.SQLQuery;
-            qtForSelectRecordsCount.Assign(qt);
-            qtForSelectRecordsCount.Skip("");
-            qtForSelectRecordsCount.Take("");
-            qtForSelectRecordsCount.SelectRecordsCount("recCount");
+            var qtForSelectRecordsCount = new QueryTransformer { QueryProvider = qb.SQLQuery };
 
             try
             {
-                var data = Execute(qtForSelectRecordsCount, _params);
-                return Json(data.First().Values.First(), JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception e)
-            {
-                return Json(new ErrorOutput { Error = e.Message }, JsonRequestBehavior.AllowGet);
+                qtForSelectRecordsCount.Assign(qt);
+                qtForSelectRecordsCount.Skip("");
+                qtForSelectRecordsCount.Take("");
+                qtForSelectRecordsCount.SelectRecordsCount("recCount");
+
+                try
+                {
+                    var data = Execute(qtForSelectRecordsCount, _params);
+                    return Json(data.First().Values.First(), JsonRequestBehavior.AllowGet);
+                }
+                catch (Exception e)
+                {
+                    return Json(new ErrorOutput {Error = e.Message}, JsonRequestBehavior.AllowGet);
+                }
             }
             finally
             {
-                QueryTransformerStore.Remove(instanceId + "_for_records_count");
+                qtForSelectRecordsCount.Dispose();
             }
         }
 

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Web;
+using ActiveQueryBuilder.Core.QueryTransformer;
 using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Handlers
@@ -12,22 +13,21 @@ namespace WebForms_Samples.Handlers
         {
             var qb = QueryBuilderStore.Get("QueryResults");
             var qt = QueryTransformerStore.Get("QueryResults");
-            var qtForSelectRecordsCount = QueryTransformerStore.Create("QueryResults_for_select_records_count");
-
-            qtForSelectRecordsCount.QueryProvider = qb.SQLQuery;
-            qtForSelectRecordsCount.Assign(qt);
-            qtForSelectRecordsCount.Skip("");
-            qtForSelectRecordsCount.Take("");
-            qtForSelectRecordsCount.SelectRecordsCount("recCount");
+            var qtForSelectRecordsCount = new QueryTransformer { QueryProvider = qt.QueryProvider };
 
             try
             {
+                qtForSelectRecordsCount.Assign(qt);
+                qtForSelectRecordsCount.Skip("");
+                qtForSelectRecordsCount.Take("");
+                qtForSelectRecordsCount.SelectRecordsCount("recCount");
+
                 var data = GetData(qtForSelectRecordsCount, _params);
                 return data.First().Values.First();
             }
             finally
             {
-                QueryTransformerStore.Remove("QueryResults_for_select_records_count");
+                qtForSelectRecordsCount.Dispose();
             }
         }
 

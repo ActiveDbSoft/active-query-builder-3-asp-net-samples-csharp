@@ -133,23 +133,22 @@ namespace WebForms_Samples.Samples
 
         private void UpdateRecordCount(QueryTransformer qt)
         {
-            var qtForSelectRecordsCount = QueryTransformerStore.Create("QueryResults_for_select_records_count");
-
-            qtForSelectRecordsCount.QueryProvider = qt.QueryProvider;
-            qtForSelectRecordsCount.Assign(qt);
-            qtForSelectRecordsCount.Skip("");
-            qtForSelectRecordsCount.Take("");
-            qtForSelectRecordsCount.SelectRecordsCount("recCount");
+            var qtForSelectRecordsCount = new QueryTransformer { QueryProvider = qt.QueryProvider };
 
             try
             {
+                qtForSelectRecordsCount.Assign(qt);
+                qtForSelectRecordsCount.Skip("");
+                qtForSelectRecordsCount.Take("");
+                qtForSelectRecordsCount.SelectRecordsCount("recCount");
+
                 var data = SelectRecordsCount.GetData(qtForSelectRecordsCount, new Param[0]);
                 _recordsCount = int.Parse(data.First().Values.First().ToString());
                 recordsCount.Text = "Records count: " + _recordsCount;
             }
             finally
             {
-                QueryTransformerStore.Remove("QueryResults_for_select_records_count");
+                qtForSelectRecordsCount.Dispose();
             }
         }
     }
