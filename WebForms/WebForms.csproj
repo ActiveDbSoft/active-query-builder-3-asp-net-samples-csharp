@@ -374,27 +374,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ActiveQueryBuilder.EventMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.40.1158\lib\net\ActiveQueryBuilder.EventMetadataProvider.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.OLEDBMetadataProvider.3.5.40.1158\lib\net\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider">
-		<HintPath>..\packages\ActiveQueryBuilder.SQLiteMetadataProvider.3.5.40.1158\lib\net\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.Core">
-		<HintPath>..\packages\ActiveQueryBuilder.Core.3.5.40.1158\lib\net\ActiveQueryBuilder.Core.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.View">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.4.10\lib\net\ActiveQueryBuilder.View.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.Web.Server">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.4.10\lib\net\ActiveQueryBuilder.Web.Server.dll</HintPath>
-	</Reference>
-    <Reference Include="ActiveQueryBuilder.Web.WebForms">
-		<HintPath>..\packages\ActiveQueryBuilder.Web.WebForms.3.4.10\lib\net\ActiveQueryBuilder.Web.WebForms.dll</HintPath>
-	</Reference>
+    <Reference Include="ActiveQueryBuilder.EventMetadataProvider, Version=3.6.0.1159, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider, Version=3.6.0.1159, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider, Version=3.6.0.1159, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Core, Version=3.6.0.1159, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.View, Version=3.6.0.1159, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.6.0.400, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.WebForms, Version=3.6.0.400, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

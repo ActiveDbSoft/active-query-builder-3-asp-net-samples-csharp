@@ -620,12 +620,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\MVC\\MVC.csproj",
+      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\MVC\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\MVC\\MVC.csproj",
-      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\MVC\\project.json",
+      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\MVC\\MVC.csproj",
+      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\MVC\\project.json",
       "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages",
-      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\MVC\\obj\\",
+      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\MVC\\obj\\",
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
       "configFilePaths": [

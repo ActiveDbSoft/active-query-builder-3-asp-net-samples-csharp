@@ -620,12 +620,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\JavaScript\\JavaScript.csproj",
+      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\JavaScript\\JavaScript.csproj",
       "projectName": "JavaScript",
-      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\JavaScript\\JavaScript.csproj",
-      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\JavaScript\\project.json",
+      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\JavaScript\\JavaScript.csproj",
+      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\JavaScript\\project.json",
       "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages",
-      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\JavaScript\\obj\\",
+      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\JavaScript\\obj\\",
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
       "configFilePaths": [

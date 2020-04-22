@@ -620,12 +620,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\CustomStorage\\CustomStorage.csproj",
+      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\CustomStorage.csproj",
       "projectName": "CustomStorage",
-      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\CustomStorage\\CustomStorage.csproj",
-      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\CustomStorage\\project.json",
+      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\CustomStorage.csproj",
+      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\project.json",
       "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages",
-      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples C#\\CustomStorage\\obj\\",
+      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\obj\\",
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
       "configFilePaths": [

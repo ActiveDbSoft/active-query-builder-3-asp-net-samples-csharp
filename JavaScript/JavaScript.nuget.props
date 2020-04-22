@@ -3,7 +3,7 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
-    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\src\Samples\ASP.NET\Samples C#\JavaScript\project.lock.json</ProjectAssetsFile>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\src\Samples\ASP.NET\Samples CSharp\JavaScript\project.lock.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">ProjectJson</NuGetProjectStyle>
