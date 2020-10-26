@@ -21,7 +21,7 @@ namespace WebForms_Samples.Handlers
                     var c = qt.Columns.FindColumnByResultName(m.Sortdatafield);
 
                     if (c != null)
-                        qt.OrderBy(c, m.Sortorder.ToLower() == "asc");
+                        qt.OrderBy(c, m.Sortorder.ToLowerInvariant() == "asc");
                 }
             }
 

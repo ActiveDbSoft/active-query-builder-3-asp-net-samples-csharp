@@ -10,7 +10,7 @@ namespace WebForms_Samples.Samples
 {
     public partial class QueryResultsDemo : BasePage
     {
-        private int _page = 1;
+        private int _page = 0;
         private int _recordsCount = 0;
 
         protected void Page_Load(object sender, EventArgs e)

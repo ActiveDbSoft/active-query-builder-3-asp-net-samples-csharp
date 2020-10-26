@@ -629,7 +629,6 @@
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
       "configFilePaths": [
-        "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\.nuget\\NuGet.Config",
         "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\NuGet.Config",
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
