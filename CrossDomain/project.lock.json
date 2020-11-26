@@ -542,7 +542,9 @@
     ".NETFramework,Version=v4.5": []
   },
   "packageFolders": {
-    "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages": {}
+    "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages": {},
+    "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\Offline Packages": {},
+    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {}
   },
   "project": {
     "restore": {
@@ -554,16 +556,24 @@
       "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CrossDomain\\obj\\",
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\Offline Packages",
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"
+      ],
       "configFilePaths": [
         "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\NuGet.Config",
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "sources": {
         "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.devexpress.com/y1gK22cPPOqpaMkDSyS8jMDsBk3mzKsIdAHWwDbfvDfjahkusq/api": {}

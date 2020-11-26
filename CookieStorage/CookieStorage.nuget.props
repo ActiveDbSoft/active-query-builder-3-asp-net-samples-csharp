@@ -5,7 +5,7 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\src\Samples\ASP.NET\Samples CSharp\CookieStorage\project.lock.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages;C:\Program Files (x86)\DevExpress 20.2\.NET Core Desktop Libraries\Offline Packages;C:\Program Files (x86)\DevExpress 20.2\Components\Offline Packages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">ProjectJson</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">4.9.3</NuGetToolVersion>
   </PropertyGroup>
