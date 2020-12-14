@@ -9,13 +9,12 @@ namespace WebForms_Samples.Samples
 {
     public partial class VirtualObjectsAndFields : BasePage
     {
+        private const string InstanceId = "VirtualObjectsAndFields";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("VirtualObjectsAndFields");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -26,10 +25,9 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("VirtualObjectsAndFields");
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
@@ -87,13 +85,11 @@ namespace WebForms_Samples.Samples
             queryBuilder.SQLQuery.SQLUpdated += OnSQLUpdated;
 
             queryBuilder.SQL = "SELECT mbo.OrderId_plus_1, mbo.CustomerCompanyName FROM MyBetterOrders mbo";
-
-            return queryBuilder;
         }
 
         public void OnSQLUpdated(object sender, EventArgs e)
         {
-            var qb = QueryBuilderStore.Get("VirtualObjectsAndFields");
+            var qb = QueryBuilderStore.Get(InstanceId);
 
             var opts = new SQLFormattingOptions();
 

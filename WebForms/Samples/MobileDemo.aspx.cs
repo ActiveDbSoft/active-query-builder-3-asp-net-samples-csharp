@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
+using ActiveQueryBuilder.Core;
 using ActiveQueryBuilder.Web.Server;
 
 namespace WebForms_Samples.Samples
@@ -11,10 +12,7 @@ namespace WebForms_Samples.Samples
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(qbId);
-
-            if (qb == null)
-                qb = CreateQueryBuilder(qbId);
+            var qb = QueryBuilderStore.GetOrCreate(qbId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -26,15 +24,13 @@ namespace WebForms_Samples.Samples
         }
 
         /// <summary>
-        /// Creates and initializes a new instance of the QueryBuilder object.
+        /// Initializes a new instance of the QueryBuilder object.
         /// </summary>
-        /// <param name="AInstanceId">String which uniquely identifies an instance of Active Query Builder in the session.</param>
-        /// <returns>Returns instance of the QueryBuilder object.</returns>
-        private QueryBuilder CreateQueryBuilder(string AInstanceId)
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql(AInstanceId);
-            
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
+
             // Denies metadata loading requests from live database connection
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -46,8 +42,6 @@ namespace WebForms_Samples.Samples
 
             //Set default query
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()

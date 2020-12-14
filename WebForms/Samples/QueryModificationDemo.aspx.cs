@@ -10,6 +10,8 @@ namespace WebForms_Samples.Samples
 {
     public partial class QueryModificationDemo : BasePage
     {
+        private const string InstanceId = "AlternateNames";
+
         private SQLQualifiedName _joinFieldName;
         private SQLQualifiedName _companyNameFieldName;
         private SQLQualifiedName _orderDateFieldName;
@@ -30,10 +32,7 @@ namespace WebForms_Samples.Samples
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("QueryModification");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -55,11 +54,14 @@ namespace WebForms_Samples.Samples
             _orderDateFieldName = qb.SQLContext.ParseQualifiedName(OrderDate);
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("QueryModification");
-            
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
+
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -68,8 +70,6 @@ namespace WebForms_Samples.Samples
             var xml = Path.Combine(Server.MapPath("~"), path);
 
             queryBuilder.MetadataContainer.ImportFromXML(xml);
-
-            return queryBuilder;
         }
 
         private bool IsTablePresentInQuery(UnionSubQuery unionSubQuery, DataSource table)
@@ -96,7 +96,7 @@ namespace WebForms_Samples.Samples
 
         private DataSource AddTable(UnionSubQuery unionSubQuery, string name, string alias)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             using (var parsedName = queryBuilder1.SQLContext.ParseQualifiedName(name))
             using (var parsedAlias = queryBuilder1.SQLContext.ParseIdentifier(alias))
@@ -107,7 +107,7 @@ namespace WebForms_Samples.Samples
 
         private DataSource FindTableInQueryByName(UnionSubQuery unionSubQuery, string name)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             List<DataSourceObject> foundDatasources;
             using (var qualifiedName = queryBuilder1.SQLContext.ParseQualifiedName(name))
@@ -152,7 +152,7 @@ namespace WebForms_Samples.Samples
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             // get the active SELECT
 
@@ -338,19 +338,19 @@ namespace WebForms_Samples.Samples
 
         protected void btnQueryCustomers_Click(object sender, EventArgs e)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
             queryBuilder1.SQL = "select * from Northwind.dbo.Customers c";
         }
 
         protected void btnQueryOrders_Click(object sender, EventArgs e)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
             queryBuilder1.SQL = "select * from Northwind.dbo.Orders o";
         }
 
         protected void btnQueryCustomersOrders_Click(object sender, EventArgs e)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
             queryBuilder1.SQL = "select * from Northwind.dbo.Customers c, Northwind.dbo.Orders o";
         }
     }

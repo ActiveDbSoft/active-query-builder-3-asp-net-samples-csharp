@@ -9,13 +9,12 @@ namespace WebForms_Samples.Samples
 {
     public partial class ToggleUseAltNames : BasePage
     {
+        private const string InstanceId = "ToggleUseAltNames";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("ToggleUseAltNames");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -26,10 +25,9 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.DB2("ToggleUseAltNames");
+            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
 
             // Turn displaying of alternate names on in the text of result SQL query and in the visual UI
             queryBuilder.SQLFormattingOptions.UseAltNames = false;
@@ -44,8 +42,6 @@ namespace WebForms_Samples.Samples
 
             //Set default query
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()
@@ -63,7 +59,7 @@ namespace WebForms_Samples.Samples
         public void Toggle()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("ToggleUseAltNames");
+            var qb = QueryBuilderStore.Get(InstanceId);
 
             qb.SQLFormattingOptions.UseAltNames = !qb.SQLFormattingOptions.UseAltNames;
 

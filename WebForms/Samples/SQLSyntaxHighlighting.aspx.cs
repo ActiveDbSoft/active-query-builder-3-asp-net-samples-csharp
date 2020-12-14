@@ -12,10 +12,7 @@ namespace WebForms_Samples.Samples
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("Oledb");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate("Oledb", InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -26,11 +23,10 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("Oledb");
-            
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
+
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -42,8 +38,6 @@ namespace WebForms_Samples.Samples
 
             //Set default query
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()

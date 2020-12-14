@@ -13,10 +13,7 @@ namespace WebForms_Samples.Samples
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(qbId);
-
-            if (qb == null)
-                qb = CreateQueryBuilder(qbId);
+            var qb = QueryBuilderStore.GetOrCreate	(qbId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -28,14 +25,12 @@ namespace WebForms_Samples.Samples
         }
 
         /// <summary>
-        /// Creates and initializes a new instance of the QueryBuilder object.
+        /// Initializes a new instance of the QueryBuilder object.
         /// </summary>
-        /// <param name="AInstanceId">String which uniquely identifies an instance of Active Query Builder in the session.</param>
-        /// <returns>Returns instance of the QueryBuilder object.</returns>
-        private QueryBuilder CreateQueryBuilder(string AInstanceId)
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MSAccess(AInstanceId);
+            queryBuilder.SyntaxProvider = new MSAccessSyntaxProvider();
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = false;
@@ -52,8 +47,6 @@ namespace WebForms_Samples.Samples
 
             // Assign the initial SQL query text the user sees on the _first_ page load
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()

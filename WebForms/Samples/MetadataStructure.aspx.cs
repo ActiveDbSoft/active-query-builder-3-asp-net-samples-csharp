@@ -12,10 +12,7 @@ namespace WebForms_Samples.Samples
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("MetadataStructure");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate("MetadataStructure", InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -26,10 +23,13 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Get instance of QueryBuilder
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("MetadataStructure");
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = true;
             
@@ -85,8 +85,6 @@ namespace WebForms_Samples.Samples
             queryBuilder.MetadataStructure.Items.Add(filteredFolder);
 
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()

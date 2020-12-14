@@ -13,10 +13,7 @@ namespace WebForms_Samples.Samples
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("UserDefinedFields");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate("UserDefinedFields", InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -27,10 +24,9 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("UserDefinedFields");
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
 
             // Enables manipulations with user-defined fields in the visual UI
             queryBuilder.DataSourceOptions.EnableUserFields = true;
@@ -43,8 +39,6 @@ namespace WebForms_Samples.Samples
             var xml = Path.Combine(Server.MapPath("~"), path);
 
             queryBuilder.MetadataContainer.ImportFromXML(xml);
-
-            return queryBuilder;
         }
         //}}CUT:STD
     }

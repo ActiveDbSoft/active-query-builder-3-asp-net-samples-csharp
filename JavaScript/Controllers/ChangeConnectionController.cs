@@ -12,8 +12,7 @@ namespace JavaScript.Controllers
 
         public ChangeConnectionController()
         {
-            if (QueryBuilderStore.Get(_instanceId) == null)
-                QueryBuilderStore.Create(_instanceId);
+            QueryBuilderStore.GetOrCreate(_instanceId);
         }
 
         public ActionResult Index()

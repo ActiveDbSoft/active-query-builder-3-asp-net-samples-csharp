@@ -12,18 +12,18 @@ namespace MVC_Samples.Controllers
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("UserDefinedFields");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate("UserDefinedFields", InitializeQueryBuilder);
 
             return View(qb);
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("UserDefinedFields");
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
 
             // Enables manipulations with user-defined fields in the visual UI
             queryBuilder.DataSourceOptions.EnableUserFields = true;
@@ -36,8 +36,6 @@ namespace MVC_Samples.Controllers
             var xml = Path.Combine(Server.MapPath("~"), path);
 
             queryBuilder.MetadataContainer.ImportFromXML(xml);
-
-            return queryBuilder;
         }
     }
 //}}CUT:STD

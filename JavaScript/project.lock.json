@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.5": {
+    ".NETFramework,Version=v4.7.2": {
       "Antlr/3.4.1.9004": {
         "type": "package",
         "compile": {
@@ -123,13 +123,13 @@
       "System.Data.SQLite.Core/1.0.109": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "build": {
-          "build/net45/System.Data.SQLite.Core.targets": {}
+          "build/net46/System.Data.SQLite.Core.targets": {}
         }
       },
       "WebGrease/1.5.2": {
@@ -146,7 +146,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.5/win": {
+    ".NETFramework,Version=v4.7.2/win": {
       "Antlr/3.4.1.9004": {
         "type": "package",
         "compile": {
@@ -268,13 +268,13 @@
       "System.Data.SQLite.Core/1.0.109": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "build": {
-          "build/net45/System.Data.SQLite.Core.targets": {}
+          "build/net46/System.Data.SQLite.Core.targets": {}
         }
       },
       "WebGrease/1.5.2": {
@@ -613,7 +613,7 @@
       "jQuery.Validation >= 1.11.1",
       "log4net >= 2.0.8"
     ],
-    ".NETFramework,Version=v4.5": []
+    ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
     "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages": {},
@@ -653,7 +653,7 @@
         "https://nuget.devexpress.com/y1gK22cPPOqpaMkDSyS8jMDsBk3mzKsIdAHWwDbfvDfjahkusq/api": {}
       },
       "frameworks": {
-        "net45": {
+        "net472": {
           "projectReferences": {}
         }
       }
@@ -677,7 +677,7 @@
       "log4net": "[2.0.8, )"
     },
     "frameworks": {
-      "net45": {}
+      "net472": {}
     },
     "runtimes": {
       "win": {

@@ -10,18 +10,14 @@ namespace MVC_Samples.Controllers
 {
     public class LoadMetadataDemoController : Controller
     {
+        private const string InstanceId = "LoadMetadata";
+
         private readonly IDbConnection _conn = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
 
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("LoadMetadata");
-
-            if (qb == null)
-            {
-                qb = QueryBuilderStore.Create("LoadMetadata");
-                qb.SyntaxProvider = new GenericSyntaxProvider();
-            }
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, q => q.SyntaxProvider = new GenericSyntaxProvider());
 
             return View(qb);
         }
@@ -33,7 +29,7 @@ namespace MVC_Samples.Controllers
         //////////////////////////////////////////////////////////////////////////
         public void Way1()
         {
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             ResetQueryBuilderMetadata(queryBuilder1);
             queryBuilder1.SyntaxProvider = new GenericSyntaxProvider();
@@ -91,7 +87,7 @@ namespace MVC_Samples.Controllers
         //////////////////////////////////////////////////////////////////////////
         public void Way2()
         {
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
             ResetQueryBuilderMetadata(queryBuilder1);
             // allow QueryBuilder to request metadata
             queryBuilder1.MetadataLoadingOptions.OfflineMode = false;
@@ -169,7 +165,7 @@ namespace MVC_Samples.Controllers
         //////////////////////////////////////////////////////////////////////////
         public void Way3()
         {
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             try
             {
@@ -212,7 +208,7 @@ namespace MVC_Samples.Controllers
         //////////////////////////////////////////////////////////////////////////
         public void Way4()
         {
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
             ResetQueryBuilderMetadata(queryBuilder1);
             
             queryBuilder1.MetadataLoadingOptions.OfflineMode = true; // prevent QueryBuilder to request metadata from connection

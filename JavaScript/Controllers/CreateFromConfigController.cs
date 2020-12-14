@@ -18,25 +18,16 @@ namespace JavaScript.Controllers
         /// <returns></returns>
         public ActionResult Create(string name)
         {
-            // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(name);
-
-            if (qb != null)
-                return new EmptyResult();
-
             try
             {
                 // Create an instance of the QueryBuilder object
-                qb = QueryBuilderStore.Create(name);
+                QueryBuilderStore.GetOrCreate(name, qb => qb.SQL = GetDefaultSql());
 
                 // The necessary initialization procedures to setup SQL syntax and the source of metadata will be performed automatically 
                 // according to directives in the special configuration section of 'Web.config' file.
 
                 // This behavior is enabled by the QueryBuilderStore.WebConfig() method call in the Application_Start method in Global.asax.cs file.
                 // See qb.ConfiguredBy to get information about actual default settings
-
-                // Set default query
-                qb.SQL = GetDefaultSql();
             }
             catch (Exception e)
             {

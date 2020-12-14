@@ -18,14 +18,12 @@ namespace MVC_Samples.Controllers
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(instanceId);
-            var qt = QueryTransformerStore.Get(instanceId);
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
-
-            if (qt == null)
-                qt = CreateQueryTransformer(qb.SQLQuery);
+            var qb = QueryBuilderStore.GetOrCreate(instanceId, InitializeQueryBuilder);
+            var qt = QueryTransformerStore.GetOrCreate(instanceId, q =>
+            {
+                q.QueryProvider = qb.SQLQuery;
+                q.AlwaysExpandColumnsInQuery = true;
+            });
 
             ViewBag.QueryTransformer = qt;
 
@@ -116,13 +114,12 @@ namespace MVC_Samples.Controllers
         }
 
         /// <summary>
-        /// Creates and initializes a new instance of the QueryBuilder object.
+        /// Initializes a new instance of the QueryBuilder object.
         /// </summary>
-        /// <returns>Returns instance of the QueryBuilder object.</returns>
-        private QueryBuilder CreateQueryBuilder()
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.SqLite(instanceId);
+            queryBuilder.SyntaxProvider = new SQLiteSyntaxProvider();
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = false;
@@ -136,8 +133,6 @@ namespace MVC_Samples.Controllers
 
             // Assign the initial SQL query text the user sees on the _first_ page load
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
         
         private string GetDefaultSql()
@@ -146,21 +141,6 @@ namespace MVC_Samples.Controllers
                       customers.LastName,
                       customers.FirstName
                     From customers";
-        }
-
-        /// <summary>
-        /// Creates and initializes a new instance of the QueryTransformer object.
-        /// </summary>
-        /// <param name="query">SQL Query to transform.</param>
-        /// <returns>Returns instance of the QueryTransformer object.</returns>
-        private QueryTransformer CreateQueryTransformer(SQLQuery query)
-        {
-            var qt = QueryTransformerStore.Create(instanceId);
-
-            qt.QueryProvider = query;
-            qt.AlwaysExpandColumnsInQuery = true;
-
-            return qt;
         }
     }
 

@@ -9,21 +9,23 @@ namespace MVC_Samples.Controllers
 {
     public class AlternateNamesController : Controller
     {
+        private const string InstanceId = "AlternateNames";
+
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("AlternateNames");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             return View(qb);
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.DB2("AlternateNames");
+            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
 
             // Turn displaying of alternate names on in the text of result SQL query
             queryBuilder.SQLFormattingOptions.UseAltNames = true;
@@ -43,8 +45,6 @@ namespace MVC_Samples.Controllers
 
             //Set default query
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()
@@ -56,7 +56,7 @@ namespace MVC_Samples.Controllers
 
         public void OnSQLUpdated(object sender, EventArgs e)
         {
-            var qb = QueryBuilderStore.Get("AlternateNames");
+            var qb = QueryBuilderStore.Get(InstanceId);
 
             var opts = new SQLFormattingOptions();
 

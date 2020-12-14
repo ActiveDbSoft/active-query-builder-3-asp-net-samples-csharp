@@ -10,6 +10,8 @@ namespace MVC_Samples.Controllers
 {
     public class QueryModificationDemoController : Controller
     {
+        private const string InstanceId = "QueryModification";
+
         private const string CustomersName = "Northwind.dbo.Customers";
         private const string OrdersName = "Northwind.dbo.Orders";
         private const string CustomersAlias = "c";
@@ -21,19 +23,19 @@ namespace MVC_Samples.Controllers
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("QueryModification");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             return View(qb);
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("QueryModification");
-            
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
+
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -42,8 +44,6 @@ namespace MVC_Samples.Controllers
             var xml = Path.Combine(Server.MapPath("~"), path);
 
             queryBuilder.MetadataContainer.ImportFromXML(xml);
-
-            return queryBuilder;
         }
 
         private bool IsTablePresentInQuery(UnionSubQuery unionSubQuery, DataSource table)
@@ -70,7 +70,7 @@ namespace MVC_Samples.Controllers
 
         private DataSource AddTable(UnionSubQuery unionSubQuery, string name, string alias)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             using (var parsedName = queryBuilder1.SQLContext.ParseQualifiedName(name))
             using (var parsedAlias = queryBuilder1.SQLContext.ParseIdentifier(alias))
@@ -81,7 +81,7 @@ namespace MVC_Samples.Controllers
 
         private DataSource FindTableInQueryByName(UnionSubQuery unionSubQuery, string name)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             List<DataSourceObject> foundDatasources;
             using (var qualifiedName = queryBuilder1.SQLContext.ParseQualifiedName(name))
@@ -126,7 +126,7 @@ namespace MVC_Samples.Controllers
 
         public void ApplyChanges(Model m)
         {
-            var queryBuilder1 = QueryBuilderStore.Get("QueryModification");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             DataSource customers = null;
             DataSource orders = null;

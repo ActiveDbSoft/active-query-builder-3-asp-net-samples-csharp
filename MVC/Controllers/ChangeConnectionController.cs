@@ -14,10 +14,7 @@ namespace MVC_Samples.Controllers
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(_instanceId);
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(_instanceId, InitializeQueryBuilder);
 
             return View(qb);
         }
@@ -25,22 +22,18 @@ namespace MVC_Samples.Controllers
         public ActionResult WithPartiaView()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(_instanceId);
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(_instanceId, InitializeQueryBuilder);
 
             return View(qb);
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Create(_instanceId);
-
-            SetNorthwindXml(qb);
-
-            return qb;
+            SetNorthwindXml(queryBuilder);
         }
 
         [HttpPost]

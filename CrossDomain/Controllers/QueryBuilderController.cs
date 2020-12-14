@@ -28,16 +28,10 @@ namespace CrossDomain.Controllers
 
         public ActionResult CreateQueryBuilder(string name)
         {
-            // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(name);
-
-            if (qb != null)
-                return new HttpStatusCodeResult(200);
-
             try
             {
                 // Create an instance of the QueryBuilder object
-                QueryBuilderStore.Create(name);
+                QueryBuilderStore.GetOrCreate(name);
                 return new HttpStatusCodeResult(200);
             }
             catch (QueryBuilderException e)

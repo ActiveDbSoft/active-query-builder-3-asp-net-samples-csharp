@@ -22,22 +22,19 @@ namespace JavaScript.Controllers
         private void CreateFirstQueryBuilder()
         {
             // Get an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Get("FirstClient");
+            QueryBuilderStore.GetOrCreate("FirstClient", queryBuilder =>
+            {
+                queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
 
-            if (queryBuilder != null)
-                return;
+                // Denies metadata loading requests from the metadata provider
+                queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
-            // Create an instance of the QueryBuilder object
-            queryBuilder = QueryBuilderStore.Factory.MsSql("FirstClient");
-            
-            // Denies metadata loading requests from the metadata provider
-            queryBuilder.MetadataLoadingOptions.OfflineMode = true;
+                // Load MetaData from XML document. File name is stored in the "Web.config" file in [/configuration/appSettings/NorthwindXmlMetaData] key
+                var path = ConfigurationManager.AppSettings["NorthwindXmlMetaData"];
+                var xml = Path.Combine(Server.MapPath("~"), path);
 
-            // Load MetaData from XML document. File name is stored in the "Web.config" file in [/configuration/appSettings/NorthwindXmlMetaData] key
-            var path = ConfigurationManager.AppSettings["NorthwindXmlMetaData"];
-            var xml = Path.Combine(Server.MapPath("~"), path);
-
-            queryBuilder.MetadataContainer.ImportFromXML(xml);
+                queryBuilder.MetadataContainer.ImportFromXML(xml);
+            });
         }
 
         /// <summary>
@@ -46,22 +43,19 @@ namespace JavaScript.Controllers
         private void CreateSecondQueryBuilder()
         {
             // Get an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Get("SecondClient");
+            QueryBuilderStore.GetOrCreate("SecondClient", queryBuilder =>
+            {
+                queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
 
-            if (queryBuilder != null)
-                return;
+                // Denies metadata loading requests from the metadata provider
+                queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
-            // Create an instance of the QueryBuilder object
-            queryBuilder = QueryBuilderStore.Factory.DB2("SecondClient");
-            
-            // Denies metadata loading requests from the metadata provider
-            queryBuilder.MetadataLoadingOptions.OfflineMode = true;
+                // Load MetaData from XML document. File name is stored in the "Web.config" file in [/configuration/appSettings/NorthwindXmlMetaData] key
+                var path = ConfigurationManager.AppSettings["Db2XmlMetaData"];
+                var xml = Path.Combine(Server.MapPath("~"), path);
 
-            // Load MetaData from XML document. File name is stored in the "Web.config" file in [/configuration/appSettings/db2_sample_with_alt_names] key
-            var path = ConfigurationManager.AppSettings["Db2XmlMetaData"];
-            var xml = Path.Combine(Server.MapPath("~"), path);
-
-            queryBuilder.MetadataContainer.ImportFromXML(xml);
+                queryBuilder.MetadataContainer.ImportFromXML(xml);
+            });
         }
     }
 }

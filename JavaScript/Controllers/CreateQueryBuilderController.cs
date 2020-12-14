@@ -21,25 +21,22 @@ namespace JavaScript.Controllers
         public ActionResult CreateQueryBuilder(string name)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get(name);
+            QueryBuilderStore.GetOrCreate(name, queryBuilder =>
+            {
+                queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
 
-            if (qb != null)
-                return new EmptyResult();
+                // Denies metadata loading requests from live database connection
+                queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql(name);
-            
-            // Denies metadata loading requests from live database connection
-            queryBuilder.MetadataLoadingOptions.OfflineMode = true;
+                // Load MetaData from XML document. File name is stored in the "Web.config" file in [/configuration/appSettings/NorthwindXmlMetaData] key
+                var path = ConfigurationManager.AppSettings["NorthwindXmlMetaData"];
+                var xml = Path.Combine(Server.MapPath("~"), path);
 
-            // Load MetaData from XML document. File name is stored in the "Web.config" file in [/configuration/appSettings/NorthwindXmlMetaData] key
-            var path = ConfigurationManager.AppSettings["NorthwindXmlMetaData"];
-            var xml = Path.Combine(Server.MapPath("~"), path);
+                queryBuilder.MetadataContainer.ImportFromXML(xml);
 
-            queryBuilder.MetadataContainer.ImportFromXML(xml);
-
-            //Set default query
-            queryBuilder.SQL = GetDefaultSql();
+                //Set default query
+                queryBuilder.SQL = GetDefaultSql();
+            });
 
             return new EmptyResult();
         }

@@ -10,19 +10,15 @@ namespace WebForms_Samples.Samples
 {
     public partial class LoadMetadataDemo : BasePage
     {
+        private const string InstanceId = "LoadMetadata";
+
         private readonly IDbConnection _conn = DataBaseHelper.CreateSqLiteConnection("SqLiteDataBase");
         protected int ActiveTabs = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("LoadMetadata");
-
-            if (qb == null)
-            {
-                qb = QueryBuilderStore.Create("LoadMetadata");
-                qb.SyntaxProvider = new GenericSyntaxProvider();
-            }
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, q => q.SyntaxProvider = new GenericSyntaxProvider());
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -42,7 +38,7 @@ namespace WebForms_Samples.Samples
         {
             ActiveTabs = 0;
 
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             ResetQueryBuilderMetadata(queryBuilder1);
             queryBuilder1.SyntaxProvider = new GenericSyntaxProvider();
@@ -102,7 +98,7 @@ namespace WebForms_Samples.Samples
         {
             ActiveTabs = 1;
 
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
             ResetQueryBuilderMetadata(queryBuilder1);
             // allow QueryBuilder to request metadata
             queryBuilder1.MetadataLoadingOptions.OfflineMode = false;
@@ -182,7 +178,7 @@ namespace WebForms_Samples.Samples
         {
             ActiveTabs = 2;
             
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
 
             try
             {
@@ -227,7 +223,7 @@ namespace WebForms_Samples.Samples
         {
             ActiveTabs = 3;
 
-            var queryBuilder1 = QueryBuilderStore.Get("LoadMetadata");
+            var queryBuilder1 = QueryBuilderStore.Get(InstanceId);
             ResetQueryBuilderMetadata(queryBuilder1);
 
             queryBuilder1.MetadataLoadingOptions.OfflineMode = true; // prevent QueryBuilder to request metadata from connection

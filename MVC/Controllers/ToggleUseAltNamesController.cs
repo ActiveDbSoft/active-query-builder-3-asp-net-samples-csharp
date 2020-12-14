@@ -8,21 +8,19 @@ namespace MVC_Samples.Controllers
 {
     public class ToggleUseAltNamesController : Controller
     {
+        private const string InstanceId = "ToggleUseAltNames";
+
         public ActionResult Index()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("ToggleUseAltNames");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
-
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
             return View(qb);
         }
 
         public ActionResult Toggle()
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("ToggleUseAltNames");
+            var qb = QueryBuilderStore.Get(InstanceId);
 
             qb.SQLFormattingOptions.UseAltNames = !qb.SQLFormattingOptions.UseAltNames;
 
@@ -33,10 +31,13 @@ namespace MVC_Samples.Controllers
             return new EmptyResult();
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.DB2("ToggleUseAltNames");
+            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
 
             queryBuilder.SQLFormattingOptions.UseAltNames = false;
             
@@ -50,8 +51,6 @@ namespace MVC_Samples.Controllers
 
             //Set default query
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()

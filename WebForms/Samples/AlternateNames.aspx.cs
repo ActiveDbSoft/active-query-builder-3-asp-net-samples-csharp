@@ -9,13 +9,12 @@ namespace WebForms_Samples.Samples
 {
     public partial class AlternateNames : BasePage
     {
+        private const string InstanceId = "AlternateNames";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("AlternateNames");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -26,10 +25,13 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.DB2("AlternateNames");
+            queryBuilder.SyntaxProvider = new DB2SyntaxProvider();
 
             // Turn displaying of alternate names on in the text of result SQL query and in the visual UI
             queryBuilder.SQLFormattingOptions.UseAltNames = true;
@@ -45,8 +47,6 @@ namespace WebForms_Samples.Samples
 
             //Set default query
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()
@@ -58,7 +58,7 @@ namespace WebForms_Samples.Samples
 
         public void OnSQLUpdated(object sender, EventArgs e)
         {
-            var qb = QueryBuilderStore.Get("AlternateNames");
+            var qb = QueryBuilderStore.Get(InstanceId);
 
             var opts = new SQLFormattingOptions();
 

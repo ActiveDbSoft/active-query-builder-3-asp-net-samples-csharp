@@ -1,7 +1,9 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using ActiveQueryBuilder.Web.Server;
+using Microsoft.Ajax.Utilities;
 
 namespace JavaScript
 {
@@ -18,6 +20,20 @@ namespace JavaScript
             
             // Uncomment this line to work with the "Create Query Configuration from Web.Config" demo
             // QueryBuilderStore.UseWebConfig();
+        }
+
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            if (!Request.IsSecureConnection)
+                return;
+
+            foreach (string name in Response.Cookies)
+            {
+                var cookie = Response.Cookies[name];
+
+                cookie.SameSite = SameSiteMode.None;
+                cookie.Secure = true;
+            }
         }
     }
 }

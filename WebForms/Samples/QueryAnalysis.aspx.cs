@@ -13,13 +13,12 @@ namespace WebForms_Samples.Samples
 {
     public partial class QueryAnalysis : BasePage
     {
+        private const string InstanceId = "QueryAnalysis";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("QueryAnalysis");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -30,11 +29,14 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.MsSql("QueryAnalysis");
-            
+            queryBuilder.SyntaxProvider = new MSSQLSyntaxProvider();
+
             // Denies metadata loading requests from the metadata provider
             queryBuilder.MetadataLoadingOptions.OfflineMode = true;
 
@@ -47,8 +49,6 @@ namespace WebForms_Samples.Samples
             queryBuilder.SQLQuery.SQLUpdated += OnSQLUpdated;
 
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()

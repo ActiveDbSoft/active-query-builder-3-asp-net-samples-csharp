@@ -10,20 +10,20 @@ namespace WebForms_Samples.Samples
 {
     public partial class QueryResultsDemo : BasePage
     {
+        private const string InstanceId = "QueryResults";
+
         private int _page = 0;
         private int _recordsCount = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("QueryResults");
-            var qt = QueryTransformerStore.Get("QueryResults");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
-
-            if (qt == null)
-                qt = CreateQueryTransformer(qb.SQLQuery);
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
+            var qt = QueryTransformerStore.GetOrCreate(InstanceId, q =>
+            {
+                q.QueryProvider = qb.SQLQuery;
+                q.AlwaysExpandColumnsInQuery = true;
+            });
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -36,13 +36,12 @@ namespace WebForms_Samples.Samples
         }
 
         /// <summary>
-        /// Creates and initializes a new instance of the QueryBuilder object.
+        /// Initializes a new instance of the QueryBuilder object.
         /// </summary>
-        /// <returns>Returns instance of the QueryBuilder object.</returns>
-        private QueryBuilder CreateQueryBuilder()
+        /// <param name="queryBuilder">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder queryBuilder)
         {
-            // Create an instance of the QueryBuilder object
-            var queryBuilder = QueryBuilderStore.Factory.SqLite("QueryResults");
+            queryBuilder.SyntaxProvider = new SQLiteSyntaxProvider();
 
             // Turn this property on to suppress parsing error messages when user types non-SELECT statements in the text editor.
             queryBuilder.BehaviorOptions.AllowSleepMode = false;
@@ -56,8 +55,6 @@ namespace WebForms_Samples.Samples
 
             // Assign the initial SQL query text the user sees on the _first_ page load
             queryBuilder.SQL = GetDefaultSql();
-
-            return queryBuilder;
         }
 
         private string GetDefaultSql()
@@ -66,16 +63,6 @@ namespace WebForms_Samples.Samples
                       customers.LastName,
                       customers.FirstName
                     From customers";
-        }
-
-        private QueryTransformer CreateQueryTransformer(SQLQuery query)
-        {
-            var qt = QueryTransformerStore.Create("QueryResults");
-
-            qt.QueryProvider = query;
-            qt.AlwaysExpandColumnsInQuery = true;
-
-            return qt;
         }
 
         protected void Prev_OnClick(object sender, EventArgs e)
@@ -92,8 +79,7 @@ namespace WebForms_Samples.Samples
 
         protected void UpdateDataGrid(object sender, EventArgs e)
         {
-            var qb = QueryBuilderStore.Get("QueryResults");
-            var qt = QueryTransformerStore.Get("QueryResults");
+            var qt = QueryTransformerStore.Get(InstanceId);
 
             if (string.IsNullOrEmpty(qt.SQL))
             {

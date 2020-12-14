@@ -11,13 +11,12 @@ namespace WebForms_Samples.Samples
 {
     public partial class ChangeConnection : BasePage
     {
+        private const string InstanceId = "ChangeConnection";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Get("ChangeConnection");
-
-            if (qb == null)
-                qb = CreateQueryBuilder();
+            var qb = QueryBuilderStore.GetOrCreate(InstanceId, InitializeQueryBuilder);
 
             QueryBuilderControl1.QueryBuilder = qb;
             ObjectTreeView1.QueryBuilder = qb;
@@ -28,14 +27,13 @@ namespace WebForms_Samples.Samples
             StatusBar1.QueryBuilder = qb;
         }
 
-        private QueryBuilder CreateQueryBuilder()
+        /// <summary>
+        /// Initializes a new instance of the QueryBuilder object.
+        /// </summary>
+        /// <param name="qb">Active Query Builder instance.</param>
+        private void InitializeQueryBuilder(QueryBuilder qb)
         {
-            // Create an instance of the QueryBuilder object
-            var qb = QueryBuilderStore.Create("ChangeConnection");
-
             SetNorthwindXml(qb);
-
-            return qb;
         }
 
         private void SetNorthwindXml(QueryBuilder qb)
@@ -84,7 +82,7 @@ namespace WebForms_Samples.Samples
 
         public void Change(string name)
         {
-            var queryBuilder = QueryBuilderStore.Get("ChangeConnection");
+            var queryBuilder = QueryBuilderStore.Get(InstanceId);
 
             queryBuilder.MetadataContainer.Clear();
 

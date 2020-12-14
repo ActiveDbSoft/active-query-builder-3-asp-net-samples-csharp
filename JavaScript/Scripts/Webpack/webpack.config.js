@@ -6,8 +6,10 @@ module.exports = {
     devServer: {
         proxy: {
             '*': {
-                target: 'http://localhost:1066'
-            }
-        }
+				"target": "https://[::1]:44384",
+				"secure": false
+            }			
+        },
+		'https': true
     }
 };
