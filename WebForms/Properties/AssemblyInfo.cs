@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WebForms_Samples")]
-[assembly: AssemblyCopyright("Copyright © 2018-2020 Active Database Software")]
+[assembly: AssemblyCopyright("Copyright © 2018-2021 Active Database Software")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
