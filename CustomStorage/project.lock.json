@@ -120,7 +120,7 @@
       "Respond/1.2.0": {
         "type": "package"
       },
-      "System.Data.SQLite.Core/1.0.109": {
+      "Stub.System.Data.SQLite.Core.NetFramework/1.0.113.3": {
         "type": "package",
         "compile": {
           "lib/net45/System.Data.SQLite.dll": {}
@@ -129,7 +129,13 @@
           "lib/net45/System.Data.SQLite.dll": {}
         },
         "build": {
-          "build/net45/System.Data.SQLite.Core.targets": {}
+          "buildTransitive/net45/Stub.System.Data.SQLite.Core.NetFramework.targets": {}
+        }
+      },
+      "System.Data.SQLite.Core/1.0.113.7": {
+        "type": "package",
+        "dependencies": {
+          "Stub.System.Data.SQLite.Core.NetFramework": "1.0.113.3"
         }
       },
       "WebGrease/1.5.2": {
@@ -265,7 +271,7 @@
       "Respond/1.2.0": {
         "type": "package"
       },
-      "System.Data.SQLite.Core/1.0.109": {
+      "Stub.System.Data.SQLite.Core.NetFramework/1.0.113.3": {
         "type": "package",
         "compile": {
           "lib/net45/System.Data.SQLite.dll": {}
@@ -274,7 +280,13 @@
           "lib/net45/System.Data.SQLite.dll": {}
         },
         "build": {
-          "build/net45/System.Data.SQLite.Core.targets": {}
+          "buildTransitive/net45/Stub.System.Data.SQLite.Core.NetFramework.targets": {}
+        }
+      },
+      "System.Data.SQLite.Core/1.0.113.7": {
+        "type": "package",
+        "dependencies": {
+          "Stub.System.Data.SQLite.Core.NetFramework": "1.0.113.3"
         }
       },
       "WebGrease/1.5.2": {
@@ -528,52 +540,60 @@
         "respond.nuspec"
       ]
     },
-    "System.Data.SQLite.Core/1.0.109": {
-      "sha512": "oPxz072xISqpXXOsCu77OVVy6nNrFGecmMU0XKT+fcIkBDQcGW5PgajEoY/64AFh2DdMNAcZEOdYDV6oGywqlw==",
+    "Stub.System.Data.SQLite.Core.NetFramework/1.0.113.3": {
+      "sha512": "HAZt6dEnKobDle4LKwnZXUa/iY8pSmKCZfpyaB3tdeNwOaPWOcClDTdrN5sv/WjYN6EmbDKX6+bBksF4K/ss4A==",
       "type": "package",
-      "path": "system.data.sqlite.core/1.0.109",
+      "path": "stub.system.data.sqlite.core.netframework/1.0.113.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "build/net20/System.Data.SQLite.Core.targets",
+        "build/net20/Stub.System.Data.SQLite.Core.NetFramework.targets",
         "build/net20/x64/SQLite.Interop.dll",
         "build/net20/x86/SQLite.Interop.dll",
-        "build/net40/System.Data.SQLite.Core.targets",
+        "build/net40/Stub.System.Data.SQLite.Core.NetFramework.targets",
         "build/net40/x64/SQLite.Interop.dll",
         "build/net40/x86/SQLite.Interop.dll",
-        "build/net45/System.Data.SQLite.Core.targets",
+        "build/net45/Stub.System.Data.SQLite.Core.NetFramework.targets",
         "build/net45/x64/SQLite.Interop.dll",
         "build/net45/x86/SQLite.Interop.dll",
-        "build/net451/System.Data.SQLite.Core.targets",
+        "build/net451/Stub.System.Data.SQLite.Core.NetFramework.targets",
         "build/net451/x64/SQLite.Interop.dll",
         "build/net451/x86/SQLite.Interop.dll",
-        "build/net46/System.Data.SQLite.Core.targets",
+        "build/net46/Stub.System.Data.SQLite.Core.NetFramework.targets",
         "build/net46/x64/SQLite.Interop.dll",
         "build/net46/x86/SQLite.Interop.dll",
-        "build/netstandard2.0/System.Data.SQLite.Core.targets",
-        "build/netstandard2.0/linux-x64/SQLite.Interop.dll",
-        "build/netstandard2.0/osx-x64/SQLite.Interop.dll",
-        "build/netstandard2.0/x64/SQLite.Interop.dll",
-        "build/netstandard2.0/x86/SQLite.Interop.dll",
+        "buildTransitive/net20/Stub.System.Data.SQLite.Core.NetFramework.targets",
+        "buildTransitive/net40/Stub.System.Data.SQLite.Core.NetFramework.targets",
+        "buildTransitive/net45/Stub.System.Data.SQLite.Core.NetFramework.targets",
+        "buildTransitive/net451/Stub.System.Data.SQLite.Core.NetFramework.targets",
+        "buildTransitive/net46/Stub.System.Data.SQLite.Core.NetFramework.targets",
         "lib/net20/System.Data.SQLite.dll",
-        "lib/net20/System.Data.SQLite.dll.config",
+        "lib/net20/System.Data.SQLite.dll.altconfig",
         "lib/net20/System.Data.SQLite.xml",
         "lib/net40/System.Data.SQLite.dll",
-        "lib/net40/System.Data.SQLite.dll.config",
+        "lib/net40/System.Data.SQLite.dll.altconfig",
         "lib/net40/System.Data.SQLite.xml",
         "lib/net45/System.Data.SQLite.dll",
-        "lib/net45/System.Data.SQLite.dll.config",
+        "lib/net45/System.Data.SQLite.dll.altconfig",
         "lib/net45/System.Data.SQLite.xml",
         "lib/net451/System.Data.SQLite.dll",
-        "lib/net451/System.Data.SQLite.dll.config",
+        "lib/net451/System.Data.SQLite.dll.altconfig",
         "lib/net451/System.Data.SQLite.xml",
         "lib/net46/System.Data.SQLite.dll",
-        "lib/net46/System.Data.SQLite.dll.config",
+        "lib/net46/System.Data.SQLite.dll.altconfig",
         "lib/net46/System.Data.SQLite.xml",
-        "lib/netstandard2.0/System.Data.SQLite.dll",
-        "lib/netstandard2.0/System.Data.SQLite.dll.config",
-        "lib/netstandard2.0/System.Data.SQLite.xml",
-        "system.data.sqlite.core.1.0.109.nupkg.sha512",
+        "stub.system.data.sqlite.core.netframework.1.0.113.3.nupkg.sha512",
+        "stub.system.data.sqlite.core.netframework.nuspec"
+      ]
+    },
+    "System.Data.SQLite.Core/1.0.113.7": {
+      "sha512": "2DKMIxfZpIVzdMfx1dj9qvTm+0m0Mx6sN6CZXMQDNytU7Sk/JKo0Ox6mvHAicfHrQgqZbUZMzMMtLXD0kwmFfg==",
+      "type": "package",
+      "path": "system.data.sqlite.core/1.0.113.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "system.data.sqlite.core.1.0.113.7.nupkg.sha512",
         "system.data.sqlite.core.nuspec"
       ]
     },
@@ -606,7 +626,7 @@
       "Modernizr >= 2.6.2",
       "Newtonsoft.Json >= 6.0.4",
       "Respond >= 1.2.0",
-      "System.Data.SQLite.Core >= 1.0.109",
+      "System.Data.SQLite.Core >= 1.0.113.7",
       "WebGrease >= 1.5.2",
       "bootstrap >= 3.0.0",
       "jQuery >= 1.10.2",
@@ -616,31 +636,36 @@
     ".NETFramework,Version=v4.5": []
   },
   "packageFolders": {
-    "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages": {},
+    "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\packages": {},
     "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\Offline Packages": {},
-    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {}
+    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {},
+    "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\CustomStorage.csproj",
+      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\CustomStorage.csproj",
       "projectName": "CustomStorage",
-      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\CustomStorage.csproj",
-      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\project.json",
-      "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\packages",
-      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\ASP\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\obj\\",
+      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\CustomStorage.csproj",
+      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\project.json",
+      "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\packages",
+      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\CustomStorage\\netcore\\obj\\",
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\Offline Packages",
-        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages"
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+        "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\NuGet.Config",
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.1.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "sources": {
@@ -648,7 +673,9 @@
         "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\vagrant\\Distribs\\Programming\\!Components\\DevExpress.Net\\_nuget.local\\devexpress-21.1.3": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.devexpress.com/y1gK22cPPOqpaMkDSyS8jMDsBk3mzKsIdAHWwDbfvDfjahkusq/api": {}
       },
@@ -669,7 +696,7 @@
       "Modernizr": "[2.6.2, )",
       "Newtonsoft.Json": "[6.0.4, )",
       "Respond": "[1.2.0, )",
-      "System.Data.SQLite.Core": "[1.0.109, )",
+      "System.Data.SQLite.Core": "[1.0.113.7, )",
       "WebGrease": "[1.5.2, )",
       "bootstrap": "[3.0.0, )",
       "jQuery": "[1.10.2, )",

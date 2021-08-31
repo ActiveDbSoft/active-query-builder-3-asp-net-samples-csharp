@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{5689838E-0F1D-48B3-AB14-CA1B5475E4AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC Demo", "MVC\MVC Demo.csproj", "{5689838E-0F1D-48B3-AB14-CA1B5475E4AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms", "WebForms\WebForms.csproj", "{C0AB43EC-1040-400C-89BA-7C968952E481}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms Demo", "WebForms\WebForms Demo.csproj", "{C0AB43EC-1040-400C-89BA-7C968952E481}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScript", "JavaScript\JavaScript.csproj", "{68C2BCE1-60A7-44ED-B504-85C193A269D3}"
 EndProject

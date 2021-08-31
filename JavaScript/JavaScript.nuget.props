@@ -3,19 +3,26 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
-    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\src\Samples\ASP.NET\Samples CSharp\JavaScript\project.lock.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages;C:\Program Files (x86)\DevExpress 20.2\.NET Core Desktop Libraries\Offline Packages;C:\Program Files (x86)\DevExpress 20.2\Components\Offline Packages</NuGetPackageFolders>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.lock.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\packages</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\packages;C:\Program Files (x86)\DevExpress 20.2\.NET Core Desktop Libraries\Offline Packages;C:\Program Files (x86)\DevExpress 20.2\Components\Offline Packages;C:\Program Files (x86)\DevExpress 21.1\Components\Offline Packages;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">ProjectJson</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">4.9.3</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.9.1</NuGetToolVersion>
   </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\DevExpress 20.2\.NET Core Desktop Libraries\Offline Packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\DevExpress 20.2\Components\Offline Packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\DevExpress 21.1\Components\Offline Packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\newtonsoft.json\6.0.4</PkgNewtonsoft_Json>
-    <PkgWebGrease Condition=" '$(PkgWebGrease)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\webgrease\1.5.2</PkgWebGrease>
-    <PkgModernizr Condition=" '$(PkgModernizr)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\modernizr\2.6.2</PkgModernizr>
-    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\ASP\packages\jquery\1.10.2</PkgjQuery>
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\packages\newtonsoft.json\6.0.4</PkgNewtonsoft_Json>
+    <PkgWebGrease Condition=" '$(PkgWebGrease)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\packages\webgrease\1.5.2</PkgWebGrease>
+    <PkgModernizr Condition=" '$(PkgModernizr)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\packages\modernizr\2.6.2</PkgModernizr>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\TeamCity_work\ActiveQueryBuilderASP.NET3.0_1\packages\jquery\1.10.2</PkgjQuery>
   </PropertyGroup>
 </Project>
