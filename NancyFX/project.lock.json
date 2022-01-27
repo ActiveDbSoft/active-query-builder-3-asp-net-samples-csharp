@@ -241,43 +241,32 @@
     ".NETFramework,Version=v4.5": []
   },
   "packageFolders": {
-    "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\packages": {},
-    "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {},
+    "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
+      "projectUniqueName": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
       "projectName": "NancyFX",
-      "projectPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
-      "projectJsonPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\project.json",
-      "packagesPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\packages",
-      "outputPath": "C:\\TeamCity_work\\ActiveQueryBuilderASP.NET3.0_1\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\netcore\\obj\\",
+      "projectPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
+      "projectJsonPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\project.json",
+      "packagesPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\packages",
+      "outputPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\netcore\\obj\\",
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\System\\Components\\Packages": {},
-        "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "c:\\vagrant\\_nuget.local\\devexpress-20.2.7": {},
-        "c:\\vagrant\\_nuget.local\\devexpress-21.1.3": {},
-        "c:\\vagrant\\_nuget.local\\devexpress-21.2.3": {},
         "c:\\vagrant\\_nuget.local\\devexpress-21.2.4": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.devexpress.com/y1gK22cPPOqpaMkDSyS8jMDsBk3mzKsIdAHWwDbfvDfjahkusq/api": {}
+        "c:\\vagrant\\_nuget.local\\devexpress-21.2.5": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net45": {
