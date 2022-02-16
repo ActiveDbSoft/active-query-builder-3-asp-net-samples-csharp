@@ -1,10 +1,10 @@
 {
   "dependencies": {
-  "ActiveQueryBuilder.Core": "3.8.16.2218",
-  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.8.16.2218",
-  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.8.16.2218",
-  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.8.16.2218",
-  "ActiveQueryBuilder.Web.WebForms": "3.8.16.452",
+  "ActiveQueryBuilder.Core": "3.8.17.2219",
+  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.8.17.2219",
+  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.8.17.2219",
+  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.8.17.2219",
+  "ActiveQueryBuilder.Web.WebForms": "3.8.17.453",
     "Antlr": "3.4.1.9004",
     "AspNet.ScriptManager.bootstrap": "3.0.0",
     "AspNet.ScriptManager.jQuery": "1.10.2",
@@ -25,7 +25,7 @@
     "WebGrease": "1.5.2"
   },
   "frameworks": {
-    "net45": {}
+    "net472": {}
   },
   "runtimes": {
     "win": {}

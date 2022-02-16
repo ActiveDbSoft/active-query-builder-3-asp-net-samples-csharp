@@ -4,6 +4,6 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)\stub.system.data.sqlite.core.netframework\1.0.113.3\buildTransitive\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('$(NuGetPackageRoot)\stub.system.data.sqlite.core.netframework\1.0.113.3\buildTransitive\net45\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+    <Import Project="$(NuGetPackageRoot)\stub.system.data.sqlite.core.netframework\1.0.113.3\buildTransitive\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('$(NuGetPackageRoot)\stub.system.data.sqlite.core.netframework\1.0.113.3\buildTransitive\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   </ImportGroup>
 </Project>

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.5": {
+    ".NETFramework,Version=v4.7.2": {
       "Antlr/3.4.1.9004": {
         "type": "package",
         "compile": {
@@ -134,7 +134,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.5/win": {
+    ".NETFramework,Version=v4.7.2/win": {
       "Antlr/3.4.1.9004": {
         "type": "package",
         "compile": {
@@ -539,7 +539,7 @@
       "jQuery.Validation >= 1.11.1",
       "log4net >= 2.0.8"
     ],
-    ".NETFramework,Version=v4.5": []
+    ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
     "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\packages": {},
@@ -570,7 +570,7 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net45": {
+        "net472": {
           "projectReferences": {}
         }
       }
@@ -593,7 +593,7 @@
       "log4net": "[2.0.8, )"
     },
     "frameworks": {
-      "net45": {}
+      "net472": {}
     },
     "runtimes": {
       "win": {

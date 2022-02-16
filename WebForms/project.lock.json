@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.5": {
+    ".NETFramework,Version=v4.7.2": {
       "Antlr/3.4.1.9004": {
         "type": "package",
         "compile": {
@@ -139,13 +139,13 @@
       "Stub.System.Data.SQLite.Core.NetFramework/1.0.113.3": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "build": {
-          "buildTransitive/net45/Stub.System.Data.SQLite.Core.NetFramework.targets": {}
+          "buildTransitive/net46/Stub.System.Data.SQLite.Core.NetFramework.targets": {}
         }
       },
       "System.Data.SQLite.Core/1.0.113.7": {
@@ -168,7 +168,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.5/win": {
+    ".NETFramework,Version=v4.7.2/win": {
       "Antlr/3.4.1.9004": {
         "type": "package",
         "compile": {
@@ -306,13 +306,13 @@
       "Stub.System.Data.SQLite.Core.NetFramework/1.0.113.3": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {}
         },
         "build": {
-          "buildTransitive/net45/Stub.System.Data.SQLite.Core.NetFramework.targets": {}
+          "buildTransitive/net46/Stub.System.Data.SQLite.Core.NetFramework.targets": {}
         }
       },
       "System.Data.SQLite.Core/1.0.113.7": {
@@ -709,7 +709,7 @@
       "jQuery >= 1.10.2",
       "log4net >= 2.0.8"
     ],
-    ".NETFramework,Version=v4.5": []
+    ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
     "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\packages": {},
@@ -740,7 +740,7 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net45": {
+        "net472": {
           "projectReferences": {}
         }
       }
@@ -766,7 +766,7 @@
       "log4net": "[2.0.8, )"
     },
     "frameworks": {
-      "net45": {}
+      "net472": {}
     },
     "runtimes": {
       "win": {

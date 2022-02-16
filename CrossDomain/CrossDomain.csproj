@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CrossDomain</RootNamespace>
     <AssemblyName>CrossDomain</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -69,6 +69,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -144,8 +145,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ActiveQueryBuilder.Core, Version=3.8.16.2218, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
-    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.8.16.452, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Core, Version=3.8.17.2219, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.8.17.453, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

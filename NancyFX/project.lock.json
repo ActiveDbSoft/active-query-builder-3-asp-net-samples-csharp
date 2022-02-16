@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.5": {
+    ".NETFramework,Version=v4.7.2": {
       "jQuery/1.10.2": {
         "type": "package"
       },
@@ -61,7 +61,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.5/win": {
+    ".NETFramework,Version=v4.7.2/win": {
       "jQuery/1.10.2": {
         "type": "package"
       },
@@ -238,7 +238,7 @@
       "Newtonsoft.Json >= 6.0.4",
       "jQuery >= 1.10.2"
     ],
-    ".NETFramework,Version=v4.5": []
+    ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
     "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\packages": {},
@@ -269,7 +269,7 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net45": {
+        "net472": {
           "projectReferences": {}
         }
       }
@@ -283,7 +283,7 @@
       "jQuery": "[1.10.2, )"
     },
     "frameworks": {
-      "net45": {}
+      "net472": {}
     },
     "runtimes": {
       "win": {
