@@ -78,10 +78,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ActiveQueryBuilder.Core, Version=3.8.29.2230, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
-    <Reference Include="ActiveQueryBuilder.View, Version=3.8.29.2230, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
-    <Reference Include="ActiveQueryBuilder.Web.MVC, Version=3.8.29.463, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
-    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.8.29.463, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Core, Version=3.9.0.2232, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.View, Version=3.9.0.2232, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.MVC, Version=3.9.0.464, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.9.0.464, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />

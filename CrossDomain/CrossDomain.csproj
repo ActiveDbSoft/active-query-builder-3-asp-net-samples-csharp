@@ -145,8 +145,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ActiveQueryBuilder.Core, Version=3.8.29.2230, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
-    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.8.29.463, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Core, Version=3.9.0.2232, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.9.0.464, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
