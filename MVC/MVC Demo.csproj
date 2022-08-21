@@ -214,8 +214,8 @@
     <Reference Include="ActiveQueryBuilder.EventMetadataProvider, Version=3.9.0.2232, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
     <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider, Version=3.9.0.2232, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
     <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider, Version=3.9.0.2232, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
-    <Reference Include="ActiveQueryBuilder.Web.MVC, Version=3.9.0.464, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
-    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.9.0.464, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.MVC, Version=3.9.1.465, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
+    <Reference Include="ActiveQueryBuilder.Web.Server, Version=3.9.1.465, Culture=neutral, PublicKeyToken=49d051b90653c7f4, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
