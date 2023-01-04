@@ -4,7 +4,7 @@
   "ActiveQueryBuilder.SQLiteMetadataProvider": "3.9.5.2237",
   "ActiveQueryBuilder.OLEDBMetadataProvider": "3.9.5.2237",
   "ActiveQueryBuilder.MSSQLMetadataProvider": "3.9.5.2237",
-  "ActiveQueryBuilder.Web.WebForms": "3.9.5.471",
+  "ActiveQueryBuilder.Web.WebForms": "3.9.6.472",
     "Antlr": "3.4.1.9004",
     "AspNet.ScriptManager.bootstrap": "3.0.0",
     "AspNet.ScriptManager.jQuery": "1.10.2",
