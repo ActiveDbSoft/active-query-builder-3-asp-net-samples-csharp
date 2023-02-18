@@ -865,6 +865,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "c:\\vagrant\\_nuget.local\\devexpress-22.1.3": {},
+        "c:\\vagrant\\_nuget.local\\devexpress-22.2.3": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
