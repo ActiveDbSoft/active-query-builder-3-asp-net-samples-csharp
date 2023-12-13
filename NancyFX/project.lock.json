@@ -8,19 +8,27 @@
       "Microsoft.AspNet.Razor/3.2.3": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Nancy/1.4.5": {
         "type": "package",
         "compile": {
-          "lib/net40/Nancy.dll": {}
+          "lib/net40/Nancy.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net40/Nancy.dll": {}
+          "lib/net40/Nancy.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Nancy.Hosting.Aspnet/1.4.1": {
@@ -29,10 +37,14 @@
           "Nancy": "1.4.1"
         },
         "compile": {
-          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Nancy.Viewengines.Razor/1.4.3": {
@@ -42,10 +54,14 @@
           "Nancy": "1.4.3"
         },
         "compile": {
-          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "build/Nancy.ViewEngines.Razor.targets": {}
@@ -54,10 +70,14 @@
       "Newtonsoft.Json/6.0.4": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       }
     },
@@ -68,19 +88,27 @@
       "Microsoft.AspNet.Razor/3.2.3": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Nancy/1.4.5": {
         "type": "package",
         "compile": {
-          "lib/net40/Nancy.dll": {}
+          "lib/net40/Nancy.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net40/Nancy.dll": {}
+          "lib/net40/Nancy.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Nancy.Hosting.Aspnet/1.4.1": {
@@ -89,10 +117,14 @@
           "Nancy": "1.4.1"
         },
         "compile": {
-          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net40/Nancy.Hosting.Aspnet.dll": {}
+          "lib/net40/Nancy.Hosting.Aspnet.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Nancy.Viewengines.Razor/1.4.3": {
@@ -102,10 +134,14 @@
           "Nancy": "1.4.3"
         },
         "compile": {
-          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net40/Nancy.ViewEngines.Razor.dll": {}
+          "lib/net40/Nancy.ViewEngines.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "build/Nancy.ViewEngines.Razor.targets": {}
@@ -114,10 +150,14 @@
       "Newtonsoft.Json/6.0.4": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       }
     }

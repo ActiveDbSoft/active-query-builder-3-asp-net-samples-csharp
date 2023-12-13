@@ -47,10 +47,14 @@
       "log4net/2.0.8": {
         "type": "package",
         "compile": {
-          "lib/net45-full/log4net.dll": {}
+          "lib/net45-full/log4net.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45-full/log4net.dll": {}
+          "lib/net45-full/log4net.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.FriendlyUrls/1.0.2": {
@@ -62,10 +66,14 @@
       "Microsoft.AspNet.FriendlyUrls.Core/1.0.2": {
         "type": "package",
         "compile": {
-          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.ScriptManager.MSAjax/5.0.0": {
@@ -127,10 +135,14 @@
       "Newtonsoft.Json/6.0.4": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Respond/1.2.0": {
@@ -139,10 +151,14 @@
       "Stub.System.Data.SQLite.Core.NetFramework/1.0.113.3": {
         "type": "package",
         "compile": {
-          "lib/net46/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {
+            "related": ".dll.altconfig;.xml"
+          }
         },
         "runtime": {
-          "lib/net46/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {
+            "related": ".dll.altconfig;.xml"
+          }
         },
         "build": {
           "buildTransitive/net46/Stub.System.Data.SQLite.Core.NetFramework.targets": {}
@@ -214,10 +230,14 @@
       "log4net/2.0.8": {
         "type": "package",
         "compile": {
-          "lib/net45-full/log4net.dll": {}
+          "lib/net45-full/log4net.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45-full/log4net.dll": {}
+          "lib/net45-full/log4net.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.FriendlyUrls/1.0.2": {
@@ -229,10 +249,14 @@
       "Microsoft.AspNet.FriendlyUrls.Core/1.0.2": {
         "type": "package",
         "compile": {
-          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {}
+          "lib/net45/Microsoft.AspNet.FriendlyUrls.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.ScriptManager.MSAjax/5.0.0": {
@@ -294,10 +318,14 @@
       "Newtonsoft.Json/6.0.4": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Respond/1.2.0": {
@@ -306,10 +334,14 @@
       "Stub.System.Data.SQLite.Core.NetFramework/1.0.113.3": {
         "type": "package",
         "compile": {
-          "lib/net46/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {
+            "related": ".dll.altconfig;.xml"
+          }
         },
         "runtime": {
-          "lib/net46/System.Data.SQLite.dll": {}
+          "lib/net46/System.Data.SQLite.dll": {
+            "related": ".dll.altconfig;.xml"
+          }
         },
         "build": {
           "buildTransitive/net46/Stub.System.Data.SQLite.Core.NetFramework.targets": {}

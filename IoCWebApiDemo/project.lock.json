@@ -14,10 +14,14 @@
       "Autofac/4.9.2": {
         "type": "package",
         "compile": {
-          "lib/net45/Autofac.dll": {}
+          "lib/net45/Autofac.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/Autofac.dll": {}
+          "lib/net45/Autofac.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Autofac.WebApi2/4.2.1": {
@@ -27,10 +31,14 @@
           "Microsoft.AspNet.WebApi.Core": "[5.2.0, 6.0.0)"
         },
         "compile": {
-          "lib/net45/Autofac.Integration.WebApi.dll": {}
+          "lib/net45/Autofac.Integration.WebApi.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/Autofac.Integration.WebApi.dll": {}
+          "lib/net45/Autofac.Integration.WebApi.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "bootstrap/3.3.7": {
@@ -49,19 +57,27 @@
           "Microsoft.AspNet.WebPages": "[3.2.4, 3.3.0)"
         },
         "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
+          "lib/net45/System.Web.Mvc.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
+          "lib/net45/System.Web.Mvc.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.Razor/3.2.4": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.TelemetryCorrelation/1.0.0": {
@@ -70,10 +86,14 @@
           "System.Diagnostics.DiagnosticSource": "4.4.0"
         },
         "compile": {
-          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {}
+          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {}
+          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.Web.Optimization/1.1.3": {
@@ -104,10 +124,14 @@
           "System.Net.Http"
         ],
         "compile": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Core/5.2.4": {
@@ -116,10 +140,14 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.4"
         },
         "compile": {
-          "lib/net45/System.Web.Http.dll": {}
+          "lib/net45/System.Web.Http.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Http.dll": {}
+          "lib/net45/System.Web.Http.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.HelpPage/5.2.4": {
@@ -140,10 +168,14 @@
           "Microsoft.AspNet.WebApi.Core": "[5.2.4, 5.3.0)"
         },
         "compile": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
+          "lib/net45/System.Web.Http.WebHost.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
+          "lib/net45/System.Web.Http.WebHost.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.WebPages/3.2.4": {
@@ -153,16 +185,32 @@
           "Microsoft.Web.Infrastructure": "1.0.0"
         },
         "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {}
+          "lib/net45/System.Web.Helpers.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.dll": {
+            "related": ".Deployment.xml;.Razor.xml;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {}
+          "lib/net45/System.Web.Helpers.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.dll": {
+            "related": ".Deployment.xml;.Razor.xml;.xml"
+          }
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -180,10 +228,14 @@
       "Newtonsoft.Json/11.0.1": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Diagnostics.DiagnosticSource/4.4.1": {
@@ -193,10 +245,14 @@
           "mscorlib"
         ],
         "compile": {
-          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         }
       },
       "WebGrease/1.6.0": {
@@ -226,10 +282,14 @@
       "Autofac/4.9.2": {
         "type": "package",
         "compile": {
-          "lib/net45/Autofac.dll": {}
+          "lib/net45/Autofac.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/Autofac.dll": {}
+          "lib/net45/Autofac.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Autofac.WebApi2/4.2.1": {
@@ -239,10 +299,14 @@
           "Microsoft.AspNet.WebApi.Core": "[5.2.0, 6.0.0)"
         },
         "compile": {
-          "lib/net45/Autofac.Integration.WebApi.dll": {}
+          "lib/net45/Autofac.Integration.WebApi.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/Autofac.Integration.WebApi.dll": {}
+          "lib/net45/Autofac.Integration.WebApi.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "bootstrap/3.3.7": {
@@ -261,19 +325,27 @@
           "Microsoft.AspNet.WebPages": "[3.2.4, 3.3.0)"
         },
         "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
+          "lib/net45/System.Web.Mvc.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
+          "lib/net45/System.Web.Mvc.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.Razor/3.2.4": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
+          "lib/net45/System.Web.Razor.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.TelemetryCorrelation/1.0.0": {
@@ -282,10 +354,14 @@
           "System.Diagnostics.DiagnosticSource": "4.4.0"
         },
         "compile": {
-          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {}
+          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {}
+          "lib/net45/Microsoft.AspNet.TelemetryCorrelation.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.Web.Optimization/1.1.3": {
@@ -316,10 +392,14 @@
           "System.Net.Http"
         ],
         "compile": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
+          "lib/net45/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Core/5.2.4": {
@@ -328,10 +408,14 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.4"
         },
         "compile": {
-          "lib/net45/System.Web.Http.dll": {}
+          "lib/net45/System.Web.Http.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Http.dll": {}
+          "lib/net45/System.Web.Http.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.HelpPage/5.2.4": {
@@ -352,10 +436,14 @@
           "Microsoft.AspNet.WebApi.Core": "[5.2.4, 5.3.0)"
         },
         "compile": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
+          "lib/net45/System.Web.Http.WebHost.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
+          "lib/net45/System.Web.Http.WebHost.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNet.WebPages/3.2.4": {
@@ -365,16 +453,32 @@
           "Microsoft.Web.Infrastructure": "1.0.0"
         },
         "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {}
+          "lib/net45/System.Web.Helpers.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.dll": {
+            "related": ".Deployment.xml;.Razor.xml;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {}
+          "lib/net45/System.Web.Helpers.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/System.Web.WebPages.dll": {
+            "related": ".Deployment.xml;.Razor.xml;.xml"
+          }
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -392,10 +496,14 @@
       "Newtonsoft.Json/11.0.1": {
         "type": "package",
         "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Diagnostics.DiagnosticSource/4.4.1": {
@@ -405,10 +513,14 @@
           "mscorlib"
         ],
         "compile": {
-          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net46/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         }
       },
       "WebGrease/1.6.0": {
