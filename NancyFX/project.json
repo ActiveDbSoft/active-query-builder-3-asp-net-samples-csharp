@@ -4,7 +4,7 @@
   "ActiveQueryBuilder.SQLiteMetadataProvider": "3.11.2.2251",
   "ActiveQueryBuilder.OLEDBMetadataProvider": "3.11.2.2251",
   "ActiveQueryBuilder.MSSQLMetadataProvider": "3.11.2.2251",
-  "ActiveQueryBuilder.Web.MVC": "3.10.2.484",
+  "ActiveQueryBuilder.Web.MVC": "3.11.2.484",
     "jQuery": "1.10.2",
     "Microsoft.AspNet.Razor": "3.2.3",
     "Nancy": "1.4.5",
