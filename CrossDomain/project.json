@@ -1,10 +1,10 @@
 {
   "dependencies": {
-  "ActiveQueryBuilder.Core": "3.11.2.2251",
-  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.11.2.2251",
-  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.11.2.2251",
-  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.11.2.2251",
-  "ActiveQueryBuilder.Web.MVC": "3.11.2.484",
+  "ActiveQueryBuilder.Core": "3.11.3.2252",
+  "ActiveQueryBuilder.SQLiteMetadataProvider": "3.11.3.2252",
+  "ActiveQueryBuilder.OLEDBMetadataProvider": "3.11.3.2252",
+  "ActiveQueryBuilder.MSSQLMetadataProvider": "3.11.3.2252",
+  "ActiveQueryBuilder.Web.MVC": "3.11.3.485",
     "Antlr": "3.4.1.9004",
     "bootstrap": "3.0.0",
     "jQuery": "1.10.2",
