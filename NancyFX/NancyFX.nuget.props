@@ -4,17 +4,17 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.lock.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">C:\gitlab-runner\builds\CCSCgA3g\0\aqb\active-query-builder-3-asp\packages</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\gitlab-runner\builds\CCSCgA3g\0\aqb\active-query-builder-3-asp\packages;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">C:\gitlab-runner\builds\BqqNRUzdm\0\aqb\active-query-builder-3-asp\packages</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\gitlab-runner\builds\BqqNRUzdm\0\aqb\active-query-builder-3-asp\packages;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">ProjectJson</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.7.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\gitlab-runner\builds\CCSCgA3g\0\aqb\active-query-builder-3-asp\packages\" />
+    <SourceRoot Include="C:\gitlab-runner\builds\BqqNRUzdm\0\aqb\active-query-builder-3-asp\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\gitlab-runner\builds\CCSCgA3g\0\aqb\active-query-builder-3-asp\packages\newtonsoft.json\6.0.4</PkgNewtonsoft_Json>
-    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\gitlab-runner\builds\CCSCgA3g\0\aqb\active-query-builder-3-asp\packages\jquery\1.10.2</PkgjQuery>
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\gitlab-runner\builds\BqqNRUzdm\0\aqb\active-query-builder-3-asp\packages\newtonsoft.json\6.0.4</PkgNewtonsoft_Json>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\gitlab-runner\builds\BqqNRUzdm\0\aqb\active-query-builder-3-asp\packages\jquery\1.10.2</PkgjQuery>
   </PropertyGroup>
 </Project>

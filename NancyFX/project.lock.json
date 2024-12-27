@@ -281,17 +281,17 @@
     ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
-    "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\packages": {},
+    "C:\\gitlab-runner\\builds\\BqqNRUzdm\\0\\aqb\\active-query-builder-3-asp\\packages": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
+      "projectUniqueName": "C:\\gitlab-runner\\builds\\BqqNRUzdm\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
       "projectName": "NancyFX",
-      "projectPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
-      "projectJsonPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\project.json",
-      "packagesPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\packages",
-      "outputPath": "C:\\gitlab-runner\\builds\\CCSCgA3g\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\netcore\\obj\\",
+      "projectPath": "C:\\gitlab-runner\\builds\\BqqNRUzdm\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\NancyFX.csproj",
+      "projectJsonPath": "C:\\gitlab-runner\\builds\\BqqNRUzdm\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\project.json",
+      "packagesPath": "C:\\gitlab-runner\\builds\\BqqNRUzdm\\0\\aqb\\active-query-builder-3-asp\\packages",
+      "outputPath": "C:\\gitlab-runner\\builds\\BqqNRUzdm\\0\\aqb\\active-query-builder-3-asp\\src\\Samples\\ASP.NET\\Samples CSharp\\NancyFX\\netcore\\obj\\",
       "projectStyle": "ProjectJson",
       "validateRuntimeAssets": true,
       "fallbackFolders": [
@@ -306,6 +306,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "c:\\vagrant\\_nuget.local\\devexpress-22.1.3": {},
         "c:\\vagrant\\_nuget.local\\devexpress-22.2.3": {},
+        "c:\\vagrant\\_nuget.local\\devexpress-24.1.6": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
