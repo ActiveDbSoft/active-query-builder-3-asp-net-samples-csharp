@@ -4,7 +4,7 @@
   "ActiveQueryBuilder.SQLiteMetadataProvider": "3.13.2.2264",
   "ActiveQueryBuilder.OLEDBMetadataProvider": "3.13.2.2264",
   "ActiveQueryBuilder.MSSQLMetadataProvider": "3.13.2.2264",
-  "ActiveQueryBuilder.Web.MVC": "3.13.1.494",
+  "ActiveQueryBuilder.Web.MVC": "3.13.2.495",
     "Antlr": "3.5.0.2",
     "Autofac": "4.9.2",
     "Autofac.WebApi2": "4.2.1",
